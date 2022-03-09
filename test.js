@@ -1,59 +1,210 @@
-(function() {
-    var quiz;
-  
-    $(document).ready(function() {
-      return quiz.init();
-    });
-  
-    quiz = {
-      init: function() {
-        return this.bind_events();
-      },
-      bind_events: function() {
-        return $(document).on("click", ".btn-check1", function(e) {
-          return quiz.check1();
-        });
-      },
-      check1: function() {
-        var correct, i, incorrect;
-        i = 1;
-        correct = 0;
-        incorrect = 0;
-        $(".question").each(function() {
-          var checked_count, correct_checked, correct_count, val;
-          val = $("input:radio[name='question-" + i + "']:checked").val();
-          correct_count = 0;
-          correct_checked = 0;
-          checked_count = 0;
-          $("input:checkbox[name='question-" + i + "']").each(function() {
-            if ($(this).attr("value") === "true") {
-              correct_count++;
-              if ($(this).is(":checked")) {
-                correct_checked++;
-              }
-            }
-            if ($(this).is(":checked")) {
-              return checked_count++;
-            }
-          });
-          if (correct_count > 0 && correct_count === correct_checked && checked_count === correct_count) {
-            val = "true";
-          }
-          $(this).removeClass("success error");
-          if (val === "true") {
-            $(this).addClass("success");
-            correct++;
-          } else {
-            $(this).addClass("error");
-            incorrect++;
-          }
-          return i++;
-        });
-        return $(".result").html("Du hast <strong>" + correct + " Fragen richtig</strong> beantwortet und <strong>" + incorrect + " falsch</strong>.").show();
-      }
-    };
-  
-  }).call(this);
-  
-  //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiPGFub255bW91cz4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQSxNQUFBOztFQUFBLENBQUEsQ0FBRSxRQUFGLENBQVcsQ0FBQyxLQUFaLENBQWtCLFFBQUEsQ0FBQSxDQUFBO1dBQ2hCLElBQUksQ0FBQyxJQUFMLENBQUE7RUFEZ0IsQ0FBbEI7O0VBR0EsSUFBQSxHQUNFO0lBQUEsSUFBQSxFQUFNLFFBQUEsQ0FBQSxDQUFBO2FBQ0osSUFBQyxDQUFBLFdBQUQsQ0FBQTtJQURJLENBQU47SUFHQSxXQUFBLEVBQWEsUUFBQSxDQUFBLENBQUE7YUFDWCxDQUFBLENBQUUsUUFBRixDQUFXLENBQUMsRUFBWixDQUFlLE9BQWYsRUFBd0IsWUFBeEIsRUFBc0MsUUFBQSxDQUFDLENBQUQsQ0FBQTtlQUNwQyxJQUFJLENBQUMsS0FBTCxDQUFBO01BRG9DLENBQXRDO0lBRFcsQ0FIYjtJQU9BLEtBQUEsRUFBTyxRQUFBLENBQUEsQ0FBQTtBQUNULFVBQUEsT0FBQSxFQUFBLENBQUEsRUFBQTtNQUFJLENBQUEsR0FBSTtNQUNKLE9BQUEsR0FBVTtNQUNWLFNBQUEsR0FBWTtNQUNaLENBQUEsQ0FBRSxXQUFGLENBQWMsQ0FBQyxJQUFmLENBQW9CLFFBQUEsQ0FBQSxDQUFBO0FBQ3hCLFlBQUEsYUFBQSxFQUFBLGVBQUEsRUFBQSxhQUFBLEVBQUE7UUFBTSxHQUFBLEdBQU0sQ0FBQSxDQUFFLDZCQUFBLEdBQThCLENBQTlCLEdBQWdDLFlBQWxDLENBQStDLENBQUMsR0FBaEQsQ0FBQTtRQUVOLGFBQUEsR0FBZ0I7UUFDaEIsZUFBQSxHQUFrQjtRQUNsQixhQUFBLEdBQWdCO1FBQ2hCLENBQUEsQ0FBRSxnQ0FBQSxHQUFpQyxDQUFqQyxHQUFtQyxJQUFyQyxDQUEwQyxDQUFDLElBQTNDLENBQWdELFFBQUEsQ0FBQSxDQUFBO1VBQzlDLElBQUcsQ0FBQSxDQUFFLElBQUYsQ0FBTyxDQUFDLElBQVIsQ0FBYSxPQUFiLENBQUEsS0FBeUIsTUFBNUI7WUFDRSxhQUFBO1lBQ0EsSUFBRyxDQUFBLENBQUUsSUFBRixDQUFPLENBQUMsRUFBUixDQUFXLFVBQVgsQ0FBSDtjQUNFLGVBQUEsR0FERjthQUZGOztVQUlBLElBQUcsQ0FBQSxDQUFFLElBQUYsQ0FBTyxDQUFDLEVBQVIsQ0FBVyxVQUFYLENBQUg7bUJBQ0UsYUFBQSxHQURGOztRQUw4QyxDQUFoRDtRQU9BLElBQUcsYUFBQSxHQUFnQixDQUFoQixJQUFxQixhQUFBLEtBQWlCLGVBQXRDLElBQXlELGFBQUEsS0FBaUIsYUFBN0U7VUFDRSxHQUFBLEdBQU0sT0FEUjs7UUFHQSxDQUFBLENBQUUsSUFBRixDQUFPLENBQUMsV0FBUixDQUFvQixlQUFwQjtRQUNBLElBQUcsR0FBQSxLQUFPLE1BQVY7VUFDRSxDQUFBLENBQUUsSUFBRixDQUFPLENBQUMsUUFBUixDQUFpQixTQUFqQjtVQUNBLE9BQUEsR0FGRjtTQUFBLE1BQUE7VUFJRSxDQUFBLENBQUUsSUFBRixDQUFPLENBQUMsUUFBUixDQUFpQixPQUFqQjtVQUNBLFNBQUEsR0FMRjs7ZUFNQSxDQUFBO01BdkJrQixDQUFwQjthQXdCQSxDQUFBLENBQUUsU0FBRixDQUFZLENBQUMsSUFBYixDQUFrQixrQkFBQSxHQUFxQixPQUFyQixHQUErQixtREFBL0IsR0FBcUYsU0FBckYsR0FBaUcsbUJBQW5ILENBQXVJLENBQUMsSUFBeEksQ0FBQTtJQTVCSztFQVBQO0FBSkYiLCJzb3VyY2VzQ29udGVudCI6WyIkKGRvY3VtZW50KS5yZWFkeSAtPlxuICBxdWl6LmluaXQoKVxuICBcbnF1aXogPVxuICBpbml0OiAtPlxuICAgIEBiaW5kX2V2ZW50cygpXG4gICAgXG4gIGJpbmRfZXZlbnRzOiAtPlxuICAgICQoZG9jdW1lbnQpLm9uIFwiY2xpY2tcIiwgXCIuYnRuLWNoZWNrXCIsIChlKSAtPlxuICAgICAgcXVpei5jaGVjaygpXG4gICAgICBcbiAgY2hlY2s6IC0+XG4gICAgaSA9IDFcbiAgICBjb3JyZWN0ID0gMFxuICAgIGluY29ycmVjdCA9IDBcbiAgICAkKFwiLnF1ZXN0aW9uXCIpLmVhY2ggLT5cbiAgICAgIHZhbCA9ICQoXCJpbnB1dDpyYWRpb1tuYW1lPSdxdWVzdGlvbi1cIitpK1wiJ106Y2hlY2tlZFwiKS52YWwoKVxuXG4gICAgICBjb3JyZWN0X2NvdW50ID0gMFxuICAgICAgY29ycmVjdF9jaGVja2VkID0gMFxuICAgICAgY2hlY2tlZF9jb3VudCA9IDBcbiAgICAgICQoXCJpbnB1dDpjaGVja2JveFtuYW1lPSdxdWVzdGlvbi1cIitpK1wiJ11cIikuZWFjaCAtPlxuICAgICAgICBpZiAkKHRoaXMpLmF0dHIoXCJ2YWx1ZVwiKSA9PSBcInRydWVcIlxuICAgICAgICAgIGNvcnJlY3RfY291bnQrK1xuICAgICAgICAgIGlmICQodGhpcykuaXMoXCI6Y2hlY2tlZFwiKVxuICAgICAgICAgICAgY29ycmVjdF9jaGVja2VkKytcbiAgICAgICAgaWYgJCh0aGlzKS5pcyhcIjpjaGVja2VkXCIpXG4gICAgICAgICAgY2hlY2tlZF9jb3VudCsrXG4gICAgICBpZiBjb3JyZWN0X2NvdW50ID4gMCAmJiBjb3JyZWN0X2NvdW50ID09IGNvcnJlY3RfY2hlY2tlZCAmJiBjaGVja2VkX2NvdW50ID09IGNvcnJlY3RfY291bnRcbiAgICAgICAgdmFsID0gXCJ0cnVlXCJcblxuICAgICAgJCh0aGlzKS5yZW1vdmVDbGFzcyhcInN1Y2Nlc3MgZXJyb3JcIik7XG4gICAgICBpZiB2YWwgPT0gXCJ0cnVlXCJcbiAgICAgICAgJCh0aGlzKS5hZGRDbGFzcyhcInN1Y2Nlc3NcIik7XG4gICAgICAgIGNvcnJlY3QrK1xuICAgICAgZWxzZVxuICAgICAgICAkKHRoaXMpLmFkZENsYXNzKFwiZXJyb3JcIik7XG4gICAgICAgIGluY29ycmVjdCsrXG4gICAgICBpKytcbiAgICAkKFwiLnJlc3VsdFwiKS5odG1sKFwiRHUgaGFzdCA8c3Ryb25nPlwiICsgY29ycmVjdCArIFwiIEZyYWdlbiByaWNodGlnPC9zdHJvbmc+IGJlYW50d29ydGV0IHVuZCA8c3Ryb25nPlwiICsgaW5jb3JyZWN0ICsgXCIgZmFsc2NoPC9zdHJvbmc+LlwiKS5zaG93KCk7Il19
-  //# sourceURL=coffeescript
+const questionEl = document.querySelector('.survey-question')
+const surveyNumEl = document.querySelector('.survey-num')
+const choicesEl = document.querySelector('.choices')
+const buttonEl = document.querySelector('.nav-buttons')
+const containerEl = document.querySelector('.container')
+
+
+const survey = [
+    {
+        id: 1,
+        question: 'How many oscars did the Titanic movie got?',
+        choices: ['11', '9', '7', '8'],
+        correctAnswer: '11',
+        answer: null
+    },
+    {
+        id: 2,
+        question: 'Who was the first American in space?',
+        choices: ['Alan Shepard', 'Yuri Gagarin', 'Tesla', 'Einstein'],
+        correctAnswer: 'Alan Shepard',
+        answer: null
+    },
+    {
+        id: 3,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 4,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 5,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 6,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 7,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 8,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 9,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    },
+    {
+        id: 10,
+        question: 'What is a very cold part of Russia?',
+        choices: ['Antarctica', 'Siberia', 'Grönland', 'Moskov'],
+        correctAnswer: 'Siberia',
+        answer: null
+    }
+
+]
+
+
+const surveyState = {
+    currentQuestion: 1
+}
+
+
+const navigateButtonClick = (e) => {
+    if(e.target.id == 'next') {
+        surveyState.currentQuestion++
+        initialSurvey()
+    }
+
+    if(e.target.id == 'prev') {
+        surveyState.currentQuestion--
+        initialSurvey()
+    }
+}
+
+const checkBoxHandler = (e, question) => {    
+    //Check if the chekbox has selected before if it is remove selected
+    if(!e.target.checked) {
+        e.target.checked = false
+        question.answer = null
+        return
+    }
+    
+    const allCheckBoxes = choicesEl.querySelectorAll('input')
+    allCheckBoxes.forEach(checkBox => checkBox.checked = false)
+    e.target.checked = true
+    question.answer = e.target.value    
+}
+
+const getResults = () => {
+    const correctAnswerCount = survey.filter(question => question.answer == question.correctAnswer).length
+    const emptyQuestionCount = survey.filter(question => question.answer === null).length
+    const wrongQuestionCount = survey.filter(question => question.answer !== null && question.answer != question.correctAnswer).length
+
+
+    return {
+        correct: correctAnswerCount,
+        empty: emptyQuestionCount,
+        wrong: wrongQuestionCount
+    }
+}
+
+
+const renderQuestion = (question) => {    
+    //Last question of survey
+    const lastQuestion = survey[survey.length - 1]
+
+    //Check if the all questions are answered if then insert some message
+    if(surveyState.currentQuestion > lastQuestion.id) {
+        const results = getResults()
+        containerEl.innerHTML = `<h1 class="test-completed">Good Job! You have completed the mini quiz</h1>
+        <p class="results-info"> You have <strong>${results.correct}</strong> correct, <strong>${results.wrong}</strong> wrong, <strong>${results.empty}</strong> empty answers</p>                        
+        <span class="tick"></span>`
+        return
+                                
+    }
+
+    // Clean innerHTML before append
+    surveyNumEl.innerHTML = ''
+    choicesEl.innerHTML = ''
+    buttonEl.innerHTML = ''
+    // Render question and question id
+    surveyNumEl.textContent = question.id + '-'
+    questionEl.textContent = question.question
+    // Render choices
+    question.choices.forEach(choice => {
+        const questionRowEl = document.createElement('p')
+        questionRowEl.setAttribute('class','question-row')
+        questionRowEl.innerHTML = `<label class="label">                                        
+                                        <span class="choise">${choice}</span>
+                                    </label>`
+        //Create checkbox input
+        const checkBoxEl = document.createElement('input')
+        checkBoxEl.setAttribute('type', 'checkbox')
+        // Bind checkboxHandler with event and current question
+        checkBoxEl.addEventListener('change', (e) => checkBoxHandler(e, question))
+        //Add answer to the input as a value
+        checkBoxEl.value = choice
+        //If question has answer already make it checked again
+        if(question.answer === choice) {
+            checkBoxEl.checked = true
+        }
+        //Insert into question row
+        questionRowEl.firstChild.prepend(checkBoxEl)
+        //Insert row to the wrapper
+        choicesEl.appendChild(questionRowEl)                                    
+    })
+
+    //Next & Previous Buttons
+    const prevButton = document.createElement('button')
+    prevButton.classList.add('nav-button')
+    prevButton.classList.add('prev')
+    prevButton.id = 'prev'
+    prevButton.textContent = 'Previous'
+    prevButton.addEventListener('click', navigateButtonClick)
+
+    const nextButton = document.createElement('button')
+    nextButton.classList.add('nav-button')
+    nextButton.classList.add('next')
+    nextButton.id = 'next'
+    nextButton.textContent = 'Next'
+    nextButton.addEventListener('click', navigateButtonClick)
+
+
+
+    //Display buttons according to survey current question
+    if(question.id == 1){        
+        buttonEl.appendChild(nextButton)
+    } else if (surveyState.currentQuestion == lastQuestion) {
+        buttonEl.appendChild(prevButton)
+    } else {
+        buttonEl.appendChild(prevButton)
+        buttonEl.appendChild(nextButton)
+    }   
+    
+}
+
+const initialSurvey = () => {
+    //Get the current question
+    const currentQuestion = survey.find(question => question.id === surveyState.currentQuestion)
+    // Render the currentQuestion
+    renderQuestion(currentQuestion)    
+
+}
+
+initialSurvey()

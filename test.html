@@ -1,93 +1,41 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel='stylesheet' href='/test.css'>
-    <script src="/test.js"></script>
-    <title>Test</title>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/test.css' />
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container bg-light shadow">
 
-<body>
-    <div class='wrapper'>
-        <div class='question'>
-          <div class='question-headline'>
-            1. Der Pottwal ist...
-          </div>
-          <div class='question-answers'>
-            <div class='answer'>
-              <input id='q1a1' name='question-1' type='radio' value='false'><label for="q1a1">Das größte Tier überhaupt auf der Erde</label></input>
-            </div>
-            <div class='answer'>
-              <input id='q1a2' name='question-1' type='radio' value='true'><label for="q1a2">Das größte Säugetier der Welt, das Zähne hat</label></input>
-            </div>
-            <div class='answer'>
-              <input id='q1a3' name='question-1' type='radio' value='false'><label for="q1a3">Der größte Wal</label></input>
-            </div>
-          </div>
+        <div class="survey-header">
+            <span class="survey-num">1-</span>
+            <p class="survey-question">How long have you been here ?</p>
         </div>
-        <div class='question'>
-          <div class='question-headline'>
-            2. Wie tief kann ein Pottwal tauchen?
-          </div>
-          <div class='question-answers'>
-            <div class='answer'>
-              <input id='q2a1' name='question-2' type='radio' value='true'><label for="q2a1">Bis über 2000 Meter</label></input>
+    
+        <div class="survey-body">
+            <div class="choices">
+    
             </div>
-            <div class='answer'>
-              <input id='q2a2' name='question-2' type='radio' value='false'><label for="q2a2">Mehrere 100 Meter</label></input>
+    
+            <div class="survey-footer">
+                <div class="nav-buttons">
+    
+                </div>
             </div>
-            <div class='answer'>
-              <input id='q2a3' name='question-2' type='radio' value='false'><label for="q2a3">Über 4 Kilometer</label></input>
-            </div>
-          </div>
+    
+    
         </div>
-        <div class='question'>
-          <div class='question-headline'>
-            3. Eine Gruppe aus Pottwalen besteht aus...
-          </div>
-          <div class='question-answers'>
-            <div class='answer'>
-              <input id='q3a1' name='question-3' type='radio' value='false'><label for="q3a1">Nur jungen Pottwalkindern ohne Erwachsene</label></input>
-            </div>
-            <div class='answer'>
-              <input id='q3a2' name='question-3' type='radio' value='true'><label for="q3a2">Nur Weibchen und ihren jungen Kindern, die Männchen gehen allein auf Jagd</label></input>
-            </div>
-            <div class='answer'>
-              <input id='q3a3' name='question-3' type='radio' value='false'><label for="q3a3">Einem Männchen, einem Weibchen und ihrem Kind (Mutter, Vater, Kind)</label></input>
-            </div>
-          </div>
-        </div>
-        <div class='question'>
-          <div class='question-headline'>
-            4. Wie schafft es der Pottwal so lange und tief zu tauchen ohne zwischendurch an die Wasseroberfläche zum Atmen kommen zu müssen?
-          </div>
-          <div class='question-answers'>
-            <div class='answer'>
-              <input id='q4a1' name='question-4' type='checkbox' value='true'><label for="q4a1">Seine Lunge ist so groß, dass sie seinen ganzen Bauch ausfüllt</label></input>
-            </div>
-            <div class='answer'>
-              <input id='q4a2' name='question-4' type='checkbox' value='false'><label for="q4a2">Er schaltet auf Kiemenatmung um, wie bei Fischen</label></input>
-            </div>
-            <div class='answer'>
-              <input id='q4a3' name='question-4' type='checkbox' value='true'><label for="q4a3">Er kann die Blutzufuhr zu bestimmten Organen zeitweise "ausschalten" damit ausreichend Sauerstoff für Herz und Gehirn übrigbleibt</label></input>
-            </div>
-          </div>
-        </div>
-        <div class='result'></div>
-        <button class='btn-check1'>Antworten prüfen</button>
-      </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="/test.js"></script>
-</body>
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+  </body>
 </html>
