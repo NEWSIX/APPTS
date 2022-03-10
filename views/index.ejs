@@ -2,182 +2,344 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- icon css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="font-awesome-animation.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-  <title>A Personalized Programming Tutoring System</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-
-  <!-- Custom styles for this template -->
-  <link href="style.css" rel="stylesheet">
+    <link rel='stylesheet' href='stylesheets/index.css' />
+    <title>APPTSystem.com</title>
 </head>
+  <body>
 
-<body>
-
-  <header>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5 shadow ">
-  <div class="container">
-    <a class="navbar-brand mb-0 h5" href="#">APPT <b>System</b></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav mb-0 h5  ms-auto">
-           <li class="nav-item active ">
-            <a class="nav-link " href="#"> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li>
-            <script src="https://accounts.google.com/gsi/client" async defer></script>
-            <div id="g_id_onload"
-               data-client_id="YOUR_GOOGLE_CLIENT_ID"
-               data-login_uri="https://your.domain/your_login_endpoint"
-               data-auto_prompt="false">
-            </div>
-            <div class="g_id_signin"
-               data-type="standard"
-               data-size="large"
-               data-theme="outline"
-               data-text="sign_in_with"
-               data-shape="rectangular"
-               data-logo_alignment="left">
-               
-            </div>
-          </li>
-      </ul>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" data-aos="fade-down">
+      <div class="container-fluid">
+        <a class="navbar-brand text-center d-flex align-items-center" href="#"><img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="37" height="30" class="d-inline-block text-center"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav d-flex justify-content-around w-100">
+            <a class="nav-link" aria-current="page" href="#">HOME</a>
+            <a class="nav-link" href="#">WHO WE ARE</a>
+            <a class="nav-link" href="#">OUR WORK</a>
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">PRICING</a>
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">CONTACT</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="pt-5 bg-primary">
+      <div class="row d-flex flex-row justify-content-around bg-primary pt-5 pb-5 pe-5 ps-5">
+        <div class="col-lg-6 glassbox pt-3 pb-3 text-center overlay" data-aos="flip-left" data-aos-duration="1000">
+          <p class="animatetext" data-aos="zoom-out-up" data-shadow='glassmorphism'>glassmorphism</p>
+          <p class="gradienttext pe-3 ps-3">It's about time we made the web beautiful</p>
+        </div>
+    
+        <div class="col-lg-6 overlay text-center pt-4">
+          <p class="herotext pt-5 pt-lg-0" data-aos="zoom-out-down">lets destroy neumorphism<br>learn bootstrap 5</p>
+          <a href="#" rel="noopener" class="glassbutton me-lg-5">WHO WE ARE</a>
+          <a href="#" rel="noopener" class="glassbutton">CONTACT US</a>
+        </div>
+      </div>
+    
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    
     </div>
-  </div>
-</nav>
-  </header>
-
-  <main>
-
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="" alt="team member" class="img-responsive">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" />
-          </svg>
-
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>อยากเรียนรู้การเขียนโปรแกรม</h1>
-              <p>มีโจทย์การเรียนโปรแกรมภาษา C เบื้องต้น</p>
-              <p><a class="btn btn-lg btn-primary" href="#">เริ่มกันเลย ></a></p>
+    
+    <div class="container-fluid section1bg pb-lg-5 pt-5 pb-5 pb-sm-0">
+      <div class="pt-5 pb-5">
+        <div class="row rowmargins mb-5 mt-5">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <img src="https://picsum.photos/id/537/500/500" class="what-is" data-aos="flip-left" data-aos-duration="1200">
+          </div>
+          <div class="col-lg-8 mb-5 mb-lg-0 overlay">
+            <div class="glasscard pt-3 mt-5 mt-lg-0" data-aos="fade-up">
+              <h1 class="blue ps-5 pt-3 pb-2">What is glassmorphism?</h1>
+              <hr>
+              <p class="ps-5 pe-5 pt-3 pb-3 white lh-xlg">It's freakin rad that's what it is. Here's some lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              <div class="text-center text-lg-start ps-lg-5 pb-5">
+                <a href="#" rel="noopener" class="glassbutton me-3">OUR WORK</a>
+                <a href="#" rel="noopener" class="glassbutton">PRICING</a>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-    <!-- Marketing messaging and featurettes
-        ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span>
-          </h2>
-          <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
-            here.</p>
-        </div>
-        <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-          </svg>
-
+    </div>
+    
+    <ul class="circlesextra">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    
+    <div class="container-fluid section2bg pb-5 pt-5">
+      <div class="rowmargins pt-5 pb-5">
+        <div class="row mb-5 mt-5">
+          <div class="col-lg-4 mb-5">
+            <div class="biocard overlay" data-aos="zoom-in-left" data-aos-duration="1600">
+              <div class="biocard-img">
+                <img src="https://dl.dropbox.com/s/u3j25jx9tkaruap/Webp.net-resizeimage.jpg?raw=1">
+              </div>
+              <div class="desc">
+                <h6 class="primary-text">Olivia Smith</h6>
+                <h6 class="secondary-text">Full Stack Developer</h6>
+              </div>
+              <button class="primary-text">View Profile</button>
+              <div class="details">
+                <div class="rating">
+                  <h6 class="primary-text"> 86% </h6>
+                  <h6 class="secondary-text"> Rating </h6>
+                </div>
+                <div class="activity">
+                  <h6 class="primary-text"> 92% </h6>
+                  <h6 class="secondary-text"> Activity </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <div class="biocard overlay" data-aos="zoom-in-up" data-aos-duration="1600">
+              <div class="biocard-img">
+                <img src="https://dl.dropbox.com/s/u3j25jx9tkaruap/Webp.net-resizeimage.jpg?raw=1">
+              </div>
+              <div class="desc">
+                <h6 class="primary-text">John Parker</h6>
+                <h6 class="secondary-text">Back End Developer</h6>
+              </div>
+              <button class="primary-text">View Profile</button>
+              <div class="details">
+                <div class="rating">
+                  <h6 class="primary-text"> 92% </h6>
+                  <h6 class="secondary-text"> Rating </h6>
+                </div>
+                <div class="activity">
+                  <h6 class="primary-text"> 81% </h6>
+                  <h6 class="secondary-text"> Activity </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <div class="biocard overlay" data-aos="zoom-in-right" data-aos-duration="1600">
+              <div class="biocard-img">
+                <img src="https://dl.dropbox.com/s/u3j25jx9tkaruap/Webp.net-resizeimage.jpg?raw=1">
+              </div>
+              <div class="desc">
+                <h6 class="primary-text">Kevin Booley</h6>
+                <h6 class="secondary-text">Front End Developer</h6>
+              </div>
+              <button class="primary-text">View Profile</button>
+              <div class="details">
+                <div class="rating">
+                  <h6 class="primary-text"> 95% </h6>
+                  <h6 class="secondary-text"> Rating </h6>
+                </div>
+                <div class="activity">
+                  <h6 class="primary-text"> 90% </h6>
+                  <h6 class="secondary-text"> Activity </h6>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <hr class="featurette-divider">
-
-      <!--Member-->
-
-      <div class="container marketing">
-
-        <hr class="featurette-divider">
-  
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span>
-            </h2>
-            <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
-              here.</p>
+    </div>
+    
+    <div class="area2">
+      <ul class="circles2">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    
+    </div>
+    
+    <div class="container-fluid section3bg">
+      <div class="row rowmargins">
+        <div class="col-lg-4 glassbox2 mt-5" data-aos="zoom-in-right" data-aos-duration="800">
+          <h1 class="pt-5 pb-3 fw-bold text-center">OUR PROJECTS</h1>
+          <hr>
+          <div class="text-center">
+            <figure class="snip1401" data-aos="flip-left">
+              <img src="https://picsum.photos/id/237/320/220" alt="sample67" />
+              <figcaption>
+                <h3>Eleanor Fant</h3>
+                <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
+              </figcaption><i class="ion-ios-home-outline"></i>
+              <a href="#"></a>
+            </figure>
           </div>
-          <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-              height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-              preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-            </svg>
-  
+          <div class="text-center">
+            <figure class="snip1401 hover" data-aos="flip-left"><img src="https://picsum.photos/id/623/320/220" alt="sample93" />
+              <figcaption>
+                <h3>Eric Widget</h3>
+                <p>I'm killing time while I wait for life to shower me with meaning and happiness.</p>
+              </figcaption><i class="ion-ios-personadd-outline"></i>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="text-center">
+            <figure class="snip1401" data-aos="flip-left"><img src="https://picsum.photos/id/167/320/220" alt="sample87" />
+              <figcaption>
+                <h3>Will Barrow</h3>
+                <p>The only skills I have the patience to learn are those that have no real application in life. </p>
+              </figcaption><i class="ion-ios-location-outline"></i>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="text-center">
+            <figure class="snip1401" data-aos="flip-left"><img src="https://picsum.photos/id/85/320/220" alt="sample87" />
+              <figcaption>
+                <h3>Jane Topesky</h3>
+                <p>Have enough courage to start and enough heart to finish. </p>
+              </figcaption><i class="ion-ios-location-outline"></i>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="text-center">
+            <figure class="snip1401" data-aos="flip-left"><img src="https://picsum.photos/id/313/320/220" alt="sample87" />
+              <figcaption>
+                <h3>Mark Radish</h3>
+                <p>Life becomes easier when you learn to accept the apology you never got. </p>
+              </figcaption><i class="ion-ios-location-outline"></i>
+              <a href="#"></a>
+            </figure>
           </div>
         </div>
-        <hr class="featurette-divider">
- 
-    </div><!-- /.container -->
+        <div class="col-lg-8">
+          <div class="grid image-grid">
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img1" src="https://picsum.photos/id/112/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img2" src="https://picsum.photos/id/179/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img3" src="https://picsum.photos/id/211/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img4" src="https://picsum.photos/id/402/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img5" src="https://picsum.photos/id/311/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img6" src="https://picsum.photos/id/491/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img7" src="https://picsum.photos/id/600/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img8" src="https://picsum.photos/id/66/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img9" src="https://picsum.photos/id/807/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+            <div class="grid-block" data-aos="zoom-out-left">
+              <div class="tile">
+                <a class="tile-link" href="#">
+                  <img class="tile-img tile-img10" src="https://picsum.photos/id/200/544/417" alt="Image">
+                </a>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
 
 
-    <!-- FOOTER -->
-    <footer class="container">
-      <p class="float-end"><a href="#">Back to top</a></p>
-      <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-  </main>
-
-
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-</body>
 
+
+
+
+  </body>
 </html>
