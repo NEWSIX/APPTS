@@ -31,35 +31,35 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/home.css' />
-    <title>HOME</title>
+    <title>Teacher</title>
 </head>
 
 <body>
+        <!-- teacher navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5 shadow ">
         <div class="container">
-          <a class="navbar-brand mb-0 h5" href="/home"><i class='fas fa-laptop-code' style='font-size:24px'></i> APPT <b>System</b></a>
+          <a class="navbar-brand mb-0 h5"  href="/teacher"><i class='fas fa-laptop-code' style='font-size:24px'></i> APPT <b>System</b></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mb-0 h5 ms-auto">
                  <li class="nav-item active ">
-                  <a class="nav-link" href="/home"><b>Home</b></a>
+                  <a class="nav-link" href="/teacher"><b>Home</b></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/course">Course</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/project">Project </a>
+                  <a class="nav-link" href="/class">Class </a>
+                  
                 </li>
                 
                 <li class="nav-item ">
-                  <a class="nav-link"  href="#log-out"><i class="fa fa-power-off" style="font-size: 25px;;align-items: center; " ></i></a>
+                  <a class="nav-link"  href="#log-out"><i class="fas fa-sign-out-alt" style="font-size: 25px;;align-items: center; " ></i></a>
                 </li>
             </ul>
           </div>
         </div>
       </nav>
+
 <!-- LEFT -->
     <main>
         <div class="sidebar bg-light shadow">
@@ -70,37 +70,27 @@
                 
                     <div class="card ">
                         <div class="card-header">
-                            <img src="https://avatars.githubusercontent.com/u/60424171?s=400&u=76ec41938a4f000b0b7eb62b1932a706ff0f1dc5&v=4" class="img-thumbnail" >
+                            <img src="https://lh3.googleusercontent.com/a-/AOh14GiPrMk3Zom_JEZ_FBExMuJ4CLw0tp_g5fSG1R2LWQ=s288-p-rw-no" class="img-thumbnail" >
                             
                             <div class="card-body">
-                                <h7 class="card-title"><b>NITIGON PHADUNGSAT</b></h7>
+                                <h7 class="card-title"><b>NITIGON GOOGLE</b></h7>
                                 <p class="card-text"></p>
                             </div>
                         </div>
                         <div class=" card-header bg-light ">
                         </div>
+                
                 <thead>
                     <div class="card ">
                         <div class="card-header">
-                            <i class="fas fa-school" style="font-size: 25px;;align-items: center; " ></i><b> Class</b>
-                            <br><br>
-                            <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#Classjoin">
-                                <i class="fas fa-plus" style="font-size: 20px;;align-items: center;" ></i><b> Join Class</b>
-                              </button>
-                              <br><br>
                             
-                        </div>	
-                </thead>
-                <div class=" card-header bg-light ">
-                </div>
-                <thead>
-                    <div class="card ">
-                        <div class="card-header">
-                            <i class="fa fa-fire" style="font-size: 25px;;align-items: center; " ></i><b> เนื้อหาที่แนะนำ</b>
+                            <i class="fa fa-chalkboard-teacher" style="font-size: 25px;;align-items: center; " ></i><b> My Class</b>
                             <div class="card-body">
-                                <h6 class="card-title">COURSE : A</h6>
-                                <h6 class="card-title">Project : Tik</h6>
-                                <p class="card-text">TEST ABC</p>
+                                
+                                <a href="/class" style="color: black;text-decoration: none;"><h6 class="card-title" >Class A</h6></a>
+                                <a href="/class" style="color: black;text-decoration: none;"><h6 class="card-title" >Class B</h6></a>
+
+                                
                             </div>
                         </div>
                 </thead>
@@ -141,37 +131,6 @@
         </div>
     </div>
     
-
-
-    <!-- Modal -->
-<div class="modal fade" id="Classjoin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Class Join</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <form>
-        <div class="modal-body">
-            <div class="mb-3">
-                <label for="classCode" class="form-label">Class Code</label>
-                <input type="text" class="form-control" id="classCode" placeholder="ใส่โค้กสำหรับเข้าชั้นเรียน">
-                <div  class="form-text">สามารถรับโค้ดจากอาจารย์ผู้สอน</div>
-              </div>
-          //เมื้อกด join = redirection ให้มัน refesh
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-outline-dark">Submit</button>
-        </div>
-        </form>
-
-      </div>
-    </div>
-  </div>
-
-
 </body>
 
 </html>
