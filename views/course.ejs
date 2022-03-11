@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="font-awesome-animation.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
+    
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -32,6 +34,7 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/course.css' />
+    <link rel='stylesheet' href='stylesheets/Drag_Drop.css' />
     <title>Course</title>
 </head>
 
@@ -63,6 +66,8 @@
         </nav>
 <!-- LEFT -->
         <main>
+
+            
     <!-- START OF C Language-->
             <div class="sidebar bg-light shadow">
                 <div class="flex-shrink-0 p-3 " >
@@ -372,6 +377,7 @@
                             <div class="box bg-light  mb-5 shadow" >
                                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                                     <h1 id = 'content'> วิธีทำโจทย์ </h1>
+
                                 </div>
                             </div>
                         </div>
@@ -871,47 +877,79 @@
 
 
 
-            <!-- TEST BUTTON -->
-                
+                <!-- TEST BUTTON -->
+                    
                 <input type="checkbox" class="btn-check" id="TEST1" autocomplete="off" data-bs-toggle="collapse" data-bs-target="#collapseTEST1" checked>
-                        <label class="btn btn-outline-secondary fs-6 fw-semibold " for="TEST1">TEST CHOICE</label>
-                <input type="checkbox" class="btn-check" id="TEST2" autocomplete="off" data-bs-toggle="collapse" data-bs-target="#collapseTEST2" >
-                        <label class="btn btn-outline-secondary fs-6 fw-semibold " for="TEST2">TEST SELECT</label>
-                <input type="checkbox" class="btn-check" id="TEST3" autocomplete="off" data-bs-toggle="collapse" data-bs-target="#collapseTEST3" >
-                        <label class="btn btn-outline-secondary fs-6 fw-semibold " for="TEST3">TEST IDE</label>
-            
-            <!-- TEST CONTENT -->
-                <div id="collapseTEST1" class="accordion-collapse collapse show" aria-labelledby="headingThree"  >
-                    <div class="box bg-light  mb-5 shadow" >
-                        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                            <h1 id = 'test'> ส่งจาก  </h1>
-                            <h1 id = 'test'> JS </Script> </h1>
-                            <h4 id="scrollspyHeading1">ถ้ากดส่งค่า value </h4>
+                    <label class="btn btn-outline-secondary fs-6 fw-semibold " for="TEST1">TEST CHOICE</label>
+            <input type="checkbox" class="btn-check" id="TEST2" autocomplete="off" data-bs-toggle="collapse" data-bs-target="#collapseTEST2" >
+                    <label class="btn btn-outline-secondary fs-6 fw-semibold " for="TEST2">TEST SELECT</label>
+            <input type="checkbox" class="btn-check" id="TEST3" autocomplete="off" data-bs-toggle="collapse" data-bs-target="#collapseTEST3" >
+                    <label class="btn btn-outline-secondary fs-6 fw-semibold " for="TEST3">TEST IDE</label>
+
+     <!-- TEST CONTENT -->
+        <!-- TEST 1 -->
+        <div id="collapseTEST1" class="accordion-collapse collapse show" aria-labelledby="headingThree"  >
+            <div class="box bg-light  mb-5 shadow" >
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <h1 id = 'test'> โปรดเลือกบทเรียน  </h1>
+                    <h1 id = 'test'> JS </Script> </h1>
+                    <h4 id="scrollspyHeading1">มะนาวแพงทำอย่างไร </h4>
+
+
+                    <form action="" method="post">
+
+                        <div class="d-flex justify-content-center p-2 bd-highlight">
+                            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" >
+                            <label class="btn btn-outline-secondary" for="option1">กินมะม่วงแทน</label>
                         </div>
-                    </div>
-                </div>
-                <div id="collapseTEST2" class="accordion-collapse collapse " aria-labelledby="headingThree"  >
-                    <div class="box bg-light  mb-5 shadow" >
-                        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                            <h1 id = 'test'> B </h1>
-                            <h4 id="scrollspyHeading1">opt</h4>
+                        <div class="d-flex justify-content-center p-2 bd-highlight">
+                            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="option2">เพิ่มซัพพลาย</label>
                         </div>
-                    </div>
-                </div>
-                <div id="collapseTEST3" class="accordion-collapse collapse " aria-labelledby="headingThree"  >
-                    <div class="box bg-light  mb-5 shadow" >
-                        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                            <h1 id = 'test'> C </h1>
-                            <h4 id="scrollspyHeading1">opt</h4>
+                        <div class="d-flex justify-content-center p-2 bd-highlight">
+                            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="option3">หาซัพพลายต่างประเทศ</label>
                         </div>
-                    </div>
+                    
+
+                        <input  class="btn btn-outline-secondary" type="submit" value="Submit">
+                    </form>
+
                 </div>
-            <!-- EDND TEST -->
+            </div>
+        </div>
+        <!-- TEST 2 -->
+        <div id="collapseTEST2" class="accordion-collapse collapse " aria-labelledby="headingThree"  >
+            <div class="box bg-light  mb-5 shadow" >
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <h1 id = 'test'> B </h1>
+                    <h4 id="scrollspyHeading1">
+                    <h1><a id="right"></a> : <a id="total"></a></h1> 
+                            <ul class="draggable-list" id="draggable-list"></ul>
+                            <button class="check-btn" id="check">
+                            ส่งไป JS
+                            </button>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEST 3 -->
+        <div id="collapseTEST3" class="accordion-collapse collapse " aria-labelledby="headingThree"  >
+            <div class="box bg-light  mb-5 shadow" >
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <h1 id = 'test'> C </h1>
+                    <h4 id="scrollspyHeading1">opt</h4>
+                </div>
+            </div>
+        </div>
+    <!-- EDND TEST -->
             
             
 
 
         </div>
+        <script src="javascripts/Drag_Drop.js"></script>
     </body>
 
 </html>

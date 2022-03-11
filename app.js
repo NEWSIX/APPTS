@@ -14,6 +14,8 @@ var projectRouter = require('./routes/project');
 var teacherhomeRouter = require('./routes/teacher-home');
 var teacherclassRouter = require('./routes/teacher-class');
 
+
+
 var app = express();
 
 // view engine setup
@@ -35,6 +37,8 @@ app.use('/project', projectRouter);
 
 app.use('/teacher', teacherhomeRouter);
 app.use('/class', teacherclassRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
