@@ -18,14 +18,14 @@ var pic = "https://i.pinimg.com/originals/02/20/da/0220dad7b5d390c3178815008a628
 router.get('/', function(req, res, next) {
     var Resulte2 = check(databaseCHECK);
     if(Resulte2 === true){
-        res.render('course', 
+        res.render('compiler', 
         { 
             title: 'EX Online IDE' 
             ,Resulte1:store('compiler')
             ,Resulte2:pic
         });
     }
-    else res.render('course', 
+    else res.render('compiler', 
         {
             title: 'EX Online IDE' 
             ,Resulte1:store('compiler')
@@ -45,11 +45,11 @@ router.post('/', function(req, res, next) {
     else ;
     if(submit === "Submit"){
         ide(code,lang);
-        res.redirect('/course#submit');
+        res.redirect('/ide#1234');
     }
     if(submit === "Compile"){
         ide(code,lang);
-        res.redirect('/course#compiler');
+        res.redirect('/ide');
     }
 });
 
