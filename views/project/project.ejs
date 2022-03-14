@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="font-awesome-animation.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -36,81 +35,16 @@
 </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5 shadow ">
-            <div class="container">
-                <a class="navbar-brand mb-0 h5" href="/home"><i class='fas fa-laptop-code' style='font-size:24px'></i> APPT <b>System</b></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav mb-0 h5 ms-auto">
-                        <li class="nav-item ">
-                        <a class="nav-link" href="/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="/course"><b>Course</b></a>
-                        </li>
-                        <li class="nav-item active">
-                        <a class="nav-link" href="/project">Project </a>
-                        </li>
-                        
-                        <li class="nav-item ">
-                        <a class="nav-link"  href="#log-out"><i class="fa fa-power-off" style="font-size: 25px;;align-items: center; " ></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-<!-- LEFT -->
-        <main>
-    <!-- START OF C Language-->
-            <div class="sidebar bg-light shadow">
-                <div class="flex-shrink-0 p-3 " >
-                    <a href="/project" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                        <span class="fs-5 fw-semibold"><i class='far fa-file-code' style='font-size:24px'></i> Project </span>
-                    </a>
-                    <ul class="list-unstyled ps-0">
+        <!-- Narbar-->
+        <%- include ../layer/navbar.ejs %>
+        <a href="../layer/navbar.ejs"> </a>
+        <!-- end of Narbar-->
 
-
-                        <div class="accordion" id="accordionParentC"> 
-                            <!-- START OF Introduce-->   
-                            <li class="mb-1">
-                            <center>
-                                <li><a class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntroduce" >
-                                    Introduce
-                                </a></li>
-
-                                <li><a class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseTicTacToe" >
-                                    Tic Tac Toe
-                                </a></li>
-
-                                <li><a class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseLibrary" >
-                                    Library System
-                                </a></li>
-
-                                <li><a class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuizGame" >
-                                    Quiz Game
-                                </a></li>
-
-                                <li><a class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseHangman" >
-                                    Hangman
-                                </a></li>
-
-                                <li><a class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalendar" >
-                                    Calendar
-                                </a></li>
-
-                                <li><a class="btn  align-items rounded collapsed fs-6 fw-semibold"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseCustomer" >
-                                    Customer Biling
-                                </a></li>
-                            </center>
-                            </li>
-                </div>
-            </div>
-        </main>
-<!-- END OF LEFT-->
-    
- 
+        
+        <!-- LEFT -->        
+        <%- include ../layer/sidebar-project.ejs %>
+        <!--end of  LEFT -->  
+ <a href="../layer/sidebar-project.ejs"></a>
 
 <!-- MIDDLE 1 -->
         <div class="content">

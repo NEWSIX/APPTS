@@ -933,13 +933,21 @@
                 </div>
             </div>
         </div>
-
+    <style>textarea{
+    background: url("http://i.imgur.com/2cOaJ.png");
+    background-attachment: local;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    padding-top: 10px;
+    border-color:#ccc; 
+}
+    </style>
         <!-- TEST 3 -->
         <div id="collapseTEST3" class="accordion-collapse collapse " aria-labelledby="headingThree"  >
             <div class="box bg-light  mb-5 shadow" >
                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                     <h1 id = 'test'> C </h1>
-                    
+                    <textarea rows="10" cols="50"></textarea>
                     <center>
                         <h1><%= title %></h1>
                         <form id="myform" name="myform" method="post" action='#'>
@@ -947,7 +955,7 @@
                           Don't forget to type<h3>print();</h3>
                     
                           print("Hello world")<br>
-                          <textarea rows="13" cols="100" id="code" name="code"></textarea>
+                          <textarea rows="13" cols="50" id="code" name="code"></textarea>
                           <br>
                           Language : <select name="lang">
                             <option value="C">C</option>
