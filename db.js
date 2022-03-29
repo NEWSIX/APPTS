@@ -1,3 +1,5 @@
 console.log("~BOYAH!");
-var MongoClient = require('mongodb').MongoClient;
+var mongo = require('mongodb');
+
+
 console.log("BOYAH!~");
