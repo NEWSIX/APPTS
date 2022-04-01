@@ -11,7 +11,6 @@ var projectRouter = require('./routes/project');
 /* Teacher */
 var teacherhomeRouter = require('./routes/teacher-home');
 var teacherclassRouter = require('./routes/teacher-class');
-
 /** Course */
 var courseRouter = require('./routes/course/0.introduce/introduce');
 //
@@ -43,7 +42,8 @@ var file_operation_A = require('./routes/course/7.file_operation/file_operation-
 var file_operation_B = require('./routes/course/7.file_operation/file_operation-B');
 var file_operation_test = require('./routes/course/7.file_operation/file_operation-Test');
 /** end Course */
-
+var RecommendRouter = require('./routes/Recommend');
+//
 
 
 var app = express();
@@ -105,12 +105,8 @@ app.use('/course-array-test', array_Test);
 app.use('/course-file_operation-A',    file_operation_A);
 app.use('/course-file_operation-B',    file_operation_B);
 app.use('/course-file_operation-test', file_operation_test);
-
-
-
-
-
-
+//
+app.use('/recommend', RecommendRouter);
 
 
 
