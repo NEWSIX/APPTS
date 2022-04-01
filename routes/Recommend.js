@@ -1,4 +1,9 @@
-var user = "user2";
+
+const fs = require('fs');
+let rawdata = fs.readFileSync('./user.json');
+let userJson = JSON.parse(rawdata);
+var user = userJson.name;
+console.log(user);
 
 var express = require('express');
 var router = express.Router();
