@@ -18,7 +18,10 @@ router.get('/', function(req, res, next) {
       MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db(mydatabase);
-        var query = { email: /.*m.*/ };
+        //var query = { email: /.*m.*/ };
+        var query = {teacher:person.email };
+
+
         dbo.collection("StudentClass").find(query).toArray(function(err, Studentresult) {
           if (err) throw err;
           console.log(Studentresult);

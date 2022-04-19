@@ -33,7 +33,7 @@ router.post('/joinclass', async (req, res, next) => {
                       if (err) throw err;
                       var dbo = db.db(mydatabase);
                       
-                      var myobj = {times: new Date().toLocaleString(), email: person.email,ClassName:classesResult[0].name,token: classesResult[0].token};
+                      var myobj = {times: new Date().toLocaleString(), email: person.email,ClassName:classesResult[0].name,token: classesResult[0].token ,teacher:classesResult[0].email};
                       dbo.collection("StudentClass").insertOne(myobj, function(err, res) {
                         if (err) throw err;
                         db.close();
