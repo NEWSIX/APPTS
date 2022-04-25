@@ -57,30 +57,130 @@
         <div class="accordion" id="accordionParentSyntax">
             <!--   Introduce -->
             <div id="collapseIntroduce" class="accordion-collapse collapse show" data-bs-parent="#accordionParentSyntax">
-                <h1>Introduce</h1>
+                <h1>Function - QUIZ</h1>
                 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><i href="/home" class="fa fa-home" style="font-size:16px"></i></li>
                     <li class="breadcrumb-item active" aria-current="page">Course</li>
                 </ol>
-                <!--   ## -->
-                <div class="box bg-light  mb-5 shadow" >
-                    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        Array
-                    </div>  
-                    
-                </div>
-                <!--   ## -->               
 
-                <div class="box bg-light  mb-5 shadow" >
-                    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        <h1 > Syntax </h1>
-              
-                        <br id="Flowgorithm">
+<%# START %> 
+<form action="/course-Function-quiz/submit" method="post" autocomplete="off" >
+
+    
+
+    <%# LV1 %> 
+                <h2><u>คำถามที่ : 1</u></h2>
+                <img width="500" height="600" src="https://drive.google.com/uc?id=1Q64BT-YiFFC3QsGVdVCwVne39HLsZeag" class="img-thumbnail rounded" >
+                <div class="list-group">
+                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                        ในโปรแกรมจากรูปมีทั้งหมดกี่ Functions
+                    </p>
+                    
+                    <input type="radio" class="btn-check" name="choice1" id="option1-1" autocomplete="off" value="A" required>
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-1">
+                        ก. 0
+                    </label>
+                    <input type="radio" class="btn-check" name="choice1" id="option1-2" autocomplete="off" value="B">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-2">
+                        ข. 1
+                    </label>
+                    <input type="radio" class="btn-check" name="choice1" id="option1-3" autocomplete="off" value="C">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-3">
+                        ค. 2
+                    </label>
+                    <input type="radio" class="btn-check" name="choice1" id="option1-4" autocomplete="off" value="D">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-4">
+                        ง. 3
+                    </label>
+                </div>
+                <br>
+    <%# LV2 %>                     
+                <h2><u>คำถามที่ : 2</u></h2>
+                <img width="500" height="600" src="https://drive.google.com/uc?id=100513DDjLQajGpXo7Hca5S9mExWLrzmg" class="img-thumbnail rounded" >
+                <div class="list-group">
+                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                        จากรูปโปรแกรมมีการเรียกใช้งานซ้ำกี่รอบ
+                    </p>
+                    
+                    <input type="radio" class="btn-check" name="choice2" id="option2-1" autocomplete="off" value="A" required="required">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-1">
+                        ก. 5
+                    </label>
+                    <input type="radio" class="btn-check" name="choice2" id="option2-2" autocomplete="off" value="B">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-2">
+                        ข. 10
+                    </label>
+                    <input type="radio" class="btn-check" name="choice2" id="option2-3" autocomplete="off" value="C">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-3">
+                        ค. 15
+                    </label>
+                    <input type="radio" class="btn-check" name="choice2" id="option2-4" autocomplete="off" value="D">
+                    <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-4">
+                        ง. 20
+                    </label>
+                </div>
+                <br>
+    <%# LV3 %>
+                <h2><u>คำถามที่ : 3</u></h2>
+                <img width="500" height="600" src="https://storage.thaipost.net/main/uploads/photos/big/20190806/image_big_5d49435fe6327.jpg" class="img-thumbnail rounded" >
+                <div class="list-group">
+                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    LV3
+
+                    </p>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ก. 4</button>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ข. 5</button>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ค. 6</button>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ง. 2</button>
+                </div>
+                <br>
+    <%# LV4 %>                
+                <h2><u>คำถามที่ : 4</u></h2>
+                <img width="500" height="600" src="https://storage.thaipost.net/main/uploads/photos/big/20190806/image_big_5d49435fe6327.jpg" class="img-thumbnail rounded" >
+                <div class="list-group">
+                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    LV4
+
+                    </p>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ก. 4</button>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ข. 5</button>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ค. 6</button>
+                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ง. 2</button>
+                </div>
+                <br>
+    <%# SUBMIT %> 
+            <!-- Button trigger modal -->
+            <div class="d-grid gap-2">
+                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    ส่งคำตอบ
+                </button>
+              </div>
+            
+            <!-- Modal -->        
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">ส่งคำตอบ</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        คุณต้องการส่งคำตอบใช่หรือไม่ ?
+                        <div id="emailHelp" class="form-text">หากยังทำโจทย์ไม่ครบ จะไม่สามารถกดส่งได้ </div>
+                        </div>
                         
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ไม่</button>
+                        <button type="submit" class="btn btn-dark">ใช่</button>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                
+                <br>
+</form> 
+
+<%# END %> 
 
         <br></div>
         </div>

@@ -209,11 +209,6 @@ app.use('/course-Array-quiz',
   ensureStudent,
   require('./routes/student/quiz/9_Array-quiz.route')
 );
-app.use('/course-File_Operation-quiz',
-  ensureLoggedIn({ redirectTo: '/auth/login' }),
-  ensureStudent,
-  require('./routes/student/quiz/10_FileOperation-quiz.route')
-);
 
 // ****** teacher ******** // 
 app.use('/class',

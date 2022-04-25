@@ -62,10 +62,48 @@
                     <!--   ## -->
                     <div class="box bg-light  mb-5 shadow" >
                         <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                            <h2 id = ''> Learn C Programming </h2>
-                            <br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br>
-                            <iframe width="480" height="320" src="https://www.youtube.com/embed/xlU8pUQ7mn8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
-                        
+                            <h2 id = ''> if...else </h2>
+                            <br>ในบทช่วยสอนนี้ คุณจะได้เรียนรู้เกี่ยวกับคำสั่ง if (รวมถึง if...else และ nested if..else) ในการเขียนโปรแกรม C ด้วยความช่วยเหลือของตัวอย่าง<br>
+                            <h5><br>if Statement<br></h5>
+                            <img src="https://drive.google.com/uc?id=1g_JPubg3b1ZeYq7K_gL_AT84Pfj6VXsm">
+                            <h6><br>How if statement works?<br></h6>
+                            <br>คำifสั่งจะประเมินนิพจน์ทดสอบภายใน()วงเล็บ หากนิพจน์ทดสอบถูกประเมินว่าเป็นจริง คำสั่งภายในเนื้อความของifจะถูกดำเนินการ หากนิพจน์การทดสอบถูกประเมินว่าเป็นเท็จ คำสั่งภายในเนื้อหาของifจะไม่ถูกดำเนินการ<br>
+                            <img src="https://drive.google.com/uc?id=1QwNCIyJjsML6F0gMmb46ah0poXGUEYo-">
+                            <br>หากต้องการเรียนรู้เพิ่มเติมว่าเมื่อใดที่นิพจน์ทดสอบถูกประเมินว่าเป็นจริง (ค่าที่ไม่ใช่ศูนย์) และเท็จ (0) ให้ตรวจสอบ ตัวดำเนินการเชิง สัมพันธ์และเชิงตรรกะ<br>
+                            <br>Example 1: if statement<br>
+                            <img src="https://drive.google.com/uc?id=1ZzTkgJZLXsL002QTGeCCGb5Z2jvgqOow">
+                            <br>Output<br>
+                            <img src="https://drive.google.com/uc?id=1v8gPCO3yVD8JDat3kNyCWDFOxpReQqNM">
+                            <br>เมื่อผู้ใช้ป้อน -2 นิพจน์การทดสอบnumber < 0จะถูกประเมินเป็นจริง เพราะฉะนั้น,คุณป้อน -2จะแสดงบนหน้าจอ<br>
+                            <img src="https://drive.google.com/uc?id=17uiKG92LDd8An-G5_S6JYXlc0yFSo7jL">
+                            <br>เมื่อผู้ใช้ป้อน 5 นิพจน์การทดสอบnumber < 0จะถูกประเมินเป็นเท็จและคำสั่งภายในเนื้อความของ if จะไม่ถูกดำเนินการ <br>
+                            <h5><br>if...else Statement<br></h5>
+                            <br>คำifสั่งอาจมีelseบล็อก ที่เป็นตัวเลือก ไวยากรณ์ของif..elseคำสั่งคือ<br>
+                            <img src="https://drive.google.com/uc?id=1Liz0fWjPeobh8fIJrF0_-nWh8h9NxC-g">
+                            <h6><br>How if...else statement works?<br></h6>
+                            <br>หากนิพจน์ทดสอบถูกประเมินว่าเป็นจริง...?<br>
+                            <br>- คำสั่งภายในร่างกายของifจะถูกดำเนินการ<br>
+                            <br>- คำสั่งภายในเนื้อความของelseจะถูกข้ามจากการดำเนินการ<br>
+                            <br>หากนิพจน์การทดสอบถูกประเมินเป็นเท็จ...?<br>
+                            <br>- คำสั่งภายในร่างกายของelseจะถูกดำเนินการ<br>
+                            <br>- คำสั่งภายในเนื้อความของifจะถูกข้ามจากการดำเนินการ<br>
+                            <img src="https://drive.google.com/uc?id=1iVlgNf2VzcgGeASCE0GKPOb3bIASw2NS">
+                            <br>Example 2: if...else statement<br>
+                            <img src="https://drive.google.com/uc?id=1it3G8mBaIk-inZ9k__34mrfa948EyRqx">
+                            <br>Output<br>
+                            <img src="https://drive.google.com/uc?id=1tVwC4-NfdLqSqWozoAWzJg_5p0N_64hc">
+                            <br>เมื่อผู้ใช้ป้อน 7 นิพจน์ทดสอบnumber%2==0จะถูกประเมินเป็นเท็จ ดังนั้นคำสั่งภายในเนื้อความของelseจึงถูกดำเนินการ<br>
+                            <h5><br>if...else Ladder<br></h5>
+                            <br>คำ if...else สั่งดำเนินการสองรหัสที่แตกต่างกันขึ้นอยู่กับว่านิพจน์การทดสอบเป็นจริงหรือเท็จ บางครั้ง ก็ต้องเลือกจากความเป็นไปได้มากกว่า 2 อย่าง<br>
+                            <br>บันได if...else ช่วยให้คุณตรวจสอบระหว่างนิพจน์การทดสอบหลายรายการและดำเนินการคำสั่งต่างๆ ได้<br>
+                            <br>Syntax of if...else Ladder<br>
+                            <img src="https://drive.google.com/uc?id=1PxfwNq-APcsXi1kgsdPBmCtMLbP_uPmo">
+                            <br>Example 3: C if...else Ladder<br>
+                            <img src="https://drive.google.com/uc?id=1DMGBPzDUJrRoAufAxEogRFxiBc0YXuBe">
+                            <br>Output<br>
+                            <img src="https://drive.google.com/uc?id=1roxvRBe8Id8cLgItW-P_6yxuDBZCaKFS">
+                            <br><br>
+                            <iframe width="480" height="320" src="https://www.youtube.com/embed/NlhCe5ltUZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <BR id="for_Loop">
                         </div>
                     </div>
@@ -76,9 +114,41 @@
                 <!--   ## -->
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        <h2 id = 'Introduce'> Learn C Programming </h2>
-                        <br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br>
-
+                        <h2 id = 'Introduce'> For Loop </h2>
+                        <br>ในบทช่วยสอนนี้ คุณจะได้เรียนรู้การสร้าง for loop ในการเขียนโปรแกรม C โดยใช้ตัวอย่าง<br>
+                        <br>ในการเขียนโปรแกรม ใช้ลูปเพื่อทำซ้ำบล็อกของรหัสจนกว่าจะตรงตามเงื่อนไขที่ระบุ การเขียนโปรแกรม C มีลูปสามประเภท<br>
+                        <br>- สำหรับวง<br>
+                        <br>- ในขณะที่วง<br>
+                        <br>- ทำ...ในขณะที่วนรอบ<br>
+                        <br>เราจะเรียนรู้เกี่ยวกับ for ลูปในบทช่วยสอนนี้ ในบทช่วยสอนถัดไป เราจะเรียนรู้เกี่ยวกับ while และ do...while วนซ้ำ<br>
+                        <h5><br>The syntax of the for loop is<br></h5>
+                        <img src="https://drive.google.com/uc?id=1Xmeh0_VGwyGoSBJNjtaVMkV1dErqBHoe">
+                        <h5><br>How for loop works?<br></h5>
+                        <br>- คำสั่งเริ่มต้นจะดำเนินการเพียงครั้งเดียว<br>
+                        <br>- จากนั้น นิพจน์ทดสอบจะถูกประเมิน หากนิพจน์การท	ดสอบถูกประเมินเป็นเท็จ การforวนซ้ำจะสิ้นสุดลง<br>
+                        <br>- อย่างไรก็ตาม หากนิพจน์การทดสอบถูกประเมินว่าเป็นจริง คำสั่งภายในเนื้อหาของforลูปจะถูกดำเนินการ และ นิพจน์การอัพเดทจะได้รับการอัปเดต<br>
+                        <br>- มีการประเมินนิพจน์การทดสอบอีกครั้ง<br>
+                        <br>กระบวนการนี้ดำเนินต่อไปจนกว่านิพจน์การทดสอบจะเป็นเท็จ เมื่อนิพจน์การทดสอบเป็นเท็จ การวนรอบจะสิ้นสุดลง<br>
+                        <br>หากต้องการเรียนรู้เพิ่มเติมเกี่ยวกับนิพจน์การทดสอบ (เมื่อประเมินนิพจน์การทดสอบเป็นจริงและเท็จ) ให้ตรวจสอบ ตัวดำเนินการเชิง สัมพันธ์และเชิงตรรกะ<br>
+                        <h5><br>for loop Flowchart<br></h5>
+                        <img src="https://drive.google.com/uc?id=1LajQ4JMQ20ntFQmcmKMTl82kPSWhwFKM">
+                        <br>Example 1: for loop<br>
+                        <img src="https://drive.google.com/uc?id=1wxrp4KUwrhiKNZ59-_qX2hFKfOXl5Jub">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1wxrp4KUwrhiKNZ59-_qX2hFKfOXl5Jub">
+                        <br>1.เริ่มต้นเป็น 1<br>
+                        <br>2.i < 11มีการ ประเมินนิพจน์การทดสอบ เนื่องจาก 1 น้อยกว่า 11 เป็นจริง เนื้อหาของforลูปจึงถูกดำเนินการ นี่จะพิมพ์1 (ค่าของฉัน) บนหน้าจอ.<br>
+                        <br>3.คำสั่งอัพเดท++iถูกดำเนินการ ตอนนี้ค่าของฉันจะเป็น 2 อีกครั้ง นิพจน์การทดสอบจะถูกประเมินว่าเป็นจริง และดำเนินการเนื้อความของforลูป นี่จะพิมพ์2 (ค่าของฉัน) บนหน้าจอ.<br>
+                        <br>4.อีกครั้ง คำสั่งการอัพเดท จะดำเนินการและ ประเมิน++iนิพจน์การทดสอบ i < 11กระบวนการนี้ดำเนินต่อไปจนถึงฉันกลายเป็น 11<br>
+                        <br>5.เมื่อไหร่ฉันกลายเป็น 11,ฉัน < 11จะเป็นเท็จและการforวนซ้ำจะสิ้นสุดลง<br>
+                        <br>Example 2: for loop<br>
+                        <img src="https://drive.google.com/uc?id=1ICmJa5ndxHwkV7fM0jkWnUN6rKugYgA6">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1E0kgbtbUDXKZQJmGR0h5Gdb4rv7C2kEn">
+                        <br>ค่าที่ป้อนโดยผู้ใช้จะถูกเก็บไว้ในตัวแปรนัม. สมมติว่าผู้ใช้ป้อน 10 นับถูกเริ่มต้นเป็น 1 และนิพจน์การทดสอบจะถูกประเมิน เนื่องจากนิพจน์การทดสอบcount<=num(1 น้อยกว่าหรือเท่ากับ 10) เป็นจริง เนื้อหาของforลูปจึงถูกดำเนินการและค่าของผลรวมจะเท่ากับ 1<br>
+                        <br>จากนั้น คำสั่งอัพเดต ++count จะถูกดำเนินการและนับจะเท่ากับ 2 อีกครั้ง นิพจน์ทดสอบจะถูกประเมิน เนื่องจาก 2 มีค่าน้อยกว่า 10 นิพจน์การทดสอบจึงถูกประเมินว่าเป็นจริงและดำเนินการเนื้อหาของforลูป ตอนนี้,ผลรวมจะเท่ากับ 3 กระบวนการนี้ดำเนินต่อไปและคำนวณผลรวมจนกระทั่งนับถึง 11 เมื่อนับคือ 11 นิพจน์การทดสอบจะถูกประเมินเป็น 0 (เท็จ) และสิ้นสุดการวนซ้ำ จากนั้น ค่าของsumจะถูกพิมพ์บนหน้าจอ<br>
+                        <br><br>
+                        <iframe width="480" height="320" src="https://www.youtube.com/embed/SvGVcnwfZe8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <BR id="while_Loop">
                     </div>
                 </div>
@@ -89,10 +159,52 @@
                 <!--   ## -->
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        <h2 id = 'Introduce'> Learn C Programming </h2>
-                        <br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br>
-
-                        <BR id="break_and_continue">
+                        <h2 id = 'Introduce'> while and do...while Loop </h2>
+                        <br>ในบทช่วยสอนนี้ คุณจะได้เรียนรู้การสร้าง while และ do...while ในการเขียนโปรแกรม C โดยใช้ตัวอย่าง ในการเขียนโปรแกรม ใช้ลูปเพื่อทำซ้ำบล็อกของโค้ดจนกว่าจะตรงตามเงื่อนไขที่ระบุ<br>
+                        <br>การเขียนโปรแกรม C มีลูปสามประเภท<br>
+                        <br>- สำหรับวง<br>
+                        <br>- ในขณะที่วง<br>
+                        <br>- ทำ...ในขณะที่วนรอบ<br>
+                        <br>ในบทช่วยสอนก่อนหน้านี้ เราได้เรียนรู้เกี่ยวกับforลูป ในบทช่วยสอนนี้ เราจะเรียนรู้เกี่ยวกับwhileและdo..whileวนซ้ำ<br>
+                        <h5><br>The syntax of the while loop is<br></h5>
+                        <br>- วน รอบwhileประเมินภายในtestExpressionวงเล็บ()<br>
+                        <br>- ถ้า  testExpressionเป็นจริงคำสั่งภายในเนื้อหาของwhileลูปจะถูกดำเนินการ แล้วtestExpressionประเมินอีกครั้ง<br>
+                        <br>- กระบวนการนี้ดำเนินต่อไปจนกว่าtestExpressionจะถูกประเมินเป็นเท็จ<br>
+                        <br>- หาก  testExpressionเป็นเท็จการวนซ้ำจะสิ้นสุดลง (สิ้นสุด)<br>
+                        <br>หากต้องการเรียนรู้เพิ่มเติมเกี่ยวกับนิพจน์ทดสอบ	(เมื่อtestExpressionประเมินเป็น trueและfalse ) ให้ตรวจสอบ ตัวดำเนินการเชิง สัมพันธ์และเชิงตรรกะ<br>
+                        <h5><br>Flowchart of while loop<br></h5>
+                        <img src="https://drive.google.com/uc?id=1LCB5zg4Wp_uBRvEnl6wMaMmiTyuW-i9A">
+                        <br>Example 1: while loop<br>
+                        <img src="https://drive.google.com/uc?id=1YBoYKYYIsi6o2e0hoB4HYLuDueNq39Ya">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1EDt0VKPxBzB7mNNZqVsEjgLVqxEOFg3g">
+                        <br>ที่นี่เราได้เริ่มต้นฉันถึง 1<br>
+                        <br>1.เมื่อi = 1นิพจน์การทดสอบi <= 5เป็นจริง ดังนั้นเนื้อความของwhileลูปจึงถูกดำเนินการ พิมพ์1บนหน้าจอและค่าของฉันเพิ่มขึ้นเป็น<br>
+                        <br>2.ตอนนี้i = 2นิพจน์การทดสอบ เป็น จริงi <= 5อีกครั้ง เนื้อหาของลูปถูกดำเนินการอีกครั้ง พิมพ์บนหน้าจอและค่าของwhile2ฉันเพิ่มขึ้นเป็น3<br>
+                        <br>3.กระบวนการนี้ดำเนินต่อไปจนถึงฉันกลายเป็น 6 จากนั้นนิพจน์การทดสอบi <= 5จะเป็นเท็จและสิ้นสุดการวนซ้ำ<br>
+                        <h5><br>do...while loop<br></h5>
+                        <br>การdo..whileวนซ้ำคล้ายกับการwhileวนซ้ำโดยมีความแตกต่างที่สำคัญอย่างหนึ่ง เนื้อหาของdo...whileลูปถูกดำเนินการอย่างน้อยหนึ่งครั้ง จากนั้นจึงประเมินนิพจน์การทดสอบ<br>
+                        <h5><br>The syntax of the do...while loop is<br></h5>
+                        <img src="https://drive.google.com/uc?id=15I6Si2KE9aK6xlOb7pBa-o_hPHU_8gX_">
+                        <h5><br>How do...while loop works?<br></h5>
+                        <br>- เนื้อความของการdo...whileวนซ้ำจะดำเนินการเพียงครั้งเดียว เท่านั้นจึงtestExpressionจะประเมิน<br>
+                        <br>- ถ้าtestExpressionเป็นจริงเนื้อหาของลูปจะถูกดำเนินการอีกครั้งและtestExpressionได้รับการประเมินอีกครั้ง<br>
+                        <br>- กระบวนการนี้ดำเนินต่อไปจนtestExpressionกลายเป็นเท็จ<br>
+                        <br>- หากtestExpressionเป็นเท็จการวนซ้ำจะสิ้นสุดลง<br>
+                        <h5><br>Flowchart of do...while Loop<br></h5>
+                        <img src="https://drive.google.com/uc?id=1T9dlr6NtmjSbw2Z9qoG3anivAC9MJF3i">
+                        <br>Example 2: do...while loop<br>
+                        <img src="https://drive.google.com/uc?id=13LpbnBWJ5B1pNheP-CL5syfZyH-alvel">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1jtoz-XGhLxFXevactF55DLGhYi4oUI41">
+                        <br>ที่นี่เราใช้การdo...whileวนซ้ำเพื่อให้ผู้ใช้ป้อนตัวเลข วนซ้ำทำงานตราบเท่าที่หมายเลขอินพุต0ไม่ใช่<br>
+                        <br>การ  do...whileวนซ้ำจะดำเนินการอย่างน้อยหนึ่งครั้ง กล่าวคือ การวนซ้ำครั้งแรกทำงานโดยไม่ตรวจสอบเงื่อนไข เงื่อนไขจะได้รับการตรวจสอบหลังจากการทำซ้ำครั้งแรกเท่านั้น<br>
+                        <img src="https://drive.google.com/uc?id=1AfVrPsikf6gUTIKZyXFxTcwGRXWyXWlb">
+                        <br>ดังนั้น ถ้าอินพุตแรกเป็นตัวเลขที่ไม่ใช่ศูนย์ ตัวเลขนั้นจะถูกเพิ่มลงในตัวผลรวมตัวแปรและลูปยังคงวนซ้ำต่อไป กระบวนการนี้จะทำซ้ำจนกว่าผู้ใช้จะเข้า  0มา<br>
+                        <br>แต่ถ้าอินพุตแรกเป็น 0 จะไม่มีการวนซ้ำครั้งที่สองของลูปและ ผลรวม กลายเป็น 0.0 นอกวงพิมพ์ค่าของผลรวม.<br>
+                        <br><br>
+                        <iframe width="480" height="320" src="https://www.youtube.com/embed/eXfeq7mj6PA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     <BR id="break_and_continue">
                     </div>
                 </div>
         <br></div>
@@ -102,9 +214,33 @@
                 <!--   ## -->
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        <h2 id = 'Introduce'> Learn C Programming </h2>
-                        <br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br>
-
+                        <h2 id = 'Introduce'> break and continue </h2>
+                        <br>เราเรียนรู้เกี่ยวกับลูปในบทช่วยสอนก่อนหน้านี้ ในบทช่วยสอนนี้ เราจะเรียนรู้การใช้ประโยคแบ่งและดำเนินการต่อโดยใช้ตัวอย่าง<br>
+                        <h5><br>Break<br></h5>
+                        <br>คำสั่ง break สิ้นสุดการวนซ้ำทันทีเมื่อพบ ไวยากรณ์ของมันคือ<br>
+                        <img src="https://drive.google.com/uc?id=1DFtkJPyHD02d6UaG2G9mSkjmRsMWZpVH">
+                        <br>คำสั่ง break มักใช้กับif...elseคำสั่งภายในลูป<br>
+                        <h5><br>How break statement works?<br></h5>
+                        <img src="https://drive.google.com/uc?id=1rLCLY3OdiIA0GG4k6tKrH-hzijaSTDvY">
+                        <br>Example 1: break statement<br>
+                        <img src="https://drive.google.com/uc?id=1TyuVzhkkhuQGLE8VjlTnIoYCtymt0l1O">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1eoeIlkWmlYw5mhn-nQBVDiijmPU9Dy2R">
+                        <br>โปรแกรมนี้คำนวณผลรวมสูงสุด 10 หมายเลข ทำไมสูงสุด 10 หมายเลข? เป็นเพราะถ้าผู้ใช้ป้อนจำนวนลบbreakคำสั่งจะถูกดำเนินการ สิ่งนี้จะสิ้นสุดการforวนซ้ำและผลรวมจะปรากฏขึ้น<br>
+                        <h5><br>continue<br></h5>
+                        <br>คำcontinueสั่งจะข้ามการวนซ้ำปัจจุบันของลูปและดำเนินการต่อด้วยการวนซ้ำครั้งต่อไป ไวยากรณ์ของมันคือ<br>
+                        <img src="https://drive.google.com/uc?id=1mN818sBs3hT8v2hG7Uas5bRuUGmMAYOa">
+                        <br>คำcontinueสั่งนี้มักใช้กับif...elseคำสั่ง<br>
+                        <h5><br>How continue statement works?<br></h5>
+                        <img src="https://drive.google.com/uc?id=1CT6vK6Mlpx8-qjy0HedJdFLZrkBFK0Hr">
+                        <br>Example 2: continue statement<br>
+                        <img src="https://drive.google.com/uc?id=1dj3MiLvzoB4UfjJdS1N5t6eaCRQiZ8EU">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1_khPsO1eHk2XncYnQEvLbNLLTCz_NHcP">
+                        <br>ในโปรแกรมนี้ เมื่อผู้ใช้ป้อนจำนวนบวก ผลรวมจะถูกคำนวณโดยใช้sum += number;คำสั่ง<br>
+                        <br>เมื่อผู้ใช้ป้อนจำนวนลบcontinueคำสั่งจะถูกดำเนินการและจะข้ามจำนวนลบจากการคำนวณ<br>
+                        <br><br>
+                        <iframe width="480" height="320" src="https://www.youtube.com/embed/obJcPlAtGVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <br id="switch_case">
                     </div>
                 </div>
@@ -115,9 +251,24 @@
                 <!--   ## -->
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        <h2 id = 'Introduce'> Learn C Programming </h2>
-                        <br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br>
-
+                        <h2 id = 'Introduce'> Switch </h2>
+                        <br>ในบทช่วยสอนนี้ คุณจะได้เรียนรู้การสร้างคำสั่ง switch ในการเขียนโปรแกรม C โดยใช้ตัวอย่างคำสั่ง switch ช่วยให้เราสามารถดำเนินการบล็อกโค้ดหนึ่งบล็อกจากทางเลือกอื่นๆ มากมาย<br>
+                        <br>คุณสามารถทำสิ่งเดียวกันกับif...else..ifบันไดได้ อย่างไรก็ตาม ไวยากรณ์ของswitchคำสั่งนั้นอ่านและเขียนได้ง่ายกว่ามาก<br>
+                        <h5><br>Syntax of switch...case+<br></h5>
+                        <img src="https://drive.google.com/uc?id=1wrxwtpGgXfqduN0a-1KRgrYmugEiHT7o">
+                        <h5><br>How does the switch statement work?<br></h5>
+                        <br>การแสดงออกได้รับการประเมินครั้งเดียวและเปรียบเทียบกับค่าของแต่ละรายการกรณีฉลาก.<br>
+                        <br>- หากมีการจับคู่ คำสั่งที่เกี่ยวข้องหลังจากดำเนินการเลเบลที่ตรงกัน ตัวอย่างเช่น หากค่าของนิพจน์เท่ากับค่าคงที่2คำสั่ง after case constant2:จะถูกดำเนินการจนกว่าbreakจะพบ<br>
+                        <br>- หากไม่มีการจับคู่ คำสั่งเริ่มต้นจะถูกดำเนินการ<br>
+                        <br>หมายเหตุ : ถ้าเราไม่ใช้breakคำสั่งนั้น คำสั่งทั้งหมดหลังจากเลเบลที่ตรงกันก็จะถูกดำเนินการด้วย defaultประโยคภายในคำswitchสั่งเป็นทางเลือก<br>
+                        <h5><br>switch Statement Flowchart<br></h5>
+                        <img src="https://drive.google.com/uc?id=1VToH_19bFvkG9WjDGRe1nntb23zgyN_D">
+                        <br>Example: Simple Calculator<br>
+                        <img src="https://drive.google.com/uc?id=1m-N0pUztD07fuRuPSe_LvStxJ2rSUiNy">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1JGnlRFMHE5sR64Mzmb5W-IFMhyFycRnj">
+                        <br><br>
+                        <iframe width="480" height="320" src="https://www.youtube.com/embed/37GG-T6B7bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <br id="goto_statement">
                     </div>
                 </div>
@@ -128,8 +279,24 @@
                 <!--   ## -->
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                        <h2 id = 'Introduce'> Learn C Programming </h2>
-                        <br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br><br>++++++++++++++<br>
+                        <h2 id = 'Introduce'> goto statement </h2>
+                        <br>ในบทช่วยสอนนี้ คุณจะได้เรียนรู้การสร้างคำสั่ง goto ในการเขียนโปรแกรม C นอกจากนี้ คุณจะได้เรียนรู้ว่าเมื่อใดควรใช้คำสั่ง goto และเมื่อใดไม่ควรใช้<br>
+                        <br>คำgotoสั่งช่วยให้เราสามารถถ่ายโอนการควบคุมของโปรแกรมไปยังที่ระบุฉลาก<br>
+                        <h5><br>Syntax of goto Statement<br></h5>
+                        <img src="https://drive.google.com/uc?id=1OTGsU8afWgpZiBzHNBz58elZZA9RY6h-">
+                        <br>Label เป็นตัวระบุ เมื่อ goto พบคำสั่ง การควบคุมของโปรแกรมจะข้ามไปlabel:และเริ่มรันโค้ด<br>
+                        <img src="https://drive.google.com/uc?id=1XnSMX_svYfbZ4GljxyQnchZXpuLeTGch">
+                        <br>Example: goto Statement<br>
+                        <img src="https://drive.google.com/uc?id=1FgjzWxcwnXbIoKR4wc0EK21AimpjZ1jP">
+                        <br>Output<br>
+                        <img src="https://drive.google.com/uc?id=1m2gD7Wqy6Sd_L3UXguFmY2yOfNBciQ-x">
+                        <br>การใช้gotoคำสั่งอาจนำไปสู่โค้ดที่ผิดพลาดและติดตามได้ยาก ตัวอย่างเช่น<br>
+                        <img src="https://drive.google.com/uc?id=1FCE5s2IaRSEjgnuVQNY6e3gHK17MnlUD">
+                        <br>นอกจากนี้gotoคำสั่งยังให้คุณทำสิ่งที่ไม่ดีได้ เช่น กระโดดออกจากขอบเขตที่ถูกกล่าวว่าgotoอาจมีประโยชน์บางครั้ง ตัวอย่างเช่น เพื่อแยกจากลูปที่ซ้อนกัน<br>
+                        <h5><br>Should you use goto?<br></h5>
+                        <br>ถ้าคุณคิดว่าการใช้gotoคำสั่งทำให้โปรแกรมของคุณง่ายขึ้น คุณสามารถใช้มันได้ ที่ถูกกล่าวว่าgotoไม่ค่อยมีประโยชน์และคุณสามารถสร้างโปรแกรม C ใด ๆ ได้โดยไม่ต้องใช้gotoเลย นี่คือคำพูดจาก Bjarne Stroustrup ผู้สร้าง C++ ว่า"ความจริงที่ว่า 'goto' ทำอะไรก็ได้คือเหตุผลที่เราไม่ใช้มัน"<br>
+                        <br><br>
+                        <iframe width="480" height="320" src="https://www.youtube.com/embed/msbzFUQ4LrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
         </div>

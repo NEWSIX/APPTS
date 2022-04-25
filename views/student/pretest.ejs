@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='stylesheets/home.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    
+    <title>Pre-Test</title>
+</head>
+
+<body>
+    <!-- Narbar-->
+    <%- include('layouts/navbar') %>
+    <!-- end of Narbar-->
+    <style>
+        .img-thumbnail {
+            padding: 0.25rem;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            max-width: 100%;
+            height: 300px;
+        }
+    </style>
+<br><br><br>
+    <div id = "content" class="container">
+    <h2><u>แบบทดสอบก่อนเรียน</u></h2>
+
+<%# START %> 
+<form action="/pretestSubmit" method="post" autocomplete="off" >
+    <%# button %> 
+    <div class="btn-group me-2" role="group" aria-label="Basic outlined example">
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test1" >1</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test2">2</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test3">3</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test4">4</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test5">5</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test6">6</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test7">7</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test8">8</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test9">9</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test10">10</button>
+    </div>
+        <button type="submit" class="btn btn-outline-dark">ส่งคำตอบ</button>
+
+<%# content %> 
+
+    <div class="accordion accordion-flush" id="accordionMain">
+    <%# %>
+        <div id="test0" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><h2>เริ่มต้นด้วยแบบทดสอบก่อนเรียน</h2>
+        </div>
+
+    <%# test1 %>
+        <div id="test1" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <%# choice %> 
+            <div class="row align-items-start">
+                <div>
+                <img src="https://drive.google.com/uc?id=1TD5oBcP8uJZhh3XRCv2MU9hitmvwPjPY" class="img-thumbnail rounded"  >
+                <p>ใช้รูปนี้เพื่อตอบคำถามข้อ 1</p>
+                </div>
+                <div class="col">
+                  <%# test %>         
+                    <div class="list-group">
+                        <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                            1.1)
+                        </p>
+                        
+                        <input type="radio" class="btn-check" name="c11" id="c11o1" autocomplete="off" value="A" required>
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c11o1">
+                            ก. 
+                        </label>
+                        <input type="radio" class="btn-check" name="c11" id="c11o2" autocomplete="off" value="B">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c11o2">
+                            ข. 
+                        </label>
+                        <input type="radio" class="btn-check" name="c11" id="c11o3" autocomplete="off" value="C">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c11o3">
+                            ค. 
+                        </label>
+                        <input type="radio" class="btn-check" name="c11" id="c11o4" autocomplete="off" value="D">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c11o4">
+                            ง. 
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                  <%# test %>           
+                    <div class="list-group">
+                        <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                            1.2)
+                        </p>
+                        
+                        <input type="radio" class="btn-check" name="c12" id="c12o1" autocomplete="off" value="A" required>
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c12o1">
+                            ก.
+                        </label>
+                        <input type="radio" class="btn-check" name="c12" id="c12o2" autocomplete="off" value="B">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c12o2">
+                            ข.
+                        </label>
+                        <input type="radio" class="btn-check" name="c12" id="c12o3" autocomplete="off" value="C">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c12o3">
+                            ค.
+                        </label>
+                        <input type="radio" class="btn-check" name="c12" id="c12o4" autocomplete="off" value="D">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c12o4">
+                            ง.
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <%# test %>           
+                    <div class="list-group">
+                        <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                            1.3)
+                        </p>
+                        
+                        <input type="radio" class="btn-check" name="c13" id="c13o1" autocomplete="off" value="A" required>
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c13o1">
+                            ก.
+                        </label>
+                        <input type="radio" class="btn-check" name="c13" id="c13o2" autocomplete="off" value="B">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c13o2">
+                            ข.
+                        </label>
+                        <input type="radio" class="btn-check" name="c13" id="c13o3" autocomplete="off" value="C">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c13o3">
+                            ค.
+                        </label>
+                        <input type="radio" class="btn-check" name="c13" id="c13o4" autocomplete="off" value="D">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c13o4">
+                            ง.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <%# choice %> 
+        </div>
+    <%# test2 %>
+        <div id="test2" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <%# choice %> 
+            <div class="row align-items-start">
+                <div>
+                <img src="https://drive.google.com/uc?id=1TD5oBcP8uJZhh3XRCv2MU9hitmvwPjPY" class="img-thumbnail rounded"  >
+                <p>ใช้รูปนี้เพื่อตอบคำถามข้อ 2</p>
+                </div>
+                <div class="col">
+                  <%# test %>         
+                    <div class="list-group">
+                        <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                            2.1)
+                        </p>
+
+                        <input type="radio" class="btn-check" name="c21" id="c21o1" autocomplete="off" value="A" required>
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c21o1">
+                            ก. 
+                        </label>
+                        <input type="radio" class="btn-check" name="c21" id="c21o2" autocomplete="off" value="B">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c21o2">
+                            ข. 
+                        </label>
+                        <input type="radio" class="btn-check" name="c21" id="c21o3" autocomplete="off" value="C">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c21o3">
+                            ค. 
+                        </label>
+                        <input type="radio" class="btn-check" name="c21" id="c21o4" autocomplete="off" value="D">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c21o4">
+                            ง. 
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                  <%# test %>           
+                    <div class="list-group">
+                        <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                            2.2)
+                        </p>
+                        
+                        <input type="radio" class="btn-check" name="c22" id="c22o1" autocomplete="off" value="A" required>
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c22o1">
+                            ก.
+                        </label>
+                        <input type="radio" class="btn-check" name="c22" id="c22o2" autocomplete="off" value="B">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c22o2">
+                            ข.
+                        </label>
+                        <input type="radio" class="btn-check" name="c22" id="c22o3" autocomplete="off" value="C">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c22o3">
+                            ค.
+                        </label>
+                        <input type="radio" class="btn-check" name="c22" id="c22o4" autocomplete="off" value="D">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c22o4">
+                            ง.
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <%# test %>           
+                    <div class="list-group">
+                        <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                            2.3)
+                        </p>
+                        
+                        <input type="radio" class="btn-check" name="c23" id="c23o1" autocomplete="off" value="A" required>
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c1o1">
+                            ก.
+                        </label>
+                        <input type="radio" class="btn-check" name="c23" id="c23o2" autocomplete="off" value="B">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c23o2">
+                            ข.
+                        </label>
+                        <input type="radio" class="btn-check" name="c23" id="c23o3" autocomplete="off" value="C">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c23o3">
+                            ค.
+                        </label>
+                        <input type="radio" class="btn-check" name="c23" id="c23o4" autocomplete="off" value="D">
+                        <label class="list-group-item btn-outline-dark list-group-item-action" for="c23o4">
+                            ง.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <%# choice %> 
+        </div>
+    <%# end  %>
+        <div id="test3" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>3<br><br>HHHHHHHHH 3
+        </div>
+    <%# %>
+        <div id="test4" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>4<br><br>HHHHHHHHH 4
+        </div>
+    <%# %>
+        <div id="test5" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>5<br><br>HHHHHHHHH 5
+        </div>
+    <%# %>
+        <div id="test6" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>3<br><br>HHHHHHHHH 6
+        </div>
+    <%# %>
+        <div id="test7" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>3<br><br>HHHHHHHHH 7
+        </div>
+    <%# %>
+        <div id="test8" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>3<br><br>HHHHHHHHH 8
+        </div>
+    <%# %>
+        <div id="test9" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>3<br><br>HHHHHHHHH 9
+        </div>
+    <%# %>
+        <div id="test10" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+            <br><br>3<br><br>HHHHHHHHH 10
+        </div>
+
+    </div>
+
+
+<%#  END %> 
+</form>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+        
+<%# START %> 
+<form action="/course-Introduction-quiz/submit" method="post" autocomplete="off" >
+
+    
+
+    
+    <%# LV2 %>         
+    </body>
+    </html>
