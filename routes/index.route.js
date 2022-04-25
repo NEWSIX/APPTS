@@ -74,8 +74,6 @@ router.post('/joinclass', async (req, res, next) => {
 router.post('/pretestSubmit', async (req, res, next) => {
   const person = req.user;
   var currentQuiz = "Pre-test"
-
-  console.log("\n CLICK ")
   var scoreLV1=0,scoreLV2=0,scoreLV3=0;
   var scoreC1=0,scoreC2=0,scoreC3=0,scoreC4=0,scoreC5=0,scoreC6=0,scoreC7=0,scoreC8=0,scoreC9=0,scoreC10=0;
   var c11 = req.body.c11;

@@ -29,6 +29,7 @@ router.post('/submit', async (req, res, next) => {
   const person = req.user;
   const choice1  = req.body.choice1
   const choice2  = req.body.choice2
+  const choice3  = req.body.choice3
   var code = req.body.code;
   var lang = req.body.lang;
   var scoreLV1 = 0;
@@ -43,6 +44,9 @@ router.post('/submit', async (req, res, next) => {
   }
   if(choice2 === 'B'){
     scoreLV2 = 20;
+  }
+  if(choice3 === 'right'){
+    scoreLV3 = 30;
   }
   /** compiler */
   if(code === null || code === ""){

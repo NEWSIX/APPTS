@@ -36,6 +36,7 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/home.css' />
+    <link rel='stylesheet' href='stylesheets/Drag_Drop.css' />
     <title>Array - QUIZ</title>
 </head>
 
@@ -123,41 +124,37 @@
                 <br>
     <%# LV3 %>
                 <h2><u>คำถามที่ : 3</u></h2>
-                <img width="500" height="600" src="https://storage.thaipost.net/main/uploads/photos/big/20190806/image_big_5d49435fe6327.jpg" class="img-thumbnail rounded" >
                 <div class="list-group">
-                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
-                    LV3
-
-                    </p>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ก. 4</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ข. 5</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ค. 6</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ง. 2</button>
+                    <p id="choice3question" type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;"></p>
+                    <ul class="draggable-list" id="draggable-list"></ul>
+                    <input type="hidden" name="choice3" id="choice3result">
                 </div>
                 <br>
-    <%# LV4 %>                
-                <h2><u>คำถามที่ : 4</u></h2>
-                <img width="500" height="600" src="https://storage.thaipost.net/main/uploads/photos/big/20190806/image_big_5d49435fe6327.jpg" class="img-thumbnail rounded" >
-                <div class="list-group">
-                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
-                    LV4
+    <%# LV4 %>                             
+                <h2><u>คำถามที่ : 4</u> <button type="button" style="color: black;" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    ทดสอบโค้ด
+                </button></h2> 
+                
+                <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    โจทย์ : ssssssssssssssssssssssss
+                </p>
 
-                    </p>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ก. 4</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ข. 5</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ค. 6</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ง. 2</button>
+                <div class="form-group">
+                    <textarea class="number form-control" id="code" name="code" rows="8"></textarea>
                 </div>
+
+                Language : <select name="lang"><option value="C">C</option></select>
+                <br />
                 <br>
     <%# SUBMIT %> 
             <!-- Button trigger modal -->
             <div class="d-grid gap-2">
-                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
                     ส่งคำตอบ
                 </button>
-              </div>
+            </div>
             
-            <!-- Modal -->        
+            <!-- Modal Submit -->        
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -172,12 +169,32 @@
                         
                         <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ไม่</button>
-                        <button type="submit" class="btn btn-dark">ใช่</button>
+                        <button type="submit" class="btn btn-dark" value="Submits" id="check" name="check">ใช่</button>
                         </div>
                     </div>
                     </div>
                 </div>
                 <br>
+
+            <!-- Modal CODE -->        
+            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Online compiler</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.programiz.com/c-programming/online-compiler/" width="100%" height="500px"></iframe>
+                    </div>   
+          
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-lg btn-block" data-bs-dismiss="modal">ปิด</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <br>
 </form> 
 
 <%# END %> 
@@ -187,3 +204,4 @@
     </div>
 </div>
 
+<script src="javascripts/lv3/9_Array.js"></script>

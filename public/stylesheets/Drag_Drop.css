@@ -38,7 +38,7 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-.draggable-list .number {
+.draggable-list .draggable-number {
   background-color: var(--background-color);
   display: flex;
   align-items: center;
@@ -57,11 +57,11 @@ body {
 }
 
 .draggable-list li.right .person-name {
-  color: #3ae374;
+  /*color: #3ae374;*/
 }
 
 .draggable-list li.wrong .person-name {
-  color: #ff3838;
+  /*color: #7c00e2;*/
 }
 
 .draggable {

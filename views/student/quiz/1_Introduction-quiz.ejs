@@ -37,6 +37,9 @@
 
     <link rel='stylesheet' href='stylesheets/home.css' />
     <link rel='stylesheet' href='stylesheets/compiler_line.css' />
+    <link rel='stylesheet' href='stylesheets/Drag_Drop.css' />
+
+    
     <title>Introduction - QUIZ</title>
 </head>
 
@@ -66,9 +69,16 @@
                 </ol>
 
 <%# START %> 
-<form action="/course-Introduction-quiz/submit" method="post" autocomplete="off" >
+
+
 
     
+
+
+<form action="/course-Introduction-quiz/submit" method="post" autocomplete="off" > 
+    <%#  <ul class="draggable-list" id="draggable-list"></ul>
+    <h1 id="choice3"></h1>
+   %>
 
     <%# LV1 %> 
                 <h2><u>คำถามที่ : 1</u></h2>
@@ -123,16 +133,10 @@
                 <br>
     <%# LV3 %>
                 <h2><u>คำถามที่ : 3</u></h2>
-                <img width="500" height="600" src="https://storage.thaipost.net/main/uploads/photos/big/20190806/image_big_5d49435fe6327.jpg" class="img-thumbnail rounded" >
                 <div class="list-group">
-                    <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
-                    LV3
-
-                    </p>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ก. 4</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ข. 5</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ค. 6</button>
-                    <button type="button" class="list-group-item btn-outline-dark list-group-item-action">ง. 2</button>
+                    <p id="choice3question" type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;"></p>
+                    <ul class="draggable-list" id="draggable-list"></ul>
+                    <input type="hidden" name="choice3" id="choice3result">
                 </div>
                 <br>
     <%# LV4 %>                
@@ -154,7 +158,7 @@
     <%# SUBMIT %> 
             <!-- Button trigger modal -->
             <div class="d-grid gap-2">
-                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
                     ส่งคำตอบ
                 </button>
             </div>
@@ -174,7 +178,7 @@
                         
                         <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ไม่</button>
-                        <button type="submit" class="btn btn-dark">ใช่</button>
+                        <button type="submit" class="btn btn-dark" value="Submits" id="check" name="check">ใช่</button>
                         </div>
                     </div>
                     </div>
@@ -212,3 +216,4 @@
     </div>
 </div>
 
+<script src="javascripts/lv3/1_Introduction.js"></script>
