@@ -7,24 +7,47 @@
             <!--   Introduce -->
             <div id="collapseIntroduce" class="accordion-collapse collapse show" data-bs-parent="#accordionParentSyntax">
                 <h1>Introduce</h1>
-                
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><i href="/home" class="fa fa-home" style="font-size:16px"></i></li>
                     <li class="breadcrumb-item active" aria-current="page">Project</li>
                 </ol>
                 <!--   ## -->
-                <div class="box bg-light  mb-5 shadow" >
+                <% if (user) { %>
+            
+                    <% if (user.role === 'ADMIN') { %>
+                      wssc
+                    <% } %>
+                    <% if (user.role === 'Teacher') { %>
+                      qweqweqw
+                    <% } %>
+                    <% if (user.role === 'Student') { %>
+                      --
+                    <% } %>
+                    ---
+                    <% } else { %>
+                      ssssssssss
+                  <% } %>
+
+                <div class="box bg-light h2 mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                         <div lang="ja">
                             <p class="wrapbox auto">
-                                <b>
-                               แนะนำเครื่องมือ
-                                </b>
+                                <br><a href="/project-Tic_Tac_Toe" style="color:black">Tic Tac Toe</a>
+                            </p>
+                            <p class="wrapbox auto">
+                               <br><a href="/project-Library_System" style="color:black">Library System</a>
+                            </p>
+                            <p class="wrapbox auto">
+                                <br><a href="/project-Roshambo" style="color:black">Roshambo</a>
+                            </p>
+                            <p class="wrapbox auto">
+                                <br><a href="/project-Calendar" style="color:black">Calendar</a>
+                            </p>
+                            <p class="wrapbox auto">
+                              <br><a href="/project-Calculator" style="color:black">Calculator</a>
                             </p>
                           </div>
-                        <br id="Syntax">
                     </div>
-                    
                 </div>
         <br></div>
         </div>
