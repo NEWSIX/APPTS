@@ -85,60 +85,29 @@ router.post('/pretestSubmit', async (req, res, next) => {
   var c31 = req.body.c31;
   var c32 = req.body.c32;
   var c33 = req.body.c33;
-  var c34 = req.body.c34;
   var c41 = req.body.c41;
   var c42 = req.body.c42;
   var c43 = req.body.c43;
-  var c44 = req.body.c44;
   var c51 = req.body.c51;
   var c52 = req.body.c52;
   var c53 = req.body.c53;
-  var c54 = req.body.c54;
+  var c61 = req.body.c61;
+  var c62 = req.body.c62;
+  var c63 = req.body.c63;
+  var c71 = req.body.c71;
+  var c72 = req.body.c72;
+  var c73 = req.body.c73;
+  var c81 = req.body.c81;
+  var c82 = req.body.c82;
+  var c83 = req.body.c83;
+  var c91 = req.body.c91;
+  var c92 = req.body.c92;
+  var c93 = req.body.c93;
+  var c101 = req.body.c101;
+  var c102 = req.body.c102;
+  var c103 = req.body.c103;
+  console.log(c11,c12,c13,c21,c22,c23,c31,c32,c33,c41,c42,c43,c51,c52,c53,c61,c62,c63,c71,c72,c73,c81,c82,c83,c91,c92,c93,c101,c102,c103)
 
-
-
-  //1 check lv
-  if(c11 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC1=scoreC1 + 10;}
-  if(c12 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC1=scoreC1 + 20;}
-  if(c13 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC1=scoreC1 + 30;}
-  //2
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //3
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //4
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //5
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //6
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //7
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //8
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //9
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-  //10
-  if(c21 === 'A'){  scoreLV1=scoreLV1 + 10; scoreC2=scoreC2 + 10;}
-  if(c22 === 'D'){  scoreLV2=scoreLV2 + 20; scoreC2=scoreC2 + 20;}
-  if(c23 === 'B'){  scoreLV3=scoreLV3 + 30; scoreC2=scoreC2 + 30;}
-
- 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db(mydatabase);
@@ -147,10 +116,10 @@ router.post('/pretestSubmit', async (req, res, next) => {
       times: new Date().toLocaleString(), 
       email: person.email,
       role:person.role,
-      quizName:currentQuiz,
-      scoreLV1:scoreLV1/10,
-      scoreLV2:scoreLV2/10,
-      scoreLV3:scoreLV3/10,
+      contentName:currentQuiz,
+      scoreLV1:scoreLV1,
+      scoreLV2:scoreLV2,
+      scoreLV3:scoreLV3,
       scoreC1:scoreC1,
       scoreC2:scoreC2,
       scoreC3:scoreC3,
@@ -167,6 +136,7 @@ router.post('/pretestSubmit', async (req, res, next) => {
       db.close();
     });
   });
+
  
     try {
   

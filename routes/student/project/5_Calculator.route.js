@@ -25,11 +25,11 @@ router.post('/submit', async (req, res, next) => {
       if (err) throw err;
       var dbo = db.db(mydatabase);
       var query = { email:person.email};
-      dbo.collection("ProjectAnswer").find(query).toArray(function(err, result) {
+      dbo.collection("StudentAnswer").find(query).toArray(function(err, result) {
         if (err) throw err;
         if(Object.keys(result).length >= 1){
           for (let i = 0; i < Object.keys(result).length; i++) {
-            if(result[i].projectName === currentProject) timetodo++;
+            if(result[i].contentName === currentProject) timetodo++;
           }
         }
         MongoClient.connect(url, function(err, db) {
@@ -40,12 +40,12 @@ router.post('/submit', async (req, res, next) => {
             times: new Date().toLocaleString(), 
             email: person.email,
             role:person.role,
-            projectName:currentProject,
+            contentName:currentProject,
             lang:lang,
             code:code,
             output:dataOut
           };
-          dbo.collection("ProjectAnswer").insertOne(myobj, function(err, res) {
+          dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
             if (err) throw err;
             db.close();
           });

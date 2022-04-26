@@ -57,8 +57,7 @@ router.post('/submit', async (req, res, next) => {
     //compiler.compileCPP(envData , code , function (data) {
         var dataOut = data.output;
         if(dataOut === undefined || dataOut === null) {dataOut = "error"}
-        else ;
-
+        else {} ;
         /** check and insert info,score  */
         MongoClient.connect(url, function(err, db) {
           if (err) throw err;
@@ -68,8 +67,8 @@ router.post('/submit', async (req, res, next) => {
             if (err) throw err;
             if(Object.keys(result).length >= 1){
               for (let i = 0; i < Object.keys(result).length; i++) {
-                //console.log(result[i].quizName)
-                if(result[i].quizName === currentQuiz) timetodo++;
+                //console.log(result[i].contentName)
+                if(result[i].contentName === currentQuiz) timetodo++;
               }
             }
             MongoClient.connect(url, function(err, db) {
@@ -80,7 +79,7 @@ router.post('/submit', async (req, res, next) => {
                 times: new Date().toLocaleString(), 
                 email: person.email,
                 role:person.role,
-                quizName:currentQuiz,
+                contentName:currentQuiz,
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
@@ -95,6 +94,7 @@ router.post('/submit', async (req, res, next) => {
             });
           });
         });
+        
     });/** compiler */
 
   try {

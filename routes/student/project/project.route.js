@@ -22,31 +22,31 @@ router.get('/', async (req, res, next) => {
         else{
           var Introduction,String,Datatype,Operators,FlowControl,Pointers,Function ,Structure ,Array;
           for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {
-            if(StudentAnswer[i].quizName === 'Introduction-Quiz'){
+            if(StudentAnswer[i].contentName === 'Introduction-Quiz'){
               Introduction = 1
             }
-            if(StudentAnswer[i].quizName === 'String-Quiz'){
+            if(StudentAnswer[i].contentName === 'String-Quiz'){
               String = 1
             }
-            if(StudentAnswer[i].quizName === 'Datatype-Quiz'){
+            if(StudentAnswer[i].contentName === 'Datatype-Quiz'){
               Datatype = 1
             }
-            if(StudentAnswer[i].quizName === 'Operators-Quiz'){
+            if(StudentAnswer[i].contentName === 'Operators-Quiz'){
               Operators = 1
             }
-            if(StudentAnswer[i].quizName === 'FlowControl-Quiz'){
+            if(StudentAnswer[i].contentName === 'FlowControl-Quiz'){
               FlowControl = 1
             }
-            if(StudentAnswer[i].quizName === 'Pointers-Quiz'){
+            if(StudentAnswer[i].contentName === 'Pointers-Quiz'){
               Pointers = 1
             }
-            if(StudentAnswer[i].quizName === 'Function-Quiz'){
+            if(StudentAnswer[i].contentName === 'Function-Quiz'){
               Function = 1
             }
-            if(StudentAnswer[i].quizName === 'Structure-Quiz'){
+            if(StudentAnswer[i].contentName === 'Structure-Quiz'){
               Structure = 1
             }
-            if(StudentAnswer[i].quizName === 'Array-Quiz'){
+            if(StudentAnswer[i].contentName === 'Array-Quiz'){
               Array = 1
             }
           }
