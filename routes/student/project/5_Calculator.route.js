@@ -14,7 +14,7 @@ router.post('/submit', async (req, res, next) => {
   var timetodo = 0;
 
   //*** COMPILER */
-  var envData = { OS: "linux" };
+  var envData = { OS : "linux" , cmd : "gcc" };
   compiler.compileCPP(envData , code , function (data) {
     //compiler.compileCPP(envData, code, function (data) {
     var dataOut = data.output;

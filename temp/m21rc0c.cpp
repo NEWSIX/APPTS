@@ -1,1 +1,0 @@
-var query = { code:/.*m.*/};
