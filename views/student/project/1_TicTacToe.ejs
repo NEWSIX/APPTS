@@ -24,6 +24,8 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/home.css' />
+    <link rel='stylesheet' href='stylesheets/compiler_line.css' />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Tic Tac Toe</title>
 </head>
@@ -42,7 +44,9 @@
                     </div>
                     <div class="col-sm-11">
                         <dl class="row text-start">
-                            
+                            จงสร้าง Program Tic Tac Toe โดยมีกำหนดว่าต้องมีการใช้ flowControl, flowControlและ Array
+
+                            <%# 
                             <dt class="col-sm-12 h3">จงเขียนโปรแกรม ................... โดยมีเงื่อนไขต่อไปนี้ </dt>
                             <dt class="col-sm-3">เงื่อนไข1</dt>
                             <dd class="col-sm-9">
@@ -61,6 +65,7 @@
                           
                             <dt class="col-sm-3 text-truncate">แนะนำ</dt>
                             <dd class="col-sm-9">นอนเยอะๆ</dd>
+                             %> 
                         </dl>
                     </div>
                 </div>
@@ -70,7 +75,8 @@
             ทดสอบโค้ด
         </button></h2> 
         <div class="form-group">
-            <textarea class="number form-control" id="code" name="code" rows="8" required></textarea>
+            <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+            <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
         </div>
         Language : <select name="lang"><option value="Python">C</option></select>
         <div class="d-grid gap-2">
@@ -118,6 +124,7 @@
         </div>
     </div>
 </form>
+<script src="javascripts/compilerStyle.js"></script>
 </body>
 
 </html>

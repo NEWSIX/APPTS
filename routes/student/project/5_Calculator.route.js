@@ -15,9 +15,10 @@ router.post('/submit', async (req, res, next) => {
 
   //*** COMPILER */
   var envData = { OS: "linux" };
-  compiler.compileCPP(envData, code, function (data) {
+  compiler.compileCPP(envData , code , function (data) {
+    //compiler.compileCPP(envData, code, function (data) {
     var dataOut = data.output;
-    if(dataOut === undefined) {console.log("DataOut@undefined!!!! : "+dataOut)}
+    if(dataOut === undefined || dataOut === null) {console.log("DataOut@undefined!!!! : "+dataOut)}
     else ;
     //** DATABASE */
     MongoClient.connect(url, function(err, db) {

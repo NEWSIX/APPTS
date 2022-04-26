@@ -3,7 +3,7 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ FLO",
+  "question":"โจทย์ FLOW",
   "opt":["1","2","3","4"],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
@@ -11,12 +11,6 @@ var data =
 //**  */
 document.getElementById("choice3question").innerHTML = data.question;
 const richestPeople = data.opt;
-var img = document.createElement("img");
-img.src = data.pic;
-img.style.width = "500px"; //**  */
-img.style.height = "300px";//**  */
-var div = document.getElementById("x");
-div.appendChild(img);
 
 
 const listItems = [];

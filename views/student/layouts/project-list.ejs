@@ -8,36 +8,49 @@
             </a>
             <ul class="list-unstyled ps-0">
                 <div class="accordion" id="accordionParentC"> 
-                    <!-- Project A -->   
-                    <li class="mb-1">
-                        <li><a href="/project-Tic_Tac_Toe" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
-                            Tic Tac Toe
-                        </a></li>
-                    </li>
-                    <!-- Project B -->   
-                    <li class="mb-1">
-                        <li><a href="/project-Library_System" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
-                            Library System 
-                        </a></li>
-                    </li>
-                    <!-- Project C -->   
-                    <li class="mb-1">
-                        <li><a href="/project-Roshambo" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
-                            Roshambo 
-                        </a></li>
-                    </li>
-                    <!-- Project D -->   
-                    <li class="mb-1">
-                        <li><a href="/project-Calendar" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
-                            Calendar
-                        </a></li>
-                    </li>
-                    <!-- Project E -->   
-                    <li class="mb-1">
-                        <li><a href="/project-Calculator" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
-                            Calculator 
-                        </a></li>
-                    </li>
+
+                    <% if(Introduction === 1 && FlowControl === 1 && Array === 1&& Pointers === 1&& String === 1) { %> <%# Follow node %> 
+                        <!-- Project A -->   
+                        <li class="mb-1">
+                            <li><a href="/project-Tic_Tac_Toe" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
+                                Tic Tac Toe
+                            </a></li>
+                        </li>
+                      <% } %>
+                      <% if(Introduction === 1 && String === 1 && FlowControl === 1 ) { %> <%# Follow node %> 
+                        <!-- Project B -->   
+                        <li class="mb-1">
+                            <li><a href="/project-Library_System" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
+                                Library System 
+                            </a></li>
+                        </li>
+                      <% } %>
+                      <% if(Introduction === 1 && FlowControl === 1&& String === 1&& Structure === 1 ) { %> <%# Follow node %> 
+                        <!-- Project C -->   
+                        <li class="mb-1">
+                            <li><a href="/project-Roshambo" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
+                                Roshambo 
+                            </a></li>
+                        </li>
+                      <% } %>
+                      <% if(Introduction === 1 && FlowControl === 1 && Structure === 1) { %> <%# Follow node %> 
+                        <!-- Project D -->   
+                        <li class="mb-1">
+                            <li><a href="/project-Calendar" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
+                                Calendar
+                            </a></li>
+                        </li>
+                      <% } %>
+                      <% if(Introduction === 1 && String === 1&& FlowControl === 1 ) { %> <%# Follow node %> 
+                        <!-- Project E -->   
+                        <li class="mb-1">
+                            <li><a href="/project-Calculator" class="btn  align-items-center rounded collapsed fs-6 fw-semibold"  type="button"  >
+                                Calculator 
+                            </a></li>
+                        </li>
+                        <% } else{ %>  
+                          <p>โปรดปลดล็อกเพื่อทำ Project</p>
+                       <% } %>
                 </div>
             </ul>     
         </div>

@@ -36,6 +36,7 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/home.css' />
+    <link rel='stylesheet' href='stylesheets/compiler_line.css' />
     <link rel='stylesheet' href='stylesheets/Drag_Drop.css' />
     <title>String - QUIZ</title>
 </head>
@@ -124,7 +125,7 @@
                     </label>
                 </div>
                 <br>
-   <%# LV3 %>
+                <%# LV3 %>
                 <h2><u>คำถามที่ : 3</u></h2>
                 <div class="list-group">
                     <p id="choice3question" type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;"></p>
@@ -141,10 +142,10 @@
                     โจทย์ : ssssssssssssssssssssssss
                 </p>
 
-                <div class="form-group">
-                    <textarea class="number form-control" id="code" name="code" rows="8"></textarea>
+                <div class="form-group" >
+                    <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+                    <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10"></textarea>
                 </div>
-
                 Language : <select name="lang"><option value="C">C</option></select>
                 <br />
                 <br>
@@ -206,3 +207,4 @@
     </div>
 </div>
 <script src="javascripts/lv3/2_String.js"></script>
+<script src="javascripts/compilerStyle.js"></script>

@@ -20,7 +20,37 @@ router.get('/', async (req, res, next) => {
           res.redirect('/')
         }
         else{
-          res.render('student/project/project_main', { person });
+          var Introduction,String,Datatype,Operators,FlowControl,Pointers,Function ,Structure ,Array;
+          for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {
+            if(StudentAnswer[i].quizName === 'Introduction-Quiz'){
+              Introduction = 1
+            }
+            if(StudentAnswer[i].quizName === 'String-Quiz'){
+              String = 1
+            }
+            if(StudentAnswer[i].quizName === 'Datatype-Quiz'){
+              Datatype = 1
+            }
+            if(StudentAnswer[i].quizName === 'Operators-Quiz'){
+              Operators = 1
+            }
+            if(StudentAnswer[i].quizName === 'FlowControl-Quiz'){
+              FlowControl = 1
+            }
+            if(StudentAnswer[i].quizName === 'Pointers-Quiz'){
+              Pointers = 1
+            }
+            if(StudentAnswer[i].quizName === 'Function-Quiz'){
+              Function = 1
+            }
+            if(StudentAnswer[i].quizName === 'Structure-Quiz'){
+              Structure = 1
+            }
+            if(StudentAnswer[i].quizName === 'Array-Quiz'){
+              Array = 1
+            }
+          }
+          res.render('student/project/project_main', { person ,Introduction,String,Datatype,Operators,FlowControl,Pointers,Function ,Structure ,Array});
         }
         db.close();
       });

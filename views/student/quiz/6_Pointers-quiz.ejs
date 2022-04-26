@@ -36,6 +36,7 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/home.css' />
+    <link rel='stylesheet' href='stylesheets/compiler_line.css' />
     <link rel='stylesheet' href='stylesheets/Drag_Drop.css' />
     <title>Pointers - QUIZ</title>
 </head>
@@ -138,8 +139,9 @@
                     โจทย์ : ssssssssssssssssssssssss
                 </p>
 
-                <div class="form-group">
-                    <textarea class="number form-control" id="code" name="code" rows="8"></textarea>
+                <div class="form-group" >
+                    <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+                    <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10"></textarea>
                 </div>
 
                 Language : <select name="lang"><option value="C">C</option></select>
@@ -204,3 +206,4 @@
 
 
 <script src="javascripts/lv3/6_Pointers.js"></script>
+<script src="javascripts/compilerStyle.js"></script>

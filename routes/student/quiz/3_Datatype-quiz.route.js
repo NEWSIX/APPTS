@@ -1,4 +1,7 @@
 const router = require('express').Router();
+var compiler = require('compilex');
+var options = {stats : true}; //prints stats on console 
+compiler.init(options);
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
@@ -35,7 +38,7 @@ router.post('/submit', async (req, res, next) => {
   var scoreLV1 = 0;
   var scoreLV2 = 0;
   var scoreLV3 = 0;
-  var currentQuiz = "Datatype" //*** */
+  var currentQuiz = "Datatype-Quiz" //*** */
   var timetodo = 0;
 
   /** chekc score */
@@ -49,44 +52,51 @@ router.post('/submit', async (req, res, next) => {
     scoreLV3 = 30;
   }
   /** compiler */
-  if(code === null || code === ""){
-      code = "";
-  }
-  else ;
-  ide(code,lang);
-  /** check and insert info,score  */
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db(mydatabase);
-    var query = { email:person.email};
-    dbo.collection("StudentAnswer").find(query).toArray(function(err, result) {
-      if (err) throw err;
-      if(Object.keys(result).length >= 1){
-        for (let i = 0; i < Object.keys(result).length; i++) {
-          console.log(result[i].quizName)
-          if(result[i].quizName === currentQuiz) timetodo++;
-        }
-      }
-      MongoClient.connect(url, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db(mydatabase);
-        var myobj = { 
-          timetodo:timetodo+1,
-          times: new Date().toLocaleString(), 
-          email: person.email,
-          role:person.role,
-          quizName:currentQuiz,
-          scoreLV1:scoreLV1,
-          scoreLV2:scoreLV2,
-          scoreLV3:scoreLV3,
-        };
-        dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
+  var envData = { OS : "linux" , cmd : "gcc" };
+  compiler.compileCPP(envData , code , function (data) {
+    //compiler.compileCPP(envData , code , function (data) {
+        var dataOut = data.output;
+        if(dataOut === undefined || dataOut === null) {console.log("DataOut@undefined!!!! : "+dataOut)}
+        else ;
+
+        /** check and insert info,score  */
+        MongoClient.connect(url, function(err, db) {
           if (err) throw err;
-          db.close();
+          var dbo = db.db(mydatabase);
+          var query = { email:person.email};
+          dbo.collection("StudentAnswer").find(query).toArray(function(err, result) {
+            if (err) throw err;
+            if(Object.keys(result).length >= 1){
+              for (let i = 0; i < Object.keys(result).length; i++) {
+                //console.log(result[i].quizName)
+                if(result[i].quizName === currentQuiz) timetodo++;
+              }
+            }
+            MongoClient.connect(url, function(err, db) {
+              if (err) throw err;
+              var dbo = db.db(mydatabase);
+              var myobj = { 
+                timetodo:timetodo+1,
+                times: new Date().toLocaleString(), 
+                email: person.email,
+                role:person.role,
+                quizName:currentQuiz,
+                scoreLV1:scoreLV1,
+                scoreLV2:scoreLV2,
+                scoreLV3:scoreLV3,
+                lang:lang,
+                code:code,
+                output:dataOut
+              };
+              dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
+                if (err) throw err;
+                db.close();
+              });
+            });
+          });
         });
-      });
-    });
-  });
+
+    });/** compiler */
 
   try {
 
@@ -95,29 +105,5 @@ router.post('/submit', async (req, res, next) => {
     next(error);
   }
 });
-
-/** Compiler function */
-function ide(code,lang){
-    if(code.length !== 0){
-        if (lang === "Python") {
-            //var envData = { OS: "windows" };
-            var envData = { OS: "linux" };
-            compiler.compilePython(envData, code, function (data) {
-                var dataOut = data.output;
-                if(dataOut === undefined) {console.log("DataOut@undefined!!!! : "+dataOut)}
-                else console.log(data.output,lang);
-            });
-        }         
-        if((lang === "C") || (lang === "C++")) {
-            var envData = { OS : "linux" , cmd : "gcc" };
-            compiler.compileCPP(envData , code , function (data) {
-                var dataOut = data.output;
-                if(dataOut === undefined) {console.log("DataOut@undefined!!!! : "+dataOut)}
-                else console.log(data.output,lang);
-            });
-        }
-    }
-    else console.log("\n please input! \n");
-} 
 
 module.exports = router;
