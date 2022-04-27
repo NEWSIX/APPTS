@@ -20,18 +20,13 @@ router.get('/', function(req, res, next) {
         var dbo = db.db(mydatabase);
         //var query = { email: /.*m.*/ };
         var query = {teacher:person.email };
-
-
         dbo.collection("StudentClass").find(query).toArray(function(err, Studentresult) {
           if (err) throw err;
-          console.log(Studentresult);
-          db.close();
+         // console.log(Object.keys(Studentresult).length);
           res.render('teacher/class', {person,classResult,Studentresult});
         });
         });
       });
-
-     
   });  
   
 });

@@ -4,73 +4,6 @@ const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/tes
 
 const mydatabase = "APPTSystem";
 
-router.post('/joinclass', async (req, res, next) => {
-  try {
-    const person = req.user;
-    const classToken = req.body.classToken;
-    if(person.role === "Student"){
-      
-        MongoClient.connect(url, function(err, db) {
-          if (err) throw err;
-          var dbo = db.db(mydatabase);
-          var query = { token: classToken };
-          dbo.collection("TeacherClass").find(query).toArray(function(err, classesResult) {
-            if (err) throw err;
-
-            if(Object.keys(classesResult).length != ''){
-
-              MongoClient.connect(url, function(err, db) {
-                if (err) throw err;
-                var dbo = db.db(mydatabase);
-                var query = { email: person.email };
-                dbo.collection("StudentClass").find(query).toArray(function(err, result) {
-                  if (err) throw err;
-
-                  if(Object.keys(result).length === 0){
-                    console.log("\n\n*********\n");
-
-                    MongoClient.connect(url, function(err, db) {
-                      if (err) throw err;
-                      var dbo = db.db(mydatabase);
-                      
-                      var myobj = {times: new Date().toLocaleString(), email: person.email,ClassName:classesResult[0].name,token: classesResult[0].token ,teacher:classesResult[0].email};
-                      dbo.collection("StudentClass").insertOne(myobj, function(err, res) {
-                        if (err) throw err;
-                        db.close();
-                      });
-                    });
-                  }
-                  else{
-                    MongoClient.connect(url, function(err, db) {
-                      if (err) throw err;
-                      var dbo = db.db(mydatabase);
-                      var myquery = { email: person.email };
-                      var newvalues = { $set: {ClassName : classesResult[0].name} };
-                      dbo.collection("StudentClass").updateOne(myquery, newvalues, function(err, res) {
-                        if (err) throw err;
-                        db.close();
-                      });
-                    });
-                  }
-                  db.close();
-                });
-              });
-            }
-            else{}
-
-            db.close();
-          });
-        });
-      res.redirect('back');
-    }
-    
-    
-  } catch (error) {
-    next(error);
-  }
-});
-
-
 router.post('/pretestSubmit', async (req, res, next) => {
   const person = req.user;
   var currentQuiz = "Pre-test"
@@ -393,6 +326,108 @@ router.get('/', async (req, res, next) => {
             res.render('student/pretest', {person});
           }
           else{
+
+
+            /** Update Data In class */
+            MongoClient.connect(url, function(err, db) {
+              if (err) throw err;
+              var dbo = db.db(mydatabase);
+              var query = { email:person.email};
+              dbo.collection("StudentAnswer").find(query).toArray(function(err, StudentAnswer) {
+                if (err) throw err;
+
+                var IntroductionDone = "NO" ,StringDone = "NO" ,OperatorsDone = "NO" ,DatatypeDone = "NO",FlowControlDone = "NO",PointersDone = "NO",FunctionDone = "NO",StructureDone = "NO",ArrayDone = "NO";
+                var TicTacToeDone = "NO" , Library_SystemDone = "NO" , RoshamboDone = "NO" ,CalendarDone = "NO" , CalculatorDone = "NO";
+      
+                for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {
+
+                  if(StudentAnswer[i].contentName ==='Introduction-Quiz'){
+                    IntroductionDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='Datatype-Quiz'){
+                    DatatypeDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='String-Quiz'){
+                    StringDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='Operators-Quiz'){
+                    OperatorsDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='FlowControl-Quiz'){
+                    FlowControlDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='Pointers-Quiz'){
+                    PointersDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='Function-Quiz'){
+                    FunctionDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='Structure-Quiz'){
+                    StructureDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='Array-Quiz'){
+                    ArrayDone = "YES";
+                  }
+                  /** */
+                  if (StudentAnswer[i].contentName ==='TicTacToe') {   
+                    TicTacToeDone = "YES";
+                  }
+                  if (StudentAnswer[i].contentName ==='LibrarySystem') {   
+                    Library_SystemDone = "YES";
+                  }
+                  if (StudentAnswer[i].contentName ==='Roshambo') {   
+                    RoshamboDone = "YES";
+                  }
+                  if (StudentAnswer[i].contentName ==='Calculator') {   
+                    CalendarDone = "YES";
+                  }
+                  if (StudentAnswer[i].contentName ==='Calendar') {   
+                    CalculatorDone = "YES";
+                  }
+
+                }
+
+                MongoClient.connect(url, function(err, db) {
+                  if (err) throw err;
+                  var dbo = db.db(mydatabase);
+                  var query = { email: person.email };
+                  dbo.collection("StudentClass").find(query).toArray(function(err, StudentClass) {
+                    if (err) throw err;
+                      if(Object.keys(StudentClass).length > 0){
+                        MongoClient.connect(url, function(err, db) {
+                          if (err) throw err;
+                          var dbo = db.db(mydatabase);
+                          var myquery = { email: person.email};
+                          var newvalues = { $set: {
+                            TicTacToe:TicTacToeDone,
+                            LibrarySystem:Library_SystemDone,
+                            Roshambo:RoshamboDone,
+                            Calculator:CalendarDone,
+                            Calendar:CalculatorDone,
+                            Introduction:IntroductionDone,
+                            String:StringDone,
+                            Datatype:DatatypeDone,
+                            Operators:OperatorsDone,
+                            FlowControl:FlowControlDone,
+                            Pointers:PointersDone,
+                            Function:FunctionDone,
+                            Structure:StructureDone,
+                            Array:ArrayDone
+                          } };
+                          dbo.collection("StudentClass").updateOne(myquery, newvalues, function(err, res) {
+                            if (err) throw err;
+                            db.close();
+                          });
+                        });
+                      }
+                  })
+                });
+              });
+            });/** Update Data In class */
+
+
+
+            /** Chart */
             MongoClient.connect(url, function(err, db) {
               if (err) throw err;
               var dbo = db.db(mydatabase);
@@ -556,6 +591,150 @@ router.get('/', async (req, res, next) => {
   else res.render('index/index_viewer');
 });
 
+router.post('/joinclass', async (req, res, next) => {
+  try {
+    const person = req.user;
+    const classToken = req.body.classToken;
+    if(person.role === "Student"){
+      
+        MongoClient.connect(url, function(err, db) {
+          if (err) throw err;
+          var dbo = db.db(mydatabase);
+          var query = { token: classToken };
+          dbo.collection("TeacherClass").find(query).toArray(function(err, classesResult) {
+            if (err) throw err;
+
+            if(Object.keys(classesResult).length != ''){
+
+              MongoClient.connect(url, function(err, db) {
+                if (err) throw err;
+                var dbo = db.db(mydatabase);
+                var query = { email: person.email };
+                dbo.collection("StudentClass").find(query).toArray(function(err, result) {
+                  if (err) throw err;
+
+                  if(Object.keys(result).length === 0){
+
+                    MongoClient.connect(url, function(err, db) {
+                      if (err) throw err;
+                      var dbo = db.db(mydatabase);
+                      var query = { email:person.email};
+                      dbo.collection("StudentAnswer").find(query).toArray(function(err, StudentAnswer) {
+                        if (err) throw err;
+        
+                        var IntroductionDone = "NO" ,StringDone = "NO" ,OperatorsDone = "NO" ,DatatypeDone = "NO",FlowControlDone = "NO",PointersDone = "NO",FunctionDone = "NO",StructureDone = "NO",ArrayDone = "NO";
+                        var TicTacToeDone = "NO" , Library_SystemDone = "NO" , RoshamboDone = "NO" ,CalendarDone = "NO" , CalculatorDone = "NO";
+              
+                        for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {
+        
+                        if(StudentAnswer[i].contentName ==='Introduction-Quiz'){
+                          IntroductionDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='Datatype-Quiz'){
+                          DatatypeDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='String-Quiz'){
+                          StringDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='Operators-Quiz'){
+                          OperatorsDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='FlowControl-Quiz'){
+                          FlowControlDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='Pointers-Quiz'){
+                          PointersDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='Function-Quiz'){
+                          FunctionDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='Structure-Quiz'){
+                          StructureDone = "YES";
+                        }
+                        if(StudentAnswer[i].contentName ==='Array-Quiz'){
+                          ArrayDone = "YES";
+                        }
+                        /** */
+                        if (StudentAnswer[i].contentName ==='TicTacToe') {   
+                          TicTacToeDone = "YES";
+                        }
+                        if (StudentAnswer[i].contentName ==='LibrarySystem') {   
+                          Library_SystemDone = "YES";
+                        }
+                        if (StudentAnswer[i].contentName ==='Roshambo') {   
+                          RoshamboDone = "YES";
+                        }
+                        if (StudentAnswer[i].contentName ==='Calculator') {   
+                          CalendarDone = "YES";
+                        }
+                        if (StudentAnswer[i].contentName ==='Calendar') {   
+                          CalculatorDone = "YES";
+                        }
+        
+                        }
+                        
+                        MongoClient.connect(url, function(err, db) {
+                          if (err) throw err;
+                          var dbo = db.db(mydatabase);
+                          
+                          var myobj = {
+                            times: new Date().toLocaleString(), 
+                            email: person.email,ClassName:classesResult[0].name,
+                            token: classesResult[0].token ,
+                            teacher:classesResult[0].email,
+                            TicTacToe:TicTacToeDone,
+                            LibrarySystem:Library_SystemDone,
+                            Roshambo:RoshamboDone,
+                            Calculator:CalendarDone,
+                            Calendar:CalculatorDone,
+                            Introduction:IntroductionDone,
+                            String:StringDone,
+                            Datatype:DatatypeDone,
+                            Operators:OperatorsDone,
+                            FlowControl:FlowControlDone,
+                            Pointers:PointersDone,
+                            Function:FunctionDone,
+                            Structure:StructureDone,
+                            Array:ArrayDone
+                          };
+                          dbo.collection("StudentClass").insertOne(myobj, function(err, res) {
+                            if (err) throw err;
+                            db.close();
+                          });
+                        });
+                      });
+                    });
+                  }
+
+                  else{
+                    MongoClient.connect(url, function(err, db) {
+                      if (err) throw err;
+                      var dbo = db.db(mydatabase);
+                      var myquery = { email: person.email };
+                      var newvalues = { $set: {ClassName : classesResult[0].name} };
+                      dbo.collection("StudentClass").updateOne(myquery, newvalues, function(err, res) {
+                        if (err) throw err;
+                        db.close();
+                      });
+                    });
+                  }
+                  db.close();
+                });
+              });
+            }
+            else{}
+
+            db.close();
+          });
+        });
+      res.redirect('back');
+    }
+    
+    
+  } catch (error) {
+    next(error);
+  }
+});
 
 
 
