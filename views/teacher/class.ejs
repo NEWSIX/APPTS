@@ -8,6 +8,21 @@
     <link rel='stylesheet' href='stylesheets/home.css' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Class</title>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 </head>
 
 <%- include('../layouts/header') %>
@@ -18,32 +33,77 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Class</th>
+                <th scope="col" class="col-1">#</th>
+                <th scope="col" class="col-4">Name</th>
+                <th scope="col" class="col-1">Class</th>
+                <th scope="col" class="col-2 text-end">Project</th>
+                <th scope="col" class="col-2 text-end">Course</th>
                 </th>
               </tr>
             </thead>
             <tbody>
+
+
                 <% 
                     if(Object.keys(Studentresult).length === 1) {   
                         %>
                             <th scope="row">1</th>
                             <td><%=Studentresult[0].email %></td>
                             <td><%=Studentresult[0].ClassName %></td>
-                         
-
+                            <td class="text-end">
+                                TicTacToe | <%=Studentresult[0].TicTacToe %> <br>
+                                Library System | <%=Studentresult[0].LibrarySystem %> <br> 
+                                Roshambo | <%=Studentresult[0].Roshambo %> <br>
+                                Calculator | <%=Studentresult[0].Calculator %> <br> 
+                                Calendar | <%=Studentresult[0].Calendar %> <br>
+                              
+                            </td>
+                            <td class="text-end">
+                                Introduction | <%=Studentresult[0].Introduction %> <br>
+                                String | <%=Studentresult[0].String %> <br>
+                                Datatype | <%=Studentresult[0].Datatype %> <br> 
+                                Operators | <%=Studentresult[0].Operators %> <br>
+                                Flow Control | <%=Studentresult[0].FlowControl %> <br> 
+                                Pointers | <%=Studentresult[0].Pointers %> <br>
+                                Function | <%=Studentresult[0].Function %> <br>
+                                Structure | <%=Studentresult[0].Structure %> <br> 
+                                Array | <%=Studentresult[0].Array %> <br>
+                            </td>
                             </tr>
+                           
+                       
                         <%
                     } 
                     else {
                         for (let i = 0; i < Object.keys(Studentresult).length; i++) {   
                             %>
+                            
+     
                             <th scope="row"><%=i+1%></th>
                             <td><%=Studentresult[i].email %></td>
                             <td><%=Studentresult[i].ClassName %></td>
-                            <tr>
+                            <td class="text-end">
+                                TicTacToe | <%=Studentresult[i].TicTacToe %> <br>
+                                Library System | <%=Studentresult[i].LibrarySystem %> <br> 
+                                Roshambo | <%=Studentresult[i].Roshambo %> <br>
+                                Calculator | <%=Studentresult[i].Calculator %> <br> 
+                                Calendar | <%=Studentresult[i].Calendar %> <br>
+                              
+                            </td>
+                            <td class="text-end">
+                                Introduction | <%=Studentresult[i].Introduction %> <br>
+                                String | <%=Studentresult[i].String %> <br>
+                                Datatype | <%=Studentresult[i].Datatype %> <br> 
+                                Operators | <%=Studentresult[i].Operators %> <br>
+                                Flow Control | <%=Studentresult[i].FlowControl %> <br> 
+                                Pointers | <%=Studentresult[i].Pointers %> <br>
+                                Function | <%=Studentresult[i].Function %> <br>
+                                Structure | <%=Studentresult[i].Structure %> <br> 
+                                Array | <%=Studentresult[i].Array %> <br>
+                            </td>
                             </tr>
+
+
                             <%
                         } 
                     }
@@ -84,10 +144,12 @@
             <button class="btn btn-outline-success" type="button"data-bs-toggle="modal" data-bs-target="#CreateClass">Create class</button>
             <button class="btn btn-outline-danger" type="button"data-bs-toggle="modal" data-bs-target="#RemoveClass">Remove class</button>
             <button class="btn btn-outline-dark" type="button"data-bs-toggle="modal" data-bs-target="#KickStudent">Kick</button>
-        
+            
         </div>
+        
+       
 
-</div>
+</div><br>
 
 
 <!-- Modal -->
