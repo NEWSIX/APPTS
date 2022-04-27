@@ -10,7 +10,7 @@ router.post('/submit', async (req, res, next) => {
   const person = req.user;
   var code = req.body.code;
   var lang = req.body.lang;
-  var currentProject = "TicTacToe";
+  var currentProject = "LibrarySystem";
   var timetodo = 0;
 
   //*** COMPILER */

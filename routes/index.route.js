@@ -154,8 +154,233 @@ router.get('/', async (req, res, next) => {
       res.render('index/index_admin', { person });
     }
     if(person.role === "Teacher"){
-      res.render('index/index_teacher', { person });
-    }
+      MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db(mydatabase);
+        var query = { email:/.*m.*/ };
+        dbo.collection("StudentAnswer").find(query).toArray(function(err, StudentAnswer) {
+          if (err) throw err;
+          db.close();
+
+          var BasicScore =0;
+          var TraceScore =0;
+          var ExplainScore =0;
+          var WriteScore =0;
+          var studentAll = Object.keys(StudentAnswer).length;
+          
+          var IntroductionScore=0,IntroductionCount=0;
+          var StringScore=0,StringCount=0;
+          var DatatypeScore=0,DatatypeCount=0;
+          var OperatorsScore=0,OperatorsCount=0;
+          var FlowControlScore=0,FlowControlCount =0;
+          var PointersScore=0,PointersCount=0;
+          var FunctionScore=0,FunctionCount=0;
+          var StructureScore=0,StructureCount=0;
+          var ArrayScore=0,ArrayCount=0;
+
+          var TicTacToeScore=0,TicTacToeCount=0;
+          var LibrarySystemScore=0,LibrarySystemCount=0;
+          var RoshamboScore=0,RoshamboCount=0;
+          var CalculatorScore=0,CalculatorCount=0;
+          var CalendarScore=0,CalendarCount=0;
+
+          
+          for(let i = 0; i < studentAll; i++) {
+
+            if( StudentAnswer[i].contentName ==='Introduction-Quiz' ){
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                IntroductionScore = IntroductionScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;
+              }
+              else{
+                IntroductionScore = IntroductionScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);
+              }
+              IntroductionCount++;
+            }
+            if (StudentAnswer[i].contentName ==='String-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                StringScore =StringScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                StringScore =StringScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+              StringCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Datatype-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                DatatypeScore =DatatypeScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                DatatypeScore =DatatypeScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                DatatypeCount++;
+            } 
+            if (StudentAnswer[i].contentName ==='Operators-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                OperatorsScore =OperatorsScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                OperatorsScore =OperatorsScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                OperatorsCount++;
+            }
+            if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                FlowControlScore =FlowControlScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                FlowControlScore =FlowControlScore+ StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                FlowControlCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Pointers-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                PointersScore = PointersScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                PointersScore = PointersScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                PointersCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Function-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                FunctionScore = FunctionScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                FunctionScore = FunctionScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                FunctionCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Structure-Quiz') {   
+                if(StudentAnswer[i].scoreTeacher === undefined){
+                  StructureScore = StructureScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+                else{
+                  StructureScore = StructureScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                  StructureCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Array-Quiz') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){
+                ArrayScore = ArrayScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3;}
+              else{
+                ArrayScore = ArrayScore+StudentAnswer[i].scoreLV1+StudentAnswer[i].scoreLV2+StudentAnswer[i].scoreLV3+parseInt(StudentAnswer[i].scoreTeacher);}
+                ArrayCount++;
+            }
+            /** */
+
+            if (StudentAnswer[i].contentName ==='TicTacToe') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){}
+              else{
+                TicTacToeScore = TicTacToeScore+parseInt(StudentAnswer[i].scoreTeacher);}
+                TicTacToeCount++;
+            }
+            if (StudentAnswer[i].contentName ==='LibrarySystem') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){}
+              else{
+                LibrarySystemScore = LibrarySystemScore+parseInt(StudentAnswer[i].scoreTeacher);}
+                LibrarySystemCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Roshambo') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){}
+              else{
+                RoshamboScore = RoshamboScore+parseInt(StudentAnswer[i].scoreTeacher);}
+                RoshamboCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Calculator') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){}
+              else{
+                CalculatorScore = CalculatorScore+parseInt(StudentAnswer[i].scoreTeacher);}
+                CalculatorCount++;
+            }
+            if (StudentAnswer[i].contentName ==='Calendar') {   
+              if(StudentAnswer[i].scoreTeacher === undefined){}
+              else{
+                CalendarScore = CalendarScore+parseInt(StudentAnswer[i].scoreTeacher);}
+                CalendarCount++;
+            }
+           
+
+            if( StudentAnswer[i].contentName ==='Introduction-Quiz' ||
+                StudentAnswer[i].contentName ==='Datatype-Quiz' || 
+                StudentAnswer[i].contentName ==='String-Quiz' ||
+                StudentAnswer[i].contentName ==='Operators-Quiz' ||
+                StudentAnswer[i].contentName ==='FlowControl-Quiz' ||
+                StudentAnswer[i].contentName ==='Pointers-Quiz' ||
+                StudentAnswer[i].contentName ==='Function-Quiz' ||
+                StudentAnswer[i].contentName ==='Structure-Quiz' ||
+                StudentAnswer[i].contentName ==='Array-Quiz' 
+              ){
+                if(StudentAnswer[i].scoreTeacher === undefined){
+                  BasicScore = BasicScore+StudentAnswer[i].scoreLV1
+                  TraceScore = TraceScore+StudentAnswer[i].scoreLV2
+                  ExplainScore = ExplainScore+StudentAnswer[i].scoreLV3
+                }
+                else{
+                  BasicScore = BasicScore+StudentAnswer[i].scoreLV1
+                  TraceScore = TraceScore+StudentAnswer[i].scoreLV2
+                  ExplainScore = ExplainScore+StudentAnswer[i].scoreLV3
+                  WriteScore = WriteScore+parseInt(StudentAnswer[i].scoreTeacher);
+                }
+              }
+          }
+
+
+          if(IntroductionScore != 0) IntroductionScore = IntroductionScore/IntroductionCount;
+          if(StringScore != 0) StringScore = StringScore/StringCount;
+          if(DatatypeScore !=0) DatatypeScore = DatatypeScore/DatatypeCount;
+          if(OperatorsScore != 0)OperatorsScore = OperatorsScore/OperatorsCount;
+          if(FlowControlScore != 0)FlowControlScore = FlowControlScore/FlowControlCount;
+          if(PointersScore != 0)PointersScore = PointersScore/PointersCount;
+          if(FunctionScore != 0)FunctionScore = FunctionScore/FunctionCount;
+          if(StructureScore != 0)StructureScore = StructureScore/StructureCount;
+          if(ArrayScore != 0)ArrayScore = ArrayScore/ArrayCount;
+
+          if(TicTacToeScore != 0) TicTacToeScore = TicTacToeScore/TicTacToeCount;
+          if(LibrarySystemScore != 0) LibrarySystemScore = LibrarySystemScore/LibrarySystemCount;
+          if(RoshamboScore != 0) RoshamboScore = RoshamboScore/RoshamboCount;
+          if(CalculatorScore != 0) CalculatorScore = CalculatorScore/CalculatorCount;
+          if(CalendarScore != 0) CalendarScore = CalendarScore/CalendarCount;
+
+          else;  
+
+          let CourseScoreObj={
+            'Introduction':{score:IntroductionScore},
+            'String':{score:StringScore},
+            'Datatype':{score:DatatypeScore},
+            'Operators':{score:OperatorsScore},
+            'Flow Control':{score:FlowControlScore},
+            'Pointers':{score:PointersScore},
+            'Function':{score:FunctionScore},
+            'Structure':{score:StructureScore},
+            'Array':{score:ArrayScore}
+          }
+          let sortedCourse = Object.keys(CourseScoreObj);
+          sortedCourse.sort((a,b) => {
+            //sort by score
+            return CourseScoreObj[b].score - CourseScoreObj[a].score;
+          });
+
+          let ProjectScoreObj={
+            'TicTacToe':{score:TicTacToeScore},
+            'Library System':{score:LibrarySystemScore},
+            'Roshambo':{score:RoshamboScore},
+            'Calculator':{score:CalculatorScore},
+            'Calendar':{score:CalendarScore}
+          }
+          let sortedProject = Object.keys(ProjectScoreObj);
+          sortedProject.sort((a,b) => {
+            //sort by score
+            return ProjectScoreObj[b].score - ProjectScoreObj[a].score;
+          });
+
+          var BasicPercent =  Math.round(((BasicScore/(studentAll*10))*100));
+          var TracePercent= Math.round(((TraceScore/(studentAll*20))*100))
+          var ExplainPercent = Math.round(((ExplainScore/(studentAll*30))*100))
+          var WritePercent = Math.round(((WriteScore/(studentAll*40))*100))
+
+          var PercentTotal =  BasicPercent+TracePercent+ExplainPercent+WritePercent;
+          BasicPercent = (BasicPercent/PercentTotal)*100;
+          TracePercent = (TracePercent/PercentTotal)*100;
+          ExplainPercent = (ExplainPercent/PercentTotal)*100;
+          WritePercent = (WritePercent/PercentTotal)*100;
+
+          // var checksumper = BasicPercent+TracePercent+ExplainPercent+WritePercent
+          // console.log("\nCHECKSUM : " ,checksumper); //100
+
+          res.render('index/index_teacher', { person ,sortedCourse,sortedProject,
+            BasicPercent,TracePercent,ExplainPercent,WritePercent
+          })
+
+          });
+        });
+      }
+            
     if(person.role === "Student"){
 
       MongoClient.connect(url, function(err, db) {
@@ -264,12 +489,20 @@ router.get('/', async (req, res, next) => {
                 var WriteScore = IntroductionScoreLV4+StringScoreLV4+DatatypeScoreLV4+OperatorsScoreLV4+FlowControlScoreLV4+PointersScoreLV4+FunctionScoreLV4+StructureScoreLV4+ArrayLV4 ;
                 var CourseDone = IntroductionDone+StringDone+DatatypeDone+OperatorsDone+FlowControlDone+PointersDone+FunctionDone+StructureDone+ArrayDone;
                 /*** Percent */
-                var BasicPercent =  Math.round((BasicScore/(CourseDone*10))*100);
-                var TracePercent= Math.round((TraceScore/(CourseDone*20))*100)
-                var ExplainPercent = Math.round((ExplainScore/(CourseDone*30))*100)
-                var WritePercent = Math.round((WriteScore/(CourseDone*40))*100)
+                var BasicPercent =  Math.round(((BasicScore/(CourseDone*10))*100));
+                var TracePercent= Math.round(((TraceScore/(CourseDone*20))*100))
+                var ExplainPercent = Math.round(((ExplainScore/(CourseDone*30))*100))
+                var WritePercent = Math.round(((WriteScore/(CourseDone*40))*100))
 
-  
+                var PercentTotal =  BasicPercent+TracePercent+ExplainPercent+WritePercent;
+                BasicPercent = (BasicPercent/PercentTotal)*100;
+                TracePercent = (TracePercent/PercentTotal)*100;
+                ExplainPercent = (ExplainPercent/PercentTotal)*100;
+                WritePercent = (WritePercent/PercentTotal)*100;
+
+                // var checksumper = BasicPercent+TracePercent+ExplainPercent+WritePercent
+                // console.log("\nCHECKSUM : " ,checksumper); //100
+                
                 if(IntroductionDone === 1){
                   TicTacToeDone = TicTacToeDone+1 ,
                   Library_SystemDone = Library_SystemDone+1 , 
