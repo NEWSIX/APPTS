@@ -186,6 +186,8 @@ router.get('/', async (req, res, next) => {
                 var FunctionScoreLV1=0,FunctionScoreLV2=0,FunctionScoreLV3=0,FunctionScoreLV4=0;
                 var StructureScoreLV1=0,StructureScoreLV2=0,StructureScoreLV3=0,StructureScoreLV4=0;
                 var ArrayLV1=0,ArrayLV2=0,ArrayLV3=0,ArrayLV4=0;
+                var IntroductionDone = 0 ,StringDone = 0 ,OperatorsDone = 0 ,DatatypeDone = 0,FlowControlDone = 0,PointersDone = 0,FunctionDone = 0,StructureDone = 0,ArrayDone = 0;
+                
         
         
                 for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {
@@ -194,62 +196,82 @@ router.get('/', async (req, res, next) => {
                         IntroductionScoreLV2 = StudentAnswer[i].scoreLV2;
                         IntroductionScoreLV3 = StudentAnswer[i].scoreLV3;
                         IntroductionScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        IntroductionDone = 1;
                     } 
                     if (StudentAnswer[i].contentName ==='String-Quiz') {   
                         StringScoreLV1 = StudentAnswer[i].scoreLV1;
                         StringScoreLV2 = StudentAnswer[i].scoreLV2;
                         StringScoreLV3 = StudentAnswer[i].scoreLV3;
                         StringScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        StringDone = 1;
                     }
                     if (StudentAnswer[i].contentName ==='Datatype-Quiz') {   
                         DatatypeScoreLV1 = StudentAnswer[i].scoreLV1;
                         DatatypeScoreLV2 = StudentAnswer[i].scoreLV2;
                         DatatypeScoreLV3 = StudentAnswer[i].scoreLV3;
                         DatatypeScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        DatatypeDone = 1;
                     } 
                     if (StudentAnswer[i].contentName ==='Operators-Quiz') {   
                         OperatorsScoreLV1 = StudentAnswer[i].scoreLV1;
                         OperatorsScoreLV2 = StudentAnswer[i].scoreLV2;
                         OperatorsScoreLV3 = StudentAnswer[i].scoreLV3;
                         OperatorsScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        OperatorsDone = 1;
                     }
                     if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {   
                         FlowControlScoreLV1 = StudentAnswer[i].scoreLV1;
                         FlowControlScoreLV2 = StudentAnswer[i].scoreLV2;
                         FlowControlScoreLV3 = StudentAnswer[i].scoreLV3;
                         FlowControlScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        FlowControlDone = 1;
                     }
                     if (StudentAnswer[i].contentName ==='Pointers-Quiz') {   
                         PointersScoreLV1 = StudentAnswer[i].scoreLV1;
                         PointersScoreLV2 = StudentAnswer[i].scoreLV2;
                         PointersScoreLV3 = StudentAnswer[i].scoreLV3;
                         PointersScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        PointersDone = 1;
                     }
                     if (StudentAnswer[i].contentName ==='Function-Quiz') {   
                         FunctionScoreLV1 = StudentAnswer[i].scoreLV1;
                         FunctionScoreLV2 = StudentAnswer[i].scoreLV2;
                         FunctionScoreLV3 = StudentAnswer[i].scoreLV3;
                         FunctionScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        FunctionDone = 1;
                     }
                     if (StudentAnswer[i].contentName ==='Structure-Quiz') {   
                         StructureScoreLV1 = StudentAnswer[i].scoreLV1;
                         StructureScoreLV2 = StudentAnswer[i].scoreLV2;
                         StructureScoreLV3 = StudentAnswer[i].scoreLV3;
                         StructureScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        StructureDone = 1;
                     }
                     if (StudentAnswer[i].contentName ==='Array-Quiz') {   
                         ArrayLV1 = StudentAnswer[i].scoreLV1;
                         ArrayLV2 = StudentAnswer[i].scoreLV2;
                         ArrayLV3 = StudentAnswer[i].scoreLV3;
                         ArrayLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                        ArrayDone = 1;
                     }
                 }
+
+                /*** SUM */
                 var BasicScore = IntroductionScoreLV1+StringScoreLV1+DatatypeScoreLV1+OperatorsScoreLV1+FlowControlScoreLV1+PointersScoreLV1+FunctionScoreLV1+StructureScoreLV1+ArrayLV1 ;
                 var TraceScore = IntroductionScoreLV2+StringScoreLV2+DatatypeScoreLV2+OperatorsScoreLV2+FlowControlScoreLV2+PointersScoreLV2+FunctionScoreLV2+StructureScoreLV2+ArrayLV2 ;
                 var ExplainScore = IntroductionScoreLV3+StringScoreLV3+DatatypeScoreLV3+OperatorsScoreLV3+FlowControlScoreLV3+PointersScoreLV3+FunctionScoreLV3+StructureScoreLV3+ArrayLV3 ;
                 var WriteScore = IntroductionScoreLV4+StringScoreLV4+DatatypeScoreLV4+OperatorsScoreLV4+FlowControlScoreLV4+PointersScoreLV4+FunctionScoreLV4+StructureScoreLV4+ArrayLV4 ;
-      
-                res.render('index/index_student', { person ,result,BasicScore,TraceScore,ExplainScore,WriteScore});
+                var CourseDone = IntroductionDone+StringDone+DatatypeDone+OperatorsDone+FlowControlDone+PointersDone+FunctionDone+StructureDone+ArrayDone;
+                /*** Percent */
+                var BasicPercent =  Math.round((BasicScore/(CourseDone*10))*100);
+                var TracePercent= Math.round((TraceScore/(CourseDone*20))*100)
+                var ExplainPercent = Math.round((ExplainScore/(CourseDone*30))*100)
+                var WritePercent = Math.round((WriteScore/(CourseDone*40))*100)
+
+
+                res.render('index/index_student', { person ,result,BasicPercent,TracePercent,ExplainPercent,WritePercent});
+              
+                
               });
             });
           }

@@ -24,7 +24,7 @@
     </style>
 
     <link rel='stylesheet' href='stylesheets/home.css' />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link rel='stylesheet' href='stylesheets/chart.css' />
     <title>HOME</title>
 </head>
 
@@ -70,41 +70,86 @@
             </div>
         </div>
     </main>
-    
+
 <!-- MID -->
     <div class="content">
         <div id = "content" class="container">
-            <h1 id = 'content'><i class="fas fa-heartbeat"></i> Skills </h1>     
+            <h1 id = 'content'><i class="fas fa-heartbeat"></i> Skills </h1>   
             <div class="box bg-light  mb-5 shadow" >
-                <div>
-                    <canvas id="myChart"  width="400" height="400"></canvas>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="width: 100%;">
+                    
+                    <div class="row mb-3 ">
+                        <h5 for="inputEmail3" class="col-sm-2 col-form-label">Basic</h5>
+                        <div class="col-sm-10 " style="top:10px">
+                            <progress  max="100" value=<%= BasicPercent %>  class="html5 "></progress>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h5 for="inputEmail3" class="col-sm-2 col-form-label">Tracing</h5>
+                         <div class="col-sm-10 " style="top:10px">
+                          <progress  max="100" value=<%= TracePercent %>  class="html5 "></progress>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h5 for="inputEmail3" class="col-sm-2 col-form-label">Explaining</h5>
+                         <div class="col-sm-10 " style="top:10px">
+                          <progress  max="100" value=<%= ExplainPercent, %>   class="html5 "></progress>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <h5 for="inputEmail3" class="col-sm-2 col-form-label">Writing</h5>
+                         <div class="col-sm-10 " style="top:10px">
+                          <progress  max="100" value=<%= WritePercent %>  class="html5 "></progress>
+                        </div>
+                    </div>
+                                        
                 </div>
             </div>
         </div>
+
+
         <div id = "content" class="container">
             <h1 id = 'content'><i class="far fa-lightbulb"></i> Progress  </h1>
             <div class="box bg-light  mb-5 shadow" >
                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0" style="width: 100%;">
-                    <h5 id="scrollspyHeading1" > Content A status</h5>
-                    <div class="progress" style="height: 25px;">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+                   
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title ">IN</h5>
+                                <div class="pie animate round" style="--p:80;--c:orange;"> 80%</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">STR <%= WritePercent %></h5>
+                                <div class="pie animate" style="--p:<%= WritePercent %> ;--c:lightgreen"> 90%</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <div class="pie animate" style="--p:90;--c:lightgreen"> 90%</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <div class="pie animate" style="--p:90;--c:lightgreen"> 90%</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <div class="pie animate" style="--p:90;--c:lightgreen"> 90%</div>
+                            </div>
+                        </div>
                     </div>
-                    <h5 id="scrollspyHeading1">Content B status</h5>
-                    <div class="progress" style="height: 25px;">
-                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    <h5 id="scrollspyHeading1">Content C status</h5>
-                    <div class="progress" style="height: 25px;">
-                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                    </div>
-                    <h5 id="scrollspyHeading1">Content D status</h5>
-                    <div class="progress" style="height: 25px;">
-                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                    <h5 id="scrollspyHeading1">Content E status</h5>
-                    <div class="progress" style="height: 25px;">
-                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-                    </div>
+
+
                 </div>
             </div>
 
@@ -160,5 +205,6 @@
       </div>
     </div>
   </div>
-  <script  src="/javascripts/chart_student.js"></script>
+  
+
 <%- include('../layouts/footer') %>
