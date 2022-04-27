@@ -187,7 +187,8 @@ router.get('/', async (req, res, next) => {
                 var StructureScoreLV1=0,StructureScoreLV2=0,StructureScoreLV3=0,StructureScoreLV4=0;
                 var ArrayLV1=0,ArrayLV2=0,ArrayLV3=0,ArrayLV4=0;
                 var IntroductionDone = 0 ,StringDone = 0 ,OperatorsDone = 0 ,DatatypeDone = 0,FlowControlDone = 0,PointersDone = 0,FunctionDone = 0,StructureDone = 0,ArrayDone = 0;
-                
+                var TicTacToe = 5 , Library_System = 3 , Roshambo = 4 ,Calendar = 3 , Calculator = 3;
+                var TicTacToeDone = 0 , Library_SystemDone = 0 , RoshamboDone = 0 ,CalendarDone = 0 , CalculatorDone = 0;
         
         
                 for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {
@@ -268,8 +269,44 @@ router.get('/', async (req, res, next) => {
                 var ExplainPercent = Math.round((ExplainScore/(CourseDone*30))*100)
                 var WritePercent = Math.round((WriteScore/(CourseDone*40))*100)
 
+  
+                if(IntroductionDone === 1){
+                  TicTacToeDone = TicTacToeDone+1 ,
+                  Library_SystemDone = Library_SystemDone+1 , 
+                  RoshamboDone = RoshamboDone+1 ,
+                  CalendarDone = CalendarDone+1 , 
+                  CalculatorDone = CalculatorDone+1;
+                }
+                if(StringDone === 1){
+                  Library_SystemDone = Library_SystemDone+1 , 
+                  RoshamboDone = RoshamboDone+1,
+                  CalculatorDone = CalculatorDone+1
+                }
+                if(FlowControlDone === 1){
+                  TicTacToeDone = TicTacToeDone+1 ,
+                  Library_SystemDone = Library_SystemDone+1 , 
+                  RoshamboDone = RoshamboDone+1 ,
+                  CalendarDone = CalendarDone+1 , 
+                  CalculatorDone = CalculatorDone+1;
+                }
+                if(ArrayDone === 1){
+                  TicTacToeDone = TicTacToeDone+1 
+                }
+                if(PointersDone === 1){
+                  TicTacToeDone = TicTacToeDone+1 
+                }
 
-                res.render('index/index_student', { person ,result,BasicPercent,TracePercent,ExplainPercent,WritePercent});
+
+                var TicTacToePercent = Math.round((TicTacToeDone/TicTacToe)*100)
+                var Library_SystemPercent = Math.round((Library_SystemDone/Library_System)*100)
+                var RoshamboPercent = Math.round((RoshamboDone/Roshambo)*100)
+                var CalendarPercent = Math.round((CalendarDone/Calendar)*100)
+                var CalculatorPercent = Math.round((CalculatorDone/Calculator)*100)
+
+                res.render('index/index_student', { person ,result,
+                  BasicPercent,TracePercent,ExplainPercent,WritePercent,
+                  TicTacToePercent,Library_SystemPercent,RoshamboPercent,CalendarPercent,CalculatorPercent
+                });
               
                 
               });
