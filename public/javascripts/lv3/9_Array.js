@@ -3,8 +3,15 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ ARRAY",
-  "opt":["1","2","3","4"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง <br>(&nbsp0 &nbsp1 &nbsp 2 &nbsp  3<br>&nbsp 4 &nbsp5 &nbsp 6 &nbsp  7<br>&nbsp 8 &nbsp9 &nbsp10 &nbsp11)",
+  "opt":[ "#include＜stdio.h＞",
+          "int array[3][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}};<br>int main () {",
+          "for(int i = 0; i < 3; i++) {",
+          "for(int j = 0; j < 4; j++) {",
+          'printf("%d ", array[i][j]);&nbsp}',
+          'printf("\n");&nbsp}',
+          'return 0;&nbsp}'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 

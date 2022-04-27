@@ -3,8 +3,15 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ POI",
-  "opt":["1","2","3","4"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (123)",
+  "opt":[ "#include＜stdio.h＞",
+          'int main(){<br>&nbsp int a = 123;',
+          'int *c = &a;',
+          'int e = *c;',
+          'int *b = &e;',
+          'printf("%d", *b);',
+          'return 0; }'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 

@@ -3,8 +3,12 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ DATA",
-  "opt":["1","2","3","4"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (The character value is: b)",
+  "opt":['#include＜stdio.h＞',
+          'void main(){<br>&nbsp  char c;',
+          "c = 'b';",
+          'printf(“The character value is: %c \n”, c); }'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 

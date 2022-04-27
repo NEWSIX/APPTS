@@ -3,8 +3,15 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ FLOW",
-  "opt":["1","2","3","4"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (Input number of rows : )",
+  "opt":[ "#include＜stdio.h＞",
+          'void main(){<br>&nbsp int i,j,rows;',
+          'printf("Input number of rows : ");',
+          'scanf("%d",&rows);',
+          'for(i=1;i<=rows;i++){',
+          'printf("*");',
+          'printf("\n");}}'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 

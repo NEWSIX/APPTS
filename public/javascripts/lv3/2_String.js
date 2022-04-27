@@ -3,8 +3,14 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ Str",
-  "opt":["1","2","3","4"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (โปรแกรมรับค่าชื่อ)",
+  "opt":['#include＜stdio.h＞',
+          "int main(){<br>&nbsp  char name[15];",
+          'printf("Enter your name: ");',
+          'scanf("%s", name);',
+          'printf("Hi %s.\n", name);',
+          'return 0; }'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 

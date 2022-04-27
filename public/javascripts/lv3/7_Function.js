@@ -3,8 +3,14 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ FUNC",
-  "opt":["1","2","3","4"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (Sum of a = 59 and b = 64 is = 123)<br> *เงื่อนไข : ให้ฟังชั่น main() ขึ้นก่อน",
+  "opt":["#include＜stdio.h＞",
+          'int Sum, a = 59, b = 64;<br>void Addition();',
+          "void main(){",
+          "Addition();&nbsp}",
+          'void Addition(){',
+          'Sum = a + b; <br> printf("\nSum of a = %d and b = %d is = %d", a, b, Sum);&nbsp}'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 

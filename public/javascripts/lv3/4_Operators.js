@@ -3,8 +3,13 @@
   //**  */
   var data =  
     {
-    "question":"โจทย์ OPE",
-    "opt":["1","2","3","4"],
+    "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (Value of a: 11)",
+    "opt":[ '#include＜stdio.h＞',
+            "int main(){<br>&nbsp int a = 10;",
+            "++a;",
+            'printf("Value of a: %d",a);',
+            'return 0; }'
+          ],
     "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
     }
   

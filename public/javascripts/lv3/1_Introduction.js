@@ -3,8 +3,13 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"โจทย์ INtro",
-  "opt":["๑","๒","๓","๔"],
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (11)",
+  "opt":['#include＜stdio.h＞',
+          "int main(){<br>&nbsp  int x = 5;<br>&nbsp int y = 6;",
+          'int sum = x + y;',
+          'printf("%d", sum);',
+          'return 0; }'
+        ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
 
