@@ -175,7 +175,81 @@ router.get('/', async (req, res, next) => {
               dbo.collection("StudentClass").find(query).toArray(function(err, result) {
                 if (err) throw err;
                 db.close();
-                res.render('index/index_student', { person ,result});
+
+
+                var IntroductionScoreLV1=0,IntroductionScoreLV2=0,IntroductionScoreLV3=0,IntroductionScoreLV4=0;
+                var StringScoreLV1=0,StringScoreLV2=0,StringScoreLV3=0,StringScoreLV4=0;
+                var DatatypeScoreLV1=0,DatatypeScoreLV2=0,DatatypeScoreLV3=0,DatatypeScoreLV4=0;
+                var OperatorsScoreLV1=0,OperatorsScoreLV2=0,OperatorsScoreLV3=0,OperatorsScoreLV4=0;
+                var FlowControlScoreLV1=0,FlowControlScoreLV2=0,FlowControlScoreLV3=0,FlowControlScoreLV4=0;
+                var PointersScoreLV1=0,PointersScoreLV2=0,PointersScoreLV3=0,PointersScoreLV4=0;
+                var FunctionScoreLV1=0,FunctionScoreLV2=0,FunctionScoreLV3=0,FunctionScoreLV4=0;
+                var StructureScoreLV1=0,StructureScoreLV2=0,StructureScoreLV3=0,StructureScoreLV4=0;
+                var ArrayLV1=0,ArrayLV2=0,ArrayLV3=0,ArrayLV4=0;
+        
+        
+                for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {
+                    if (StudentAnswer[i].contentName ==='Introduction-Quiz') {   
+                        IntroductionScoreLV1 = StudentAnswer[i].scoreLV1;
+                        IntroductionScoreLV2 = StudentAnswer[i].scoreLV2;
+                        IntroductionScoreLV3 = StudentAnswer[i].scoreLV3;
+                        IntroductionScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    } 
+                    if (StudentAnswer[i].contentName ==='String-Quiz') {   
+                        StringScoreLV1 = StudentAnswer[i].scoreLV1;
+                        StringScoreLV2 = StudentAnswer[i].scoreLV2;
+                        StringScoreLV3 = StudentAnswer[i].scoreLV3;
+                        StringScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                    if (StudentAnswer[i].contentName ==='Datatype-Quiz') {   
+                        DatatypeScoreLV1 = StudentAnswer[i].scoreLV1;
+                        DatatypeScoreLV2 = StudentAnswer[i].scoreLV2;
+                        DatatypeScoreLV3 = StudentAnswer[i].scoreLV3;
+                        DatatypeScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    } 
+                    if (StudentAnswer[i].contentName ==='Operators-Quiz') {   
+                        OperatorsScoreLV1 = StudentAnswer[i].scoreLV1;
+                        OperatorsScoreLV2 = StudentAnswer[i].scoreLV2;
+                        OperatorsScoreLV3 = StudentAnswer[i].scoreLV3;
+                        OperatorsScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                    if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {   
+                        FlowControlScoreLV1 = StudentAnswer[i].scoreLV1;
+                        FlowControlScoreLV2 = StudentAnswer[i].scoreLV2;
+                        FlowControlScoreLV3 = StudentAnswer[i].scoreLV3;
+                        FlowControlScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                    if (StudentAnswer[i].contentName ==='Pointers-Quiz') {   
+                        PointersScoreLV1 = StudentAnswer[i].scoreLV1;
+                        PointersScoreLV2 = StudentAnswer[i].scoreLV2;
+                        PointersScoreLV3 = StudentAnswer[i].scoreLV3;
+                        PointersScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                    if (StudentAnswer[i].contentName ==='Function-Quiz') {   
+                        FunctionScoreLV1 = StudentAnswer[i].scoreLV1;
+                        FunctionScoreLV2 = StudentAnswer[i].scoreLV2;
+                        FunctionScoreLV3 = StudentAnswer[i].scoreLV3;
+                        FunctionScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                    if (StudentAnswer[i].contentName ==='Structure-Quiz') {   
+                        StructureScoreLV1 = StudentAnswer[i].scoreLV1;
+                        StructureScoreLV2 = StudentAnswer[i].scoreLV2;
+                        StructureScoreLV3 = StudentAnswer[i].scoreLV3;
+                        StructureScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                    if (StudentAnswer[i].contentName ==='Array-Quiz') {   
+                        ArrayLV1 = StudentAnswer[i].scoreLV1;
+                        ArrayLV2 = StudentAnswer[i].scoreLV2;
+                        ArrayLV3 = StudentAnswer[i].scoreLV3;
+                        ArrayLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                    }
+                }
+                var BasicScore = IntroductionScoreLV1+StringScoreLV1+DatatypeScoreLV1+OperatorsScoreLV1+FlowControlScoreLV1+PointersScoreLV1+FunctionScoreLV1+StructureScoreLV1+ArrayLV1 ;
+                var TraceScore = IntroductionScoreLV2+StringScoreLV2+DatatypeScoreLV2+OperatorsScoreLV2+FlowControlScoreLV2+PointersScoreLV2+FunctionScoreLV2+StructureScoreLV2+ArrayLV2 ;
+                var ExplainScore = IntroductionScoreLV3+StringScoreLV3+DatatypeScoreLV3+OperatorsScoreLV3+FlowControlScoreLV3+PointersScoreLV3+FunctionScoreLV3+StructureScoreLV3+ArrayLV3 ;
+                var WriteScore = IntroductionScoreLV4+StringScoreLV4+DatatypeScoreLV4+OperatorsScoreLV4+FlowControlScoreLV4+PointersScoreLV4+FunctionScoreLV4+StructureScoreLV4+ArrayLV4 ;
+      
+                res.render('index/index_student', { person ,result,BasicScore,TraceScore,ExplainScore,WriteScore});
               });
             });
           }
