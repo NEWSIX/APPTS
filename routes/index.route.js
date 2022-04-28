@@ -41,6 +41,37 @@ router.post('/pretestSubmit', async (req, res, next) => {
   var c103 = req.body.c103;
   console.log(c11,c12,c13,c21,c22,c23,c31,c32,c33,c41,c42,c43,c51,c52,c53,c61,c62,c63,c71,c72,c73,c81,c82,c83,c91,c92,c93,c101,c102,c103)
 
+  /* */
+  if(c11 === 'A'){
+    scoreC1 = scoreC1+1;
+    scoreLV1 = scoreLV1+10;
+  }
+  if(c12 === 'A'){
+    scoreC1=scoreC1+1;
+    scoreLV2 = scoreLV2+20;
+  }
+  if(c13 === 'D'){
+    scoreC1=scoreC1+1;
+    scoreLV3 = scoreLV3+30;
+  }
+  /* */
+  if(c21 === 'B'){
+    scoreC2 =scoreC2+1;
+    scoreLV1 = scoreLV1+10;
+  }
+  if(c22 === 'C'){
+    scoreC2 = scoreC2+1;
+    scoreLV2 = scoreLV2+20;
+  }
+  if(c23 === 'D'){
+    scoreC2 = scoreC2+1;
+    scoreLV3 = scoreLV3+30;
+  }
+  /* */
+
+ 
+
+
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db(mydatabase);
@@ -50,19 +81,19 @@ router.post('/pretestSubmit', async (req, res, next) => {
       email: person.email,
       role:person.role,
       contentName:currentQuiz,
-      scoreLV1:scoreLV1,
-      scoreLV2:scoreLV2,
-      scoreLV3:scoreLV3,
-      scoreC1:scoreC1,
-      scoreC2:scoreC2,
-      scoreC3:scoreC3,
+      scoreLV1:scoreLV1, //Basic
+      scoreLV2:scoreLV2, //Trace
+      scoreLV3:scoreLV3, //Explain
+      scoreC1:scoreC1, //Intro
+      scoreC2:scoreC2,  //String
+      scoreC3:scoreC3,  //Datatype
       scoreC4:scoreC4,
       scoreC5:scoreC5,
       scoreC6:scoreC6,
       scoreC7:scoreC7,
       scoreC8:scoreC8,
       scoreC9:scoreC9,
-      scoreC10:scoreC10
+      scoreC10:scoreC10  //Array
     };
     dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
       if (err) throw err;
