@@ -83,6 +83,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"เขียนโปรแกรมกำหนดค่าคะแนนให้กับนักเรียน 5 คน โดยคะแนนจะมี 50, 78, 63, 45 และ 80 ตามลำดับ จากนั้นแสดงผลข้อมูล",
                 lang:lang,
                 code:code,
                 output:dataOut

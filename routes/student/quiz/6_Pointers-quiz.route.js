@@ -84,6 +84,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"จงเขียนโปรแกรม ...",
                 lang:lang,
                 code:code,
                 output:dataOut

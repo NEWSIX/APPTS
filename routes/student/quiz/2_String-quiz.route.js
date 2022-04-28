@@ -86,6 +86,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"เขียนโปรแกรมที่รับค่า String และ print ค่าที่รับออกมาพร้อมกับบอกความยาวของค่าที่รับ",
                 lang:lang,
                 code:code,
                 output:dataOut

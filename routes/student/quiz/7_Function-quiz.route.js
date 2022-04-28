@@ -84,6 +84,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"จงเขียนโปรแกรมการคำนวนคูณตัวเลข กำหนดให้มี 2 function คือ <br> &nbsp 1. Function main ให้เขียนคำสั่งรับค่า input ตัวเลข และ print ค่า output<br> &nbsp 2. Function multiplication ให้เขียนคำสั่งคำนวน",
                 lang:lang,
                 code:code,
                 output:dataOut

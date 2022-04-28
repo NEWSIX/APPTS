@@ -84,6 +84,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"เขียนโปรแกรม C เพื่อพิมพ์ตัวอักษรในลักษณะย้อนกลับจาก XML เป็น LMX(ตัวอักษรที่กำหนด : 'X', 'M', 'L')",
                 lang:lang,
                 code:code,
                 output:dataOut

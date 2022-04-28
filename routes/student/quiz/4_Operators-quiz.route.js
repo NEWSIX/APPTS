@@ -84,6 +84,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"เขียนโปรแกรม C เพื่อคำนวนค่าที่กำหนด a = 20, b = 10, c = 15 และ d = 5 โดยที่ค่า output ต้องออกมาเท่ากับ 90",
                 lang:lang,
                 code:code,
                 output:dataOut

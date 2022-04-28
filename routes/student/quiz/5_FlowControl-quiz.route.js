@@ -83,6 +83,7 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
+                lv4Content:"เขียนโปรแกรมโดยรับค่า ตัวเลขจำนวน 10 ตัว จาก Keyboard และหาค่าผลรวม และค่าเฉลี่ย",
                 lang:lang,
                 code:code,
                 output:dataOut
