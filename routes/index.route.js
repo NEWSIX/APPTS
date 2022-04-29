@@ -41,33 +41,47 @@ router.post('/pretestSubmit', async (req, res, next) => {
   var c103 = req.body.c103;
   console.log(c11,c12,c13,c21,c22,c23,c31,c32,c33,c41,c42,c43,c51,c52,c53,c61,c62,c63,c71,c72,c73,c81,c82,c83,c91,c92,c93,c101,c102,c103)
 
-  /* */
-  if(c11 === 'A'){
-    scoreC1 = scoreC1+1;
-    scoreLV1 = scoreLV1+10;
-  }
-  if(c12 === 'A'){
-    scoreC1=scoreC1+1;
-    scoreLV2 = scoreLV2+20;
-  }
-  if(c13 === 'D'){
-    scoreC1=scoreC1+1;
-    scoreLV3 = scoreLV3+30;
-  }
-  /* */
-  if(c21 === 'B'){
-    scoreC2 =scoreC2+1;
-    scoreLV1 = scoreLV1+10;
-  }
-  if(c22 === 'C'){
-    scoreC2 = scoreC2+1;
-    scoreLV2 = scoreLV2+20;
-  }
-  if(c23 === 'D'){
-    scoreC2 = scoreC2+1;
-    scoreLV3 = scoreLV3+30;
-  }
-  /* */
+  /* 1.Syntax */
+  if (c11 === 'A') {scoreC1 = scoreC1 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c12 === 'D') {scoreC1 = scoreC1 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c13 === 'C') { coreC1 = scoreC1 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 2.Data Type, Output */
+  if (c21 === 'C') {scoreC2 = scoreC2 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c22 === 'D') {scoreC2 = scoreC2 + 1; scoreLV2 = scoreLV2 + 10;}
+  if (c23 === 'A') {scoreC2 = scoreC2 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 3.Operators */
+  if (c31 === 'D') {scoreC3 = scoreC3 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c32 === 'B') {scoreC3 = scoreC3 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c33 === 'D') {scoreC3 = scoreC3 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 4.Flow Control */
+  if (c41 === 'A') {scoreC4 = scoreC4 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c42 === 'A') {scoreC4 = scoreC4 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c43 === 'B') {scoreC4 = scoreC4 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 5.Array */
+  if (c51 === 'B') {scoreC5 = scoreC5 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c52 === 'C') {scoreC5 = scoreC5 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c53 === 'A') {scoreC5 = scoreC5 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 6.File Operation */
+  if (c61 === 'A') {scoreC6 = scoreC6 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c62 === 'A') {scoreC6 = scoreC6 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c63 === 'B') {scoreC6 = scoreC6 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 7.Pointers */
+  if (c71 === 'A') {scoreC7 = scoreC7 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c72 === 'D') {scoreC7 = scoreC7 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c73 === 'C') {scoreC7 = scoreC7 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 8.Strings */
+  if (c81 === 'B') {scoreC8 = scoreC8 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c82 === 'B') {scoreC8 = scoreC8 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c83 === 'D') {scoreC8 = scoreC8 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 9.Structure */
+  if (c91 === 'A') {scoreC9 = scoreC9 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c92 === 'A') {scoreC9 = scoreC9 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c93 === 'A') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 10.Function */
+  if (c101 === 'B') {scoreC10 = scoreC10 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c102 === 'C') {scoreC10 = scoreC10 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c103 === 'A') {scoreC10 = scoreC10 + 1; scoreLV3 = scoreLV3 + 30;}
+  /** */
 
  
 
@@ -100,11 +114,9 @@ router.post('/pretestSubmit', async (req, res, next) => {
       db.close();
     });
   });
-
+  res.redirect('back')   
  
-    try {
-  
-        res.redirect('back')    
+    try {         
     } catch (error) {
       next(error);
     }
