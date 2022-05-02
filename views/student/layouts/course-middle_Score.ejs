@@ -1,0 +1,86 @@
+
+    <% 
+    if(Object.keys(StudentAnswer).length === 0) {   
+    } 
+    else {
+        %>
+        <div id = "content" class="container">
+        <h1 id = 'content'><i class="fas fa-heartbeat"></i> Score </h1>   
+            <div class="box bg-light  mb-5 shadow" >
+            <table class="table text-center">
+                <thead>
+                <tr>
+                    <th scope="col" class="col-1 text-center">ทำครั้งที่</th>
+                    <th scope="col" class="col-2 text-center">เวลา</th>
+                    <th scope="col" class="col-4 text-center">ชื่อวิชา</th>
+                    <th scope="col" class="col-1 ">ข้อที่ 1</th>
+                    <th scope="col" class="col-1 ">ข้อที่ 2</th>
+                    <th scope="col" class="col-1 ">ข้อที่ 3</th>
+                    <th scope="col" class="col-1 ">ข้อที่ 4</th>
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="text-end">
+        <%
+        for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {  
+            var Condition = 0;
+            var checkedLV1 = "✗" ,checkedLV2 = "✗",checkedLV3 = "✗",checkedLV4;
+            /* Check Content**/
+            if(StudentAnswer[i].contentName === "Pre-test" ){
+                Condition++;
+            }
+            if(StudentAnswer[i].contentName === "TicTacToe" ){
+                Condition++;
+            }
+            if(StudentAnswer[i].contentName === "LibrarySystem" ){
+                Condition++;
+            } 
+            if(StudentAnswer[i].contentName === "Roshambo" ){
+                Condition++;
+            } 
+            if(StudentAnswer[i].contentName === "Calendar" ){
+                Condition++;
+            } 
+            if(StudentAnswer[i].contentName === "Calculator" ){
+                Condition++;
+            } 
+            /* Check Value LV4 Score**/
+            if(typeof(StudentAnswer[i].scoreTeacher) === "string" ){
+                checkedLV4 = StudentAnswer[i].scoreTeacher;
+            }
+            else{
+                checkedLV4 = "ยังไม่ตรวจ";
+            }
+            /* Score tranfrom to Pass/Not Pass**/
+            if(StudentAnswer[i].scoreLV1 === 10){
+                checkedLV1 = "✓";
+            }
+            if(StudentAnswer[i].scoreLV2 === 20){
+                checkedLV2 = "✓";
+            }
+            if(StudentAnswer[i].scoreLV3 === 30){
+                checkedLV3 = "✓";
+            }
+            else;
+            /* Show Only Quiz**/
+            if(Condition != 0 ){
+    
+            }else{%>
+                <th scope="row" class="text-center"><%=StudentAnswer[i].timetodo%></th>
+                <td class="text-center"><%=StudentAnswer[i].times%></td>
+                <td class="text-center"><%=StudentAnswer[i].contentName%></td>
+                <td class="text-center"><%=checkedLV1%></td>
+                <td class="text-center"><%=checkedLV2%></td>
+                <td class="text-center"><%=checkedLV3%></td>
+                <td class="text-center"><%=checkedLV4%></td>
+                <tr>
+                <%}
+        } %>
+    
+                    </tbody>
+                </table>                    
+            
+            </div>
+        </div>
+    
+     <% } %>

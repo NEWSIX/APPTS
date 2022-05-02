@@ -20,7 +20,7 @@ router.get('/', async (req, res, next) => {
             res.redirect('/')
           }
           else{
-            res.render('student/course/course_main', { person });
+            res.render('student/course/course_main', { person ,StudentAnswer});
           }
           db.close();
         });
