@@ -17,6 +17,7 @@
                     <th scope="col" class="col-1 ">ข้อที่ 2</th>
                     <th scope="col" class="col-1 ">ข้อที่ 3</th>
                     <th scope="col" class="col-1 ">ข้อที่ 4</th>
+                    <th scope="col" class="col-1 ">ผู้ตรวจ</th>
                     </th>
                 </tr>
                 </thead>
@@ -24,7 +25,7 @@
         <%
         for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {  
             var Condition = 0;
-            var checkedLV1 = "✗" ,checkedLV2 = "✗",checkedLV3 = "✗",checkedLV4;
+            var checkedLV1 = "✗" ,checkedLV2 = "✗",checkedLV3 = "✗",checkedLV4,TeacherCheck;
             /* Check Content**/
             if(StudentAnswer[i].contentName === "Pre-test" ){
                 Condition++;
@@ -47,9 +48,11 @@
             /* Check Value LV4 Score**/
             if(typeof(StudentAnswer[i].scoreTeacher) === "string" ){
                 checkedLV4 = StudentAnswer[i].scoreTeacher;
+                TeacherCheck = StudentAnswer[i].checkedBy;
             }
             else{
-                checkedLV4 = "ยังไม่ตรวจ";
+                checkedLV4 = "-";
+                TeacherCheck = "รอตรวจ";
             }
             /* Score tranfrom to Pass/Not Pass**/
             if(StudentAnswer[i].scoreLV1 === 10){
@@ -73,6 +76,7 @@
                 <td class="text-center"><%=checkedLV2%></td>
                 <td class="text-center"><%=checkedLV3%></td>
                 <td class="text-center"><%=checkedLV4%></td>
+                <td class="text-center"><%=TeacherCheck%></td>
                 <tr>
                 <%}
         } %>
