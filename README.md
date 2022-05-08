@@ -1,7 +1,7 @@
 # `A Personalized Programming Tutoring System (APPTS)`
 <h5>
 <br>Thesis Project Web Application 
-<br> ```Azure Linux Sever , NodeJS , Bootstrap , Javascript , MongoDB ```
+<br> Azure Linux Sever , NodeJS , Bootstrap , Javascript , MongoDB
 <br> ``` Server settings use port 8080 ```
 </h5>
 
