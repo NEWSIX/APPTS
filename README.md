@@ -2,6 +2,7 @@
 <h5>
 <br>Thesis Project Web Application 
 <br> Azure Linux Sever , NodeJS , Bootstrap , Javascript , MongoDB
+    
 <br> ``` Server settings use port 8080 ```
 </h5>
 
@@ -46,5 +47,6 @@ cd APPTS
 ```sh
 npm start
 ```
-<br> try start and install 2 times
+try start and install 2 times
+
 ---
