@@ -1,4 +1,3 @@
-Siraphong-2542
 # `A Personalized Programming Tutoring System (APPTS)`
 <h5>
 <br>Thesis Project Web Application 
