@@ -20,6 +20,7 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
+            
         }
     </style>
 
@@ -63,41 +64,90 @@
                 <b> <%= student[0].contentName %> </b>  
             </div>
             <div class="card-body">
-                <div class="row align-items-start">
-                    <div class="col">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><b>EMAIL</b></span>
-                            <span class="input-group-text text-uppercase"><%= student[0].email %> </span>
+                <% if(student[0] === "null" ){ %>
+                    ไม่มีคำตอบจากผู้เรียน
+                        
+                    <% } else { %>
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><b>EMAIL</b></span>
+                                    <span class="input-group-text text-uppercase"><%= student[0].email %> </span>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><b>เวลาที่ส่ง</b></span>
+                                    <span class="input-group-text text-uppercase"><%= student[0].times %></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><b>ครั้งที่ทำ</b></span>
+                                    <span class="input-group-text text-uppercase"><%= student[0].timetodo %></span>
+                                </div>
+        
+                                <% if(student[0].contentName.substr(student[0].contentName.length - 5) === "-Quiz" ){ %>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">คะแนน</span>
+                                        <input class="form-control" type="number" name="studentScore" placeholder="0-40" aria-label="default input example" min="0" max="40"required >
+                                    </div>
+                                        
+                                    <% } else { %>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">คะแนน</span>
+                                            <div class="form-control form-check-inline">
+        
+                                                <div class="container">
+                                                    <div class="row">
+                                                      <div class="col-3">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="studentScoreProject1" value=1>
+                                                            <label class="form-check-label" for="inlineCheckbox1">ผลลัพธ์</label>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-3">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="studentScoreProject2" value=1>
+                                                            <label class="form-check-label" for="inlineCheckbox1">เงื่อนไข1</label>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-3">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="studentScoreProject3" value=1>
+                                                            <label class="form-check-label" for="inlineCheckbox1">เงื่อนไข2</label>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-3">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="studentScoreProject4" value=1>
+                                                            <label class="form-check-label" for="inlineCheckbox1">เงื่อนไข3</label>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                <% } %>
+        
+                            </div>
+        
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><b>โจทย์</b></span>
+                                <span class="input-group-text text-uppercase"><%= student[0].lv4Content %></span>
+                            </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><b>เวลาที่ส่ง</b></span>
-                            <span class="input-group-text text-uppercase"><%= student[0].times %></span>
+                        <div class="form-group" >
+                            <textarea style="height: 400px; background-color: #cacdcf;" class="form-control" id="lineCounter" readonly rows="10"> </textarea>
+                            <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" ><%= student[0].code %></textarea>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><b>ครั้งที่ทำ</b></span>
-                            <span class="input-group-text text-uppercase"><%= student[0].timetodo %></span>
+                        <div class="card-body shadow rounded">
+                            <span ><b>Output :</b></span>
+                            <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].output %></textarea>
                         </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">คะแนน</span>
-                            <input class="form-control" type="number" name="studentScore" placeholder="0-40" aria-label="default input example" min="0" max="40"required >
-                        </div>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><b>โจทย์</b></span>
-                        <span class="input-group-text text-uppercase"><%= student[0].lv4Content %></span>
-                    </div>
-                </div>
-                <div class="form-group" >
-                    <textarea style="height: 400px; background-color: #cacdcf;" class="form-control" id="lineCounter" readonly rows="10"> </textarea>
-                    <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" ><%= student[0].code %></textarea>
-                </div>
-                <div class="card-body shadow rounded">
-                    <span ><b>Output :</b></span>
-                    <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].output %></textarea>
-                </div>
+                    
+                <% } %>
+                
             </div>
         </div><br>
         <%# END %> 
