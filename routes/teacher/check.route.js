@@ -47,13 +47,13 @@ router.post('/submit', async (req, res, next) => {
         if(studentScoreProject1 != undefined){
             score = score+1;
         }
-        if(studentScoreProject1 != undefined){
-            score = score+1;
-        }
         if(studentScoreProject2 != undefined){
             score = score+1;
         }
         if(studentScoreProject3 != undefined){
+            score = score+1;
+        }
+        if(studentScoreProject4 != undefined){
             score = score+1;
         }
     }

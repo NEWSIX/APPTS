@@ -614,12 +614,49 @@ router.get('/', async (req, res, next) => {
                 var CalendarPercent = Math.round((CalendarDone/Calendar)*100)
                 var CalculatorPercent = Math.round((CalculatorDone/Calculator)*100)
 
-                res.render('index/index_student', { person ,result,
-                  BasicPercent,TracePercent,ExplainPercent,WritePercent,
-                  TicTacToePercent,Library_SystemPercent,RoshamboPercent,CalendarPercent,CalculatorPercent
+
+
+
+
+
+
+//รอ ระบบแนะนำ
+
+
+
+                MongoClient.connect(url, function(err, db) {
+                  if (err) throw err;
+                  var dbo = db.db(mydatabase);
+                  var query = {email:person.email};
+                  dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
+                    if (err) throw err;
+                    MongoClient.connect(url, function(err, db) {
+                      if (err) throw err;
+                      var dbo = db.db(mydatabase);
+                      var myquery = { email: person.email };
+                      var newvalues = { $set: {RecommendCourse: "Array" } };
+                      dbo.collection("StudentRecommendation").updateOne(myquery, newvalues, function(err, res) {
+                        if (err) throw err;
+                        db.close();
+                      });
+                    });
+
+                    res.render('index/index_student', { person ,result,RecommendaResult,
+                      BasicPercent,TracePercent,ExplainPercent,WritePercent,
+                      TicTacToePercent,Library_SystemPercent,RoshamboPercent,CalendarPercent,CalculatorPercent
+                    });
+
+                  });
                 });
-              
-                
+
+
+
+
+
+
+
+
+
               });
             });
           }
@@ -722,7 +759,8 @@ router.post('/joinclass', async (req, res, next) => {
                           
                           var myobj = {
                             times: new Date().toLocaleString(), 
-                            email: person.email,ClassName:classesResult[0].name,
+                            email: person.email,
+                            ClassName:classesResult[0].name,
                             token: classesResult[0].token ,
                             teacher:classesResult[0].email,
                             TicTacToe:TicTacToeDone,
@@ -779,6 +817,60 @@ router.post('/joinclass', async (req, res, next) => {
   }
 });
 
+router.post('/Recommendation_setting', async (req, res, next) => {
+  try {
+    const person = req.user;
+    const Recommendation = req.body.RecommendationSetting;
 
+    MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db(mydatabase);
+      var query = { email:person.email };
+      dbo.collection("StudentRecommendation").find(query).toArray(function(err, StudentRecommendationQuery) {
+        if (err) throw err;        
+        
+        if(Object.keys(StudentRecommendationQuery).length === 0 ){
+          MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydatabase);
+            var myobj = { times: new Date().toLocaleString(), 
+                          email: person.email,
+                          RecommendationType: Recommendation,
+                          RecommendCourse:"null"
+                        };
+            dbo.collection("StudentRecommendation").insertOne(myobj, function(err, res) {
+              if (err) throw err;
+              db.close();
+            });
+          });
+        }
+        else{
+          MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydatabase);
+            var myquery = { email:person.email};
+            var newvalues = { $set: 
+              {
+                RecommendationType: Recommendation
+              } 
+            };
+            dbo.collection("StudentRecommendation").updateOne(myquery, newvalues, function(err, res) {
+              if (err) throw err;
+              db.close();
+            });
+          });
+        }
+
+
+      });
+    });
+
+    
+  
+    res.redirect('back')
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;

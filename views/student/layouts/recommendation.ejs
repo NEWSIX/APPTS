@@ -1,0 +1,70 @@
+<div id = "content" class="container">
+    <h1 id = 'content'><i class="far fa-sun"></i> Recommendation </h1> 
+    <div class="box bg-light  mb-5 shadow" >
+
+        <div class="row">
+            <div class="col">
+                <h4>การแนะนำแบบ   <%= RecommendaResult[0].RecommendationType %> <%# วิธีแนะนำคือ %>  </h4>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <% if (Object.keys(RecommendaResult[0].RecommendCourse).length !== 0) { %>
+                    <h1>บทเรียนที่แนะนำ "<%= RecommendaResult[0].RecommendCourse %>"</h1>
+                <% } else { %>
+                <% } %>
+                
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+
+
+                <% if(RecommendaResult[0].RecommendCourse === "Introduction"){ %> <%# Output จาก Recommend มาเทียบ %> 
+                    
+                        <button onclick="window.location.href='/course-Introduction'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"> <i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+           
+                <% }else if(RecommendaResult[0].RecommendCourse === "String"){ %>
+                    
+                        <button onclick="window.location.href='/course-String'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+                    
+                <% }else if(RecommendaResult[0].RecommendCourse === "Datatype"){ %>
+                    
+                        <button onclick="window.location.href='/course-Datatype'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+               
+                <% }else if(RecommendaResult[0].RecommendCourse === "Operators"){ %>
+                    
+                        <button onclick="window.location.href='/course-Operators'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+              
+                <% }else if(RecommendaResult[0].RecommendCourse === "Flow Control"){ %>
+                    
+                        <button onclick="window.location.href='/course-Flow_Control'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+              
+                <% }else if(RecommendaResult[0].RecommendCourse === "Pointers"){ %>
+                    
+                        <button onclick="window.location.href='/course-Pointers'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+              
+                <% }else if(RecommendaResult[0].RecommendCourse === "Function"){ %>
+                    
+                        <button onclick="window.location.href='/course-Function'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+             
+                <% }else if(RecommendaResult[0].RecommendCourse === "Structure"){ %>
+                    
+                        <button onclick="window.location.href='/course-Structure'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+               
+                <% }else if(RecommendaResult[0].RecommendCourse === "Array"){ %>
+                    
+                        <button onclick="window.location.href='/course-Array'" type="button" class="btn btn-outline-dark btn-lg btn-block mb-2"><i class="fa fa-paper-plane" style="font-size:16px"></i> เริ่ม</button>
+                
+                <% } else{ %>  <%# ถ้าไม่มีการแนะนำ คือ เรียนตาม path ที่เลือกเรียบร้อยแล้ว%> 
+                    <button type="button" class="btn btn-outline-dark btn-sm btn-block " data-bs-toggle="modal" data-bs-target="#RecommendSetting"><i class="fa fa-flag" style="font-size: 16px;;align-items: center;" ></i></button>
+                <% } %>
+
+            </div>
+          </div>
+
+    </div>
+</div>
+
+
+
+  
+      <!-- Modal -->
