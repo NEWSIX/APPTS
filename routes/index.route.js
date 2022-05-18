@@ -614,27 +614,148 @@ router.get('/', async (req, res, next) => {
                 var CalendarPercent = Math.round((CalendarDone/Calendar)*100)
                 var CalculatorPercent = Math.round((CalculatorDone/Calculator)*100)
 
-
-
-
-
-
-
-//รอ ระบบแนะนำ
-
-
-
                 MongoClient.connect(url, function(err, db) {
                   if (err) throw err;
                   var dbo = db.db(mydatabase);
                   var query = {email:person.email};
                   dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
                     if (err) throw err;
+
+                    var ArrCourseDone = [];
+                    for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {        //value คือ ความยาก ง่าย - 1 ยาก - 9
+                      if (StudentAnswer[i].contentName ==='Introduction-Quiz') {ArrCourseDone.push({key:"Introduction",value:1});} 
+                      if (StudentAnswer[i].contentName ==='String-Quiz') {ArrCourseDone.push({key:"String",value:2});}
+                      if (StudentAnswer[i].contentName ==='Datatype-Quiz') {ArrCourseDone.push({key:"Datatype",value:3});} 
+                      if (StudentAnswer[i].contentName ==='Operators-Quiz') { ArrCourseDone.push({key:"Operators",value:4});}
+                      if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {ArrCourseDone.push({key:"Flow Control",value:5});}
+                      if (StudentAnswer[i].contentName ==='Pointers-Quiz') {ArrCourseDone.push({key:"Pointers",value:6});}
+                      if (StudentAnswer[i].contentName ==='Function-Quiz') {ArrCourseDone.push({key:"Function",value:7});}
+                      if (StudentAnswer[i].contentName ==='Structure-Quiz') {ArrCourseDone.push({key:"Structure",value:8});}
+                      if (StudentAnswer[i].contentName ==='Array-Quiz') {ArrCourseDone.push({key:"Array",value:9});}
+                      if (StudentAnswer[i].contentName ==='Pre-test') { 
+                          if(StudentAnswer[i].scoreC1 === 3){ArrCourseDone.push({key:"Introduction",value:1});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC2 === 3){ArrCourseDone.push({key:"String",value:2});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC3 === 3){ArrCourseDone.push({key:"Datatype",value:3});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC4 === 3){ArrCourseDone.push({key:"Operators",value:4});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC5 === 3){ArrCourseDone.push({key:"Flow Control",value:5});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC6 === 3){ArrCourseDone.push({key:"Pointers",value:6});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC7 === 3){ArrCourseDone.push({key:"Function",value:7});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC8 === 3){ArrCourseDone.push({key:"Structure",value:8});} //pre test ทำได้ 3 ข้อ
+                          if(StudentAnswer[i].scoreC9 === 3){ArrCourseDone.push({key:"Array",value:9});} //pre test ทำได้ 3 ข้อ 
+                        }  
+                    }
+                   
+
+                    let CourseDonedictionary = Object.assign({}, ...ArrCourseDone.map((x) => ({[x.key]: x.value}))); //Array to dictionary
+
+                    var items = Object.keys(CourseDonedictionary).map( //sort dictionary
+                      (key) => { return [key, CourseDonedictionary[key]] });
+                      
+                    items.sort(
+                      (first, second) => { return first[1] - second[1] }
+                    );
+
+                    var CourseDoneSorted = items.map(
+                      (e) => { return e[0] });
+
+
+                    // CourseDoneSorted คือ คอร์สที่ทำเสร็จรวมกับ ความยาก
+                    // StudentAnswer คือ ข้อมูลคะแนนนักเรียนที่ดึงจาก Database 
+                    // RecommendaResult[0].RecommendationType คือ วิธีแนะนำที่ผู้เรียนเลือก
+ 
+                    var RecommendOutput;
+                    var CourseTotol = ['Introduction','String','xxx3','xxx4'] //เรียกจากง่ายไปยาก
+                    
+                    if(Object.keys(RecommendaResult).length !== 0){
+                      //***RECOMMEND : COURSE
+                      if(RecommendaResult[0].RecommendationType === "Fastest Path"){
+                        //step 1
+                        //step 2
+                        //step 3
+
+
+
+                        RecommendOutput = "Operators" // ตัวอย่าง
+                      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      //***RECOMMEND : PROJECT
+                      if(RecommendaResult[0].RecommendationType === "TicTacToe"){
+                        var Path = ['Flow Control','Array','Pointers','String'] //เรียกจากง่ายไปยาก
+                        //เปรียบเทียบความยาก
+                        //เลือกอันที่ง่ายสุด index = 0
+                        var b = new Set(CourseDoneSorted);
+                        var RecommendOutput = [...Path].filter(x => !b.has(x));
+                        if(Object.keys(RecommendOutput).length === 0){
+                          RecommendOutput = "เรียนครบตามการแนะนำ"
+                        }
+                        else{
+                          RecommendOutput = RecommendOutput[0]
+                        }
+                      }
+                      if(RecommendaResult[0].RecommendationType === "Library"){
+                        var Path = ['Flow Control','Array','Pointers','String']
+                        var b = new Set(CourseDoneSorted);
+                        var RecommendOutput = [...Path].filter(x => !b.has(x));
+                        if(Object.keys(RecommendOutput).length === 0){
+                          RecommendOutput = "เรียนครบตามการแนะนำ"
+                        }
+                        else{
+                          RecommendOutput = RecommendOutput[0]
+                        }
+                      }
+                      if(RecommendaResult[0].RecommendationType === "Roshambo"){
+                        var Path = ['Flow Control','Array','Pointers','String']
+                        var b = new Set(CourseDoneSorted);
+                        var RecommendOutput = [...Path].filter(x => !b.has(x));
+                        if(Object.keys(RecommendOutput).length === 0){
+                          RecommendOutput = "เรียนครบตามการแนะนำ"
+                        }
+                        else{
+                          RecommendOutput = RecommendOutput[0]
+                        }
+                      }
+                      if(RecommendaResult[0].RecommendationType === "Calendar"){
+                        var Path = ['Flow Control','Array','Pointers','String']
+                        var b = new Set(CourseDoneSorted);
+                        var RecommendOutput = [...Path].filter(x => !b.has(x));
+                        if(Object.keys(RecommendOutput).length === 0){
+                          RecommendOutput = "เรียนครบตามการแนะนำ"
+                        }
+                        else{
+                          RecommendOutput = RecommendOutput[0]
+                        }
+                      }
+                      if(RecommendaResult[0].RecommendationType === "Calculator"){
+                        var Path = ['Flow Control','Array','Pointers','String']
+                        var b = new Set(CourseDoneSorted);
+                        var RecommendOutput = [...Path].filter(x => !b.has(x));
+                        if(Object.keys(RecommendOutput).length === 0){
+                          RecommendOutput = "เรียนครบตามการแนะนำ"
+                        }
+                        else{
+                          RecommendOutput = RecommendOutput[0]
+                        }
+                      }
+                    }
+
                     MongoClient.connect(url, function(err, db) {
                       if (err) throw err;
                       var dbo = db.db(mydatabase);
                       var myquery = { email: person.email };
-                      var newvalues = { $set: {RecommendCourse: "Array" } };
+                      var newvalues = { $set: {RecommendCourse: RecommendOutput } };
                       dbo.collection("StudentRecommendation").updateOne(myquery, newvalues, function(err, res) {
                         if (err) throw err;
                         db.close();
@@ -648,12 +769,6 @@ router.get('/', async (req, res, next) => {
 
                   });
                 });
-
-
-
-
-
-
 
 
 
@@ -874,3 +989,16 @@ router.post('/Recommendation_setting', async (req, res, next) => {
 });
 
 module.exports = router;
+
+
+function remove_duplicates(arr) {
+  var obj = {};
+  var ret_arr = [];
+  for (var i = 0; i < arr.length; i++) {
+      obj[arr[i]] = true;
+  }
+  for (var key in obj) {
+      ret_arr.push(key);
+  }
+  return ret_arr;
+}
