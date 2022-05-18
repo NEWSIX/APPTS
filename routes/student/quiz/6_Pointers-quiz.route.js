@@ -20,7 +20,17 @@ router.get('/', async (req, res, next) => {
         res.redirect('/')
       }
       else{
-        res.render('student/quiz/6_Pointers-quiz', { person });
+        MongoClient.connect(url, function(err, db) {
+          if (err) throw err;
+          var dbo = db.db(mydatabase);
+          var query = {email:person.email};
+          dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
+            if (err) throw err;
+
+            res.render('student/quiz/6_Pointers-quiz', { person ,StudentAnswer,RecommendaResult});
+          });
+        });
+
       }
       db.close();
     });

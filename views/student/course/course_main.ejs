@@ -40,12 +40,21 @@
     
  
 <div class="content">
+<!-- RECOMMENDATION-->
+<% if (Object.keys(RecommendaResult).length !== 0 && RecommendaResult[0].RecommendCourse != "null"  ) { %>
+    <%- include('../layouts/recommendation') %>
+
+<% } else { %>
+<% } %>
+
 <!-- MIDDLE 1 -->
-<%- include('../layouts/course-middle_Score') %>
+<%- include('../layouts/course-middle') %>
+
 <!-- END Of MIDDLE  -->
 <!-- MIDDLE 2 -->
-<%- include('../layouts/course-middle') %>
+<%- include('../layouts/course-middle_Score') %>
 <!-- END Of MIDDLE  -->
+
 
 
 </div>
