@@ -28,28 +28,28 @@ router.get('/', async (req, res, next) => {
               dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
                 if (err) throw err;
 
-                //หาคอร์สที่เรียนไป แล้วกรองไม้ให้ซ้ำกัน
+                 //หาคอร์สที่เรียนไป แล้วกรองไม้ให้ซ้ำกัน
                 var ArrCourseDone = [];
                 for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {        //value คือ ความยาก ง่าย - 1 ยาก - 9
                   if (StudentAnswer[i].contentName ==='Introduction-Quiz') {ArrCourseDone.push({key:"Introduction",value:1});} 
-                  if (StudentAnswer[i].contentName ==='String-Quiz') {ArrCourseDone.push({key:"String",value:2});}
-                  if (StudentAnswer[i].contentName ==='Datatype-Quiz') {ArrCourseDone.push({key:"Datatype",value:3});} 
-                  if (StudentAnswer[i].contentName ==='Operators-Quiz') { ArrCourseDone.push({key:"Operators",value:4});}
-                  if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {ArrCourseDone.push({key:"Flow Control",value:5});}
-                  if (StudentAnswer[i].contentName ==='Pointers-Quiz') {ArrCourseDone.push({key:"Pointers",value:6});}
-                  if (StudentAnswer[i].contentName ==='Function-Quiz') {ArrCourseDone.push({key:"Function",value:7});}
-                  if (StudentAnswer[i].contentName ==='Structure-Quiz') {ArrCourseDone.push({key:"Structure",value:8});}
+                  if (StudentAnswer[i].contentName ==='String-Quiz') {ArrCourseDone.push({key:"String",value:4});}
+                  if (StudentAnswer[i].contentName ==='Datatype-Quiz') {ArrCourseDone.push({key:"Datatype",value:2});} 
+                  if (StudentAnswer[i].contentName ==='Operators-Quiz') { ArrCourseDone.push({key:"Operators",value:3});}
+                  if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {ArrCourseDone.push({key:"Flow Control",value:8});}
+                  if (StudentAnswer[i].contentName ==='Pointers-Quiz') {ArrCourseDone.push({key:"Pointers",value:7});}
+                  if (StudentAnswer[i].contentName ==='Function-Quiz') {ArrCourseDone.push({key:"Function",value:5});}
+                  if (StudentAnswer[i].contentName ==='Structure-Quiz') {ArrCourseDone.push({key:"Structure",value:6});}
                   if (StudentAnswer[i].contentName ==='Array-Quiz') {ArrCourseDone.push({key:"Array",value:9});}
                   if (StudentAnswer[i].contentName ==='Pre-test') { 
                       if(StudentAnswer[i].scoreC1 === 3){ArrCourseDone.push({key:"Introduction",value:1});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC2 === 3){ArrCourseDone.push({key:"String",value:2});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC3 === 3){ArrCourseDone.push({key:"Datatype",value:3});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC4 === 3){ArrCourseDone.push({key:"Operators",value:4});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC5 === 3){ArrCourseDone.push({key:"Flow Control",value:5});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC6 === 3){ArrCourseDone.push({key:"Pointers",value:6});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC7 === 3){ArrCourseDone.push({key:"Function",value:7});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC8 === 3){ArrCourseDone.push({key:"Structure",value:8});} //pre test ทำได้ 3 ข้อ
-                      if(StudentAnswer[i].scoreC9 === 3){ArrCourseDone.push({key:"Array",value:9});} //pre test ทำได้ 3 ข้อ 
+                      if(StudentAnswer[i].scoreC8 === 3){ArrCourseDone.push({key:"String",value:4});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC2 === 3){ArrCourseDone.push({key:"Datatype",value:2});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC3 === 3){ArrCourseDone.push({key:"Operators",value:3});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC4 === 3){ArrCourseDone.push({key:"Flow Control",value:8});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC7 === 3){ArrCourseDone.push({key:"Pointers",value:7});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC10 === 3){ArrCourseDone.push({key:"Function",value:5});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC9 === 3){ArrCourseDone.push({key:"Structure",value:6});} //pre test ทำได้ 3 ข้อ
+                      if(StudentAnswer[i].scoreC5 === 3){ArrCourseDone.push({key:"Array",value:9});} //pre test ทำได้ 3 ข้อ 
                     }  
                 }
                
@@ -69,15 +69,15 @@ router.get('/', async (req, res, next) => {
                 // RecommendaResult[0].RecommendationType คือ วิธีแนะนำที่ผู้เรียนเลือก
 
                 var RecommendOutput = [];
-                var CourseTotol = ['Flow Control','Array','Pointers','String','Array'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
+                var CourseTotol = ['Introduction','Datatype','Operators','String','Function','Structure','Pointers','Flow Control','Array'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
                 var Course_Left = [];
                 var ArrRankStorage = []
                
-                var PathTicTacToe = ['Flow Control','Array','Pointers','String'] //เรียกจากง่ายไปยาก
-                var PathLibrary = ['Flow Control','Array','Pointers','String']
-                var PathRoshambo = ['Flow Control','Array','Pointers','String','Array','Array']
-                var PathCalendar = ['Flow Control','Pointers','String']
-                var PathCalculator = ['Flow Control','Array','Pointers','String','Array','Array','Array']
+                var PathTicTacToe = ['Introduction','Datatype','Operators','String','Function','Pointers','Flow Control','Array'] //เรียกจากง่ายไปยาก
+                var PathLibrary = ['Introduction','Datatype','Operators','String','Structure','Flow Control'] 
+                var PathRoshambo = ['Introduction','Datatype','Operators','String','Function','Structure','Flow Control'] 
+                var PathCalendar = ['Introduction','Datatype','Operators','String','Function','Array'] 
+                var PathCalculator = ['Introduction','Datatype','Operators','String','Flow Control'] 
                 //ตรวจสอบคอร์สที่ทำ กับ แต่ละ path
                 var b = new Set(CourseDoneSorted);
                 var DiffTicTacToe = [...PathTicTacToe].filter(x => !b.has(x));
