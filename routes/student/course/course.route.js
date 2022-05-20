@@ -101,7 +101,7 @@ router.get('/', async (req, res, next) => {
                       //หา path ที่น้อยที่สุด
                       var rankCourse_left = Course_Left.sort(function (a, b) {return a.length - b.length;});
                       // มี path น้อยสุดเพียง 1 path
-                      if(rankCourse_left[0].length != rankCourse_left[1].length){ RecommendOutput = rankCourse_left[0].CourseLEFT[0]}
+                      if(rankCourse_left[0].length != rankCourse_left[1].length){ RecommendOutput.push(rankCourse_left[0].CourseLEFT[0])}
                       // มี path เหมือกัน 2 path
                       else if (rankCourse_left[0].length === rankCourse_left[1].length){
                         ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0])
