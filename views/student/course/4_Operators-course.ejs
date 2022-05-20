@@ -49,7 +49,7 @@
             color:black;
         }
     </style>
-    <a id="Arithmetic"></a>
+    <a id="Operators"></a>
     <!-- MIDDLE 1 -->
     <div class="content">
         <div id = "content" class="container">
@@ -58,19 +58,37 @@
             <div class="accordion" id="accordionParentSyntax">
                 <!--   Token -->
                 <div id="collapseIntroduce" class="accordion-collapse collapse show" data-bs-parent="#accordionParentSyntax">
+                    <!--   ## -->
+                    <div class="box bg-light  mb-5 shadow" >
+                        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                            <h2 id = ''> Operators </h2>
+                            <br>ตัวดำเนินการเป็นสัญลักษณ์ที่บอกให้คอมไพเลอร์ดำเนินการเฉพาะฟังก์ชันทางคณิตศาสตร์หรือตรรกะ ภาษา C มี Operators มากมาย<br>
+                            <br>C  Operators ​มี​ทั้งหมด 6 ประเภทดังนี้<br>
+                            <br>1. Arithmetic Operators <br>
+                            <br>2. Relational Operators <br>
+                            <br>3. Logical ​Operators    <br>
+                            <br>4. ​Bitwise​ ​Operators <br>
+                            <br>5.​ ​Assignment​ ​Operators <br>
+                            <br>6. Misc​ ​Operators <br>
+                            <BR id="Arithmetic">
+                        </div>
+                    </div>
+            <br ></div>
+                <!--   Token -->
+                <div id="collapseIntroduce" class="accordion-collapse collapse show" data-bs-parent="#accordionParentSyntax">
                     <h2 >Arithmetic​ ​Operators </h2>
                     <!--   ## -->
                     <div class="box bg-light  mb-5 shadow" >
                         <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                            <h2 id = ''> Arithmetic​ ​Operators </h2>
-                            <br>ตารางต่อไปนี้แสดงตัวดำเนินการเลขคณิตทั้งหมดที่รองรับโดยภาษา C สมมติว่าตัวแปร A = 10 , B = 20<br>
+                            <h2 id = 'Introduce'> Arithmetic​ ​Operators </h2>
+                            <br>เป็นตัวดำเนินการคำนวณทางคณิตศาสตร์ เช่น การบวก การลบ การคูณ การหาร ฯลฯ บนค่าตัวเลข (ค่าคงที่และตัวแปร)<br>
                             <img src="https://drive.google.com/uc?id=1ncXRt7J5G9-eAKlTmhU7qjivubJBt8vL" width="500" height="300">
                             <br><br>
                             <br>ตัวอย่าง: <img src="https://drive.google.com/uc?id=1F2iYqp-Vys8_YiinDBOASn1cIC_VDhBR">
                             <br><br>
                             <br>Output: <img src="https://drive.google.com/uc?id=1d-HwqJrEWayQAFp4_eY_umgySGChRc89">
                             <br><br>
-                            <br>ตัวดำเนินการ+และ-คำนวณ*การบวก การลบ และการคูณตามลำดับที่คุณคาดไว้ ในการคำนวณปกติ9/4 = 2.25. อย่างไรก็ตาม ผลลัพธ์อยู่2ในโปรแกรม เป็นเพราะทั้งสองตัวแปรเอและ b เป็นจำนวนเต็ม ดังนั้นเอาต์พุตจึงเป็นจำนวนเต็มด้วย คอมไพเลอร์ละเลยคำที่อยู่ หลังจุดทศนิยมและแสดงคำ2ตอบแทน2.25ตัวดำเนินการโมดูโล%คำนวณส่วนที่เหลือ เมื่อa=9หารด้วยb=4เหลือ1. ตัว%ดำเนินการสามารถใช้ได้กับจำนวนเต็มเท่านั้น สมมติว่าa = 5.0, b = 2.0, c = 5และd = 2. จากนั้นในการเขียนโปรแกรม C<br>
+                            <br>ค่าการบวก ลบ และคูณ จะถูกแสดงค่าออกมาตามปกติ แต่ในส่วนของค่าที่ได้จากการหาร ค่าที่เป็นเศษจะถูกตัดออก เว้นแต่เราจะประกาศค่าตัวแปรให้แสดงทศนิยมได้ และสุดท้ายการ mod หรือ มอดุโล(%) จะเป็นการแสดงค่าเศษที่ได้จากการหาร เหมือนในตัวอย่าง เช่น 9/4 = 2 เศษ 1 โปรแกรมจะแสดงค่าออกมาเป็น 1<br>
                             <br><br>
                             <img src="https://drive.google.com/uc?id=1kq7EvZYQV51xMCKV3sqDnaq06wOslhYR">
                             <br><br>
@@ -86,7 +104,7 @@
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                         <h2 id = 'Introduce'> Relational​ ​Operators </h2>
-                        <br>ตัวดำเนินการเชิงสัมพันธ์ตรวจสอบความสัมพันธ์ระหว่างตัวถูกดำเนินการสองตัว ถ้าความสัมพันธ์เป็นจริง จะส่งกลับ 1; ถ้าความสัมพันธ์เป็นเท็จ จะส่งกลับค่า 0 ตัวดำเนินการเชิงสัมพันธ์ถูกใช้ในการตัดสินใจและวนรอบ<br>
+                        <br>เป็นตัวดำเนินการเชิงสัมพันธ์ตรวจสอบความสัมพันธ์ระหว่างตัวแปรสองตัว เมื่อความสัมพันธ์เป็นจริงค่าจะเป็น 1 ถ้าความสัมพันธ์เป็นเท็จค่าจะเป็น 0 ตัวดำเนินการเชิงสัมพันธ์ถูกใช้ในโปรแกรมที่มีการเขียนเงื่อนไขหรือการทำซ้ำ<br>
                         <img src="https://drive.google.com/uc?id=10IoPURrmpxVlt8HOQa410ZKNL_3BVilS" width="600" height="300">
                         <br>ตัวอย่าง Relational Operators<br>
                         <img src="https://drive.google.com/uc?id=1ViXANGgriLru1-2DviQA8LMOLSkJ0MKj">
@@ -105,7 +123,7 @@
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                         <h2 id = 'Introduce'> Logical Operators </h2>
-                        <br>นิพจน์ที่มีตัวดำเนินการเชิงตรรกะส่งกลับค่า 0 หรือ 1 ขึ้นอยู่กับว่านิพจน์ให้ผลลัพธ์เป็นจริงหรือเท็จ ตัวดำเนินการเชิงตรรกะมักใช้ในการตัดสินใจในการเขียนโปรแกรม C <br>
+                        <br>นิพจน์ที่มีตัวดำเนินการเชิงตรรกะส่งกลับค่า 0 หรือ 1 ขึ้นอยู่กับว่านิพจน์ให้ผลลัพธ์เป็นจริงหรือเท็จ ตัวดำเนินการเชิงตรรกะมักใช้ในโปรแกรมที่มีการสร้างเงื่อนไข<br>
                         <img src="https://drive.google.com/uc?id=1VNUo63PcOIhe_XF8KsIT1sKmEESbynnr">
                         <br>ตัวอย่าง Logical Operators<br>
                         <img src="https://drive.google.com/uc?id=12AdU1DqHpSDukE8-3frUd1eiGzNZ8yrg">
@@ -124,8 +142,8 @@
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                         <h2 id = 'Introduce'> Bitwise​ ​Operators </h2>
-                        <br>ตัวดำเนินการ Bitwise ทำงานบนบิตและดำเนินการแบบทีละบิต ตารางความจริง สำหรับ &, |, และ ^ มีดังต่อไปนี้<br>
-                        <br>ระหว่างการคำนวณ การดำเนินการทางคณิตศาสตร์ เช่น การบวก การลบ การคูณ การหาร ฯลฯ จะถูกแปลงเป็นระดับบิต ซึ่งทำให้การประมวลผลเร็วขึ้นและประหยัดพลังงาน ตัวดำเนินการระดับบิตใช้ในการเขียนโปรแกรม C เพื่อดำเนินการระดับบิต<br>
+                        <br>ตัวดำเนินการ Bitwise ทำงานบน Bit และดำเนินการแบบทีละbit ตารางความจริง สำหรับ &, |, และ ^ มีดังต่อไปนี้<br>
+                        <br>ระหว่างการคำนวณ เช่น การบวก การลบ การคูณ การหาร ฯลฯ จะถูกแปลงเป็นระดับbit ซึ่งทำให้การประมวลผลเร็วขึ้นและประหยัดพลังงาน Bitwise​ ​Operators ใช้ในการเขียนโปรแกรม C เพื่อดำเนินการระดับบิต<br>
                         <img src="https://drive.google.com/uc?id=1_AGOnZpKzUv5v5hNPajWnEx9MLHvZax4">
                         <br><br>
                         <iframe width="480" height="320" src="https://www.youtube.com/embed/jlQmeyce65Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -140,7 +158,7 @@
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                         <h2 id = 'Introduce'> Assignment​ ​Operators </h2>
-                        <br>ตัวดำเนินการกำหนดใช้สำหรับกำหนดค่าให้กับตัวแปร ตัวดำเนินการมอบหมายที่พบบ่อยที่สุดคือ =<br>
+                        <br>ตัวดำเนินการกำหนดใช้สำหรับกำหนดค่าให้กับตัวแปร Assignment​ ​Operators ที่พบบ่อยที่สุดคือ =<br>
                         <img src="https://drive.google.com/uc?id=1-eGQxbISKJaoFGGNYkBMMDF55odQsMTW">
                         <br>ตัวอย่าง Assignment​ ​Operators<br>
                         <img src="https://drive.google.com/uc?id=1C__5fA1-KgZ3LVZmmu7psdJRHHbC1JMf">
@@ -159,7 +177,7 @@
                 <div class="box bg-light  mb-5 shadow" >
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                         <h2 id = 'Introduce'> Misc Operators ↦ sizeof & ternary </h2>
-                        <br>นอกจากตัวดำเนินการที่กล่าวถึงข้างต้น ยังมีตัวดำเนินการที่สำคัญอื่น ๆ อีกสองสามตัวรวมถึงsizeof และ ? รองรับโดยภาษาซี<br>
+                        <br>นอกจากตัวดำเนินการที่กล่าวถึงข้างต้น ยังมีตัวดำเนินการที่สำคัญอื่น ๆ อีกสองสามตัวรวมถึงsizeof และ ? :รองรับโดยภาษาซี<br>
                         <img src="https://drive.google.com/uc?id=17U6Ay_6ZLaR4UOETMZbRKES5FoxvC0hy" width="750" height="150">
                         <br>C program code with misc operators<br>
                         <img src="https://drive.google.com/uc?id=1xQMObCfyuhB-CrrZ4lhP614WUq8JBpiU">
