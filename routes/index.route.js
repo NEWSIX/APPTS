@@ -697,7 +697,7 @@ router.get('/', async (req, res, next) => {
                           //หา path ที่น้อยที่สุด
                           var rankCourse_left = Course_Left.sort(function (a, b) {return a.length - b.length;});
                           // มี path น้อยสุดเพียง 1 path
-                          if(rankCourse_left[0].length != rankCourse_left[1].length){ RecommendOutput = rankCourse_left[0].CourseLEFT[0]}
+                          if(rankCourse_left[0].length != rankCourse_left[1].length){ RecommendOutput.push(rankCourse_left[0].CourseLEFT[0]);}
                           // มี path เหมือกัน 2 path
                           else if (rankCourse_left[0].length === rankCourse_left[1].length){
                             ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0])
@@ -729,7 +729,7 @@ router.get('/', async (req, res, next) => {
                         else if(RecommendaResult[0].RecommendationType === "Calendar"   ){ RecommendOutput = DiffCalendar   }
                         else if(RecommendaResult[0].RecommendationType === "Calculator" ){ RecommendOutput = DiffCalculator }
                         if(Object.keys(RecommendOutput).length === 0){  RecommendOutput = "โปรดเลือกการแนะนำ" } //ถ้า คอร์ส ใน path หมดแล้ว
-                        else{ RecommendOutput = RecommendOutput[0]  } //เลือกตัวแรกของ array = ตัวที่ง่ายที่สุด
+                        else{RecommendOutput = RecommendOutput[0]}    //เลือกตัวแรกของ array = ตัวที่ง่ายที่สุด
                       }
                       else {RecommendOutput = "สิ้นสุดการแนะนำ"} //ไม่เหลือ node (คอร์ส หรือ บทเรียน) ให้แนะนำ
                     }

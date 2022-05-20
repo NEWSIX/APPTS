@@ -248,18 +248,21 @@
                             </a></li>
                         </ul>
                     </div>
-                    
-            <!-- recommendation-->
-            <thead>
-                <div class="card ">
-                    <div class="card-header">
-                        
-                        <i class="fa fa-fire" style="font-size: 25px;;align-items: center; " ></i><b> แนะนำ</b>
-                        <div class="card-body">
-                            <h6 class="card-title"><%= RecommendaResult[0].RecommendCourse %></h6>
-                        </div>
-                    </div>
-            </thead>
+
+                    <% if (Object.keys(RecommendaResult).length !== 0 && RecommendaResult[0].RecommendCourse != "null"  ) { %>
+                        <!-- recommendation-->
+                    <thead>
+                        <div class="card ">
+                            <div class="card-header">
+                                
+                                <i class="fa fa-fire" style="font-size: 25px;;align-items: center; " ></i><b> แนะนำ</b>
+                                <div class="card-body">
+                                    <h6 class="card-title"><%= RecommendaResult[0].RecommendCourse %></h6>
+                                </div>
+                            </div>
+                    </thead>
+                            <% } else { %>
+                            <% } %>   
         </div>
     </div>
 </main>
