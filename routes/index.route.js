@@ -412,20 +412,20 @@ router.get('/', async (req, res, next) => {
                     ArrayDone = "YES";
                   }
                   /** */
-                  if (StudentAnswer[i].contentName ==='TicTacToe') {   
-                    TicTacToeDone = "YES";
+                  if (StudentAnswer[i].contentName ==='TicTacToe' && StudentAnswer[i].scoreTeacher != undefined) {   
+                    TicTacToeDone = StudentAnswer[i].scoreTeacher
                   }
-                  if (StudentAnswer[i].contentName ==='LibrarySystem') {   
-                    Library_SystemDone = "YES";
+                  if (StudentAnswer[i].contentName ==='LibrarySystem'&& StudentAnswer[i].scoreTeacher != undefined) {   
+                    Library_SystemDone = StudentAnswer[i].scoreTeacher
                   }
-                  if (StudentAnswer[i].contentName ==='Roshambo') {   
-                    RoshamboDone = "YES";
+                  if (StudentAnswer[i].contentName ==='Roshambo'&& StudentAnswer[i].scoreTeacher != undefined) {   
+                    RoshamboDone = StudentAnswer[i].scoreTeacher
                   }
-                  if (StudentAnswer[i].contentName ==='Calculator') {   
-                    CalendarDone = "YES";
+                  if (StudentAnswer[i].contentName ==='Calculator' && StudentAnswer[i].scoreTeacher != undefined) {   
+                    CalendarDone = StudentAnswer[i].scoreTeacher
                   }
-                  if (StudentAnswer[i].contentName ==='Calendar') {   
-                    CalculatorDone = "YES";
+                  if (StudentAnswer[i].contentName ==='Calendar' && StudentAnswer[i].scoreTeacher != undefined) {   
+                      CalculatorDone = StudentAnswer[i].scoreTeacher
                   }
 
                 }
@@ -577,43 +577,6 @@ router.get('/', async (req, res, next) => {
                 TracePercent = (TracePercent/PercentTotal)*100;
                 ExplainPercent = (ExplainPercent/PercentTotal)*100;
                 WritePercent = (WritePercent/PercentTotal)*100;
-
-                // var checksumper = BasicPercent+TracePercent+ExplainPercent+WritePercent
-                // console.log("\nCHECKSUM : " ,checksumper); //100
-                
-                if(IntroductionDone === 1){
-                  TicTacToeDone = TicTacToeDone+1 ,
-                  Library_SystemDone = Library_SystemDone+1 , 
-                  RoshamboDone = RoshamboDone+1 ,
-                  CalendarDone = CalendarDone+1 , 
-                  CalculatorDone = CalculatorDone+1;
-                }
-                if(StringDone === 1){
-                  Library_SystemDone = Library_SystemDone+1 , 
-                  RoshamboDone = RoshamboDone+1,
-                  CalculatorDone = CalculatorDone+1
-                }
-                if(FlowControlDone === 1){
-                  TicTacToeDone = TicTacToeDone+1 ,
-                  Library_SystemDone = Library_SystemDone+1 , 
-                  RoshamboDone = RoshamboDone+1 ,
-                  CalendarDone = CalendarDone+1 , 
-                  CalculatorDone = CalculatorDone+1;
-                }
-                if(ArrayDone === 1){
-                  TicTacToeDone = TicTacToeDone+1 
-                }
-                if(PointersDone === 1){
-                  TicTacToeDone = TicTacToeDone+1 
-                }
-
-
-                var TicTacToePercent = Math.round((TicTacToeDone/TicTacToe)*100)
-                var Library_SystemPercent = Math.round((Library_SystemDone/Library_System)*100)
-                var RoshamboPercent = Math.round((RoshamboDone/Roshambo)*100)
-                var CalendarPercent = Math.round((CalendarDone/Calendar)*100)
-                var CalculatorPercent = Math.round((CalculatorDone/Calculator)*100)
-
                 
                 //////********RECOMMENDATION*********** */
 
@@ -739,7 +702,7 @@ router.get('/', async (req, res, next) => {
                       else {RecommendOutput = "สิ้นสุดการแนะนำ"} //ไม่เหลือ node (คอร์ส หรือ บทเรียน) ให้แนะนำ
                       
                     }
-
+                    
                       //////********End RECOMMENDATION System *********** */
                     MongoClient.connect(url, function(err, db) {
                       if (err) throw err;
@@ -752,6 +715,56 @@ router.get('/', async (req, res, next) => {
                       });
                     });
                       //////********END RECOMMENDATION*********** */
+
+
+
+                    //***PROJECT UNLOCK */
+                    var TicTacToePercent = Math.round(((PathTicTacToe.length-DiffTicTacToe.length)/PathTicTacToe.length)*100)
+                    var Library_SystemPercent = Math.round(((PathLibrary.length-DiffLibrary.length)/PathLibrary.length)*100)
+                    var RoshamboPercent = Math.round(((PathRoshambo.length-DiffRoshambo.length)/PathRoshambo.length)*100)
+                    var CalendarPercent = Math.round(((PathCalendar.length-DiffCalendar.length)/PathCalendar.length)*100)
+                    var CalculatorPercent = Math.round(((PathCalculator.length-DiffCalculator.length)/PathCalculator.length)*100)
+
+                    MongoClient.connect(url, function(err, db) {
+                      if (err) throw err;
+                      var dbo = db.db(mydatabase);
+                      var query = { email:person.email };
+                      dbo.collection("StudentProject").find(query).toArray(function(err, StudentProjectresult) {
+                        if (err) throw err;
+
+
+                        if(Object.keys(StudentProjectresult).length === 0){
+                          MongoClient.connect(url, function(err, db) {
+                            if (err) throw err;
+                            var dbo = db.db(mydatabase);
+                            var myobj = { email:person.email,TicTacToePercent:TicTacToePercent, LibraryPercent:Library_SystemPercent,RoshamboPercent:RoshamboPercent,CalendarPercent:CalendarPercent,CalculatorPercent:CalculatorPercent};
+                            dbo.collection("StudentProject").insertOne(myobj, function(err, res) {
+                              if (err) throw err;
+                              db.close();
+                            });
+                          });
+
+                        }
+                        else{
+                          MongoClient.connect(url, function(err, db) {
+                            if (err) throw err;
+                            var dbo = db.db(mydatabase);
+                            var myquery = { email: person.email };
+                            var newvalues = { $set: {TicTacToePercent:TicTacToePercent, LibraryPercent:Library_SystemPercent,RoshamboPercent:RoshamboPercent,CalendarPercent:CalendarPercent,CalculatorPercent:CalculatorPercent} };
+                            dbo.collection("StudentProject").updateOne(myquery, newvalues, function(err, res) {
+                              if (err) throw err;
+                              db.close();
+                            });
+                          });
+
+                        }
+                      });
+                    });
+                     //***End Of PROJECT UNLOCK */
+
+
+                    
+
 
                     res.render('index/index_student', { person ,result,RecommendaResult,
                       BasicPercent,TracePercent,ExplainPercent,WritePercent,

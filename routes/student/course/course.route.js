@@ -145,7 +145,8 @@ router.get('/', async (req, res, next) => {
                       
                     }
 
-                      //////********End RECOMMENDATION System *********** */
+
+                    //////********End RECOMMENDATION System *********** */
                 MongoClient.connect(url, function(err, db) {
                   if (err) throw err;
                   var dbo = db.db(mydatabase);
@@ -157,6 +158,50 @@ router.get('/', async (req, res, next) => {
                   });
                 });
                   //////********END RECOMMENDATION*********** */
+
+                  //***PROJECT UNLOCK */
+                  var TicTacToePercent = Math.round(((PathTicTacToe.length-DiffTicTacToe.length)/PathTicTacToe.length)*100)
+                  var Library_SystemPercent = Math.round(((PathLibrary.length-DiffLibrary.length)/PathLibrary.length)*100)
+                  var RoshamboPercent = Math.round(((PathRoshambo.length-DiffRoshambo.length)/PathRoshambo.length)*100)
+                  var CalendarPercent = Math.round(((PathCalendar.length-DiffCalendar.length)/PathCalendar.length)*100)
+                  var CalculatorPercent = Math.round(((PathCalculator.length-DiffCalculator.length)/PathCalculator.length)*100)
+
+                  MongoClient.connect(url, function(err, db) {
+                    if (err) throw err;
+                    var dbo = db.db(mydatabase);
+                    var query = { email:person.email };
+                    dbo.collection("StudentProject").find(query).toArray(function(err, StudentProjectresult) {
+                      if (err) throw err;
+
+
+                      if(Object.keys(StudentProjectresult).length === 0){
+                        MongoClient.connect(url, function(err, db) {
+                          if (err) throw err;
+                          var dbo = db.db(mydatabase);
+                          var myobj = { email:person.email,TicTacToePercent:TicTacToePercent, LibraryPercent:Library_SystemPercent,RoshamboPercent:RoshamboPercent,CalendarPercent:CalendarPercent,CalculatorPercent:CalculatorPercent};
+                          dbo.collection("StudentProject").insertOne(myobj, function(err, res) {
+                            if (err) throw err;
+                            db.close();
+                          });
+                        });
+
+                      }
+                      else{
+                        MongoClient.connect(url, function(err, db) {
+                          if (err) throw err;
+                          var dbo = db.db(mydatabase);
+                          var myquery = { email: person.email };
+                          var newvalues = { $set: {TicTacToePercent:TicTacToePercent, LibraryPercent:Library_SystemPercent,RoshamboPercent:RoshamboPercent,CalendarPercent:CalendarPercent,CalculatorPercent:CalculatorPercent} };
+                          dbo.collection("StudentProject").updateOne(myquery, newvalues, function(err, res) {
+                            if (err) throw err;
+                            db.close();
+                          });
+                        });
+
+                      }
+                    });
+                  });
+                   //***End Of PROJECT UNLOCK */
                 
 
                 res.render('student/course/course_main', { person ,StudentAnswer,RecommendaResult});
