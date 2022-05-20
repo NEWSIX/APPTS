@@ -696,42 +696,48 @@ router.get('/', async (req, res, next) => {
                           if(DiffCalculator.length != 0){Course_Left.push({CourseName:"Calculator" ,length:DiffCalculator.length, CourseLEFT :DiffCalculator})}
                           //หา path ที่น้อยที่สุด
                           var rankCourse_left = Course_Left.sort(function (a, b) {return a.length - b.length;});
-                          // มี path น้อยสุดเพียง 1 path
-                          if(rankCourse_left[0].length != rankCourse_left[1].length){ RecommendOutput.push(rankCourse_left[0].CourseLEFT[0]);}
-                          // มี path เหมือกัน 2 path
-                          else if (rankCourse_left[0].length === rankCourse_left[1].length){
-                            ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0])
-                            let uniqueArr = [...new Set(ArrRankStorage)];
-                            const intersection = uniqueArr.filter(element => CourseTotol.includes(element));
-                            RecommendOutput = intersection;
+                          if(rankCourse_left[1] === undefined){ //ตรวจสอบค่าเปรียบเทียบว่ามีให้เปรียบเทียบไหม
+                            // มี path น้อยสุดเพียง 1 path
+                            RecommendOutput.push(rankCourse_left[0].CourseLEFT[0]);
                           }
-                          // มี path เหมือกัน 3 path
-                          else if (rankCourse_left[0].length === rankCourse_left[1].length ||rankCourse_left[0].length === rankCourse_left[2].length ){
-                            ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0],rankCourse_left[2].CourseLEFT[0])
-                            let uniqueArr = [...new Set(ArrRankStorage)];
-                            const intersection = uniqueArr.filter(element => CourseTotol.includes(element));
-                            RecommendOutput = intersection;
+                          else{
+                            // มี path เหมือกัน 2 path
+                            if (Object.keys(rankCourse_left[0]).length === Object.keys(rankCourse_left[1]).length){
+                              ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0])
+                              let uniqueArr = [...new Set(ArrRankStorage)];
+                              const intersection = uniqueArr.filter(element => CourseTotol.includes(element));
+                              RecommendOutput = intersection;
+                              }
+                              // มี path เหมือกัน 3 path
+                              else if (Object.keys(rankCourse_left[0]).length === Object.keys(rankCourse_left[1]).length ||Object.keys(rankCourse_left[0]).length === Object.keys(rankCourse_left[2]).length ){
+                                ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0],rankCourse_left[2].CourseLEFT[0])
+                                let uniqueArr = [...new Set(ArrRankStorage)];
+                                const intersection = uniqueArr.filter(element => CourseTotol.includes(element));
+                                RecommendOutput = intersection;
+                              }
+                              // มี path เหมือกัน 4 path
+                              else if (Object.keys(rankCourse_left[0]).length === Object.keys(rankCourse_left[1]).length ||Object.keys(rankCourse_left[0]).length === Object.keys(rankCourse_left[2]).length ||Object.keys(rankCourse_left[0]).length === Object.keys(rankCourse_left[3]).length ){
+                                ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0],rankCourse_left[2].CourseLEFT[0],rankCourse_left[3].CourseLEFT[0])
+                                let uniqueArr = [...new Set(ArrRankStorage)];
+                                const intersection = uniqueArr.filter(element => CourseTotol.includes(element));
+                                RecommendOutput = intersection;
+                              }
+                              // มี path เหมือกัน 5 path หรือ เท่ากันทั้งหมด จะแนะนำ course ที่ไม่ได้่ทำที่ง่ายที่สุด
+                              else{RecommendOutput = DiffTotal}
                           }
-                          // มี path เหมือกัน 4 path
-                          else if (rankCourse_left[0].length === rankCourse_left[1].length ||rankCourse_left[0].length === rankCourse_left[2].length ||rankCourse_left[0].length === rankCourse_left[3].length ){
-                            ArrRankStorage.push(rankCourse_left[0].CourseLEFT[0],rankCourse_left[1].CourseLEFT[0],rankCourse_left[2].CourseLEFT[0],rankCourse_left[3].CourseLEFT[0])
-                            let uniqueArr = [...new Set(ArrRankStorage)];
-                            const intersection = uniqueArr.filter(element => CourseTotol.includes(element));
-                            RecommendOutput = intersection;
-                          }
-                          // มี path เหมือกัน 5 path หรือ เท่ากันทั้งหมด จะแนะนำ course ที่ไม่ได้่ทำที่ง่ายที่สุด
-                          else{RecommendOutput = DiffTotal}
                         }
-                        //***RECOMMEND : PROJECT ถ้าเลือก path มาก็จะแนะนำ คอร์ส ที่ง่ายที่สุด
-                        else if(RecommendaResult[0].RecommendationType === "TicTacToe"  ){ RecommendOutput = DiffTicTacToe  }
-                        else if(RecommendaResult[0].RecommendationType === "Library"    ){ RecommendOutput = DiffLibrary    }
-                        else if(RecommendaResult[0].RecommendationType === "Roshambo"   ){ RecommendOutput = DiffRoshambo   }
-                        else if(RecommendaResult[0].RecommendationType === "Calendar"   ){ RecommendOutput = DiffCalendar   }
-                        else if(RecommendaResult[0].RecommendationType === "Calculator" ){ RecommendOutput = DiffCalculator }
-                        if(Object.keys(RecommendOutput).length === 0){  RecommendOutput = "โปรดเลือกการแนะนำ" } //ถ้า คอร์ส ใน path หมดแล้ว
-                        else{RecommendOutput = RecommendOutput[0]}    //เลือกตัวแรกของ array = ตัวที่ง่ายที่สุด
+                          //***RECOMMEND : PROJECT ถ้าเลือก path มาก็จะแนะนำ คอร์ส ที่ง่ายที่สุด
+                          else if(RecommendaResult[0].RecommendationType === "TicTacToe"  ){ RecommendOutput = DiffTicTacToe  }
+                          else if(RecommendaResult[0].RecommendationType === "Library"    ){ RecommendOutput = DiffLibrary    }
+                          else if(RecommendaResult[0].RecommendationType === "Roshambo"   ){ RecommendOutput = DiffRoshambo   }
+                          else if(RecommendaResult[0].RecommendationType === "Calendar"   ){ RecommendOutput = DiffCalendar   }
+                          else if(RecommendaResult[0].RecommendationType === "Calculator" ){ RecommendOutput = DiffCalculator }
+                          if(Object.keys(RecommendOutput).length === 0){  RecommendOutput = "โปรดเลือกการแนะนำ" } //ถ้า คอร์ส ใน path หมดแล้ว
+                          else{RecommendOutput = RecommendOutput[0]}    //เลือกตัวแรกของ array = ตัวที่ง่ายที่สุด
+                        
                       }
                       else {RecommendOutput = "สิ้นสุดการแนะนำ"} //ไม่เหลือ node (คอร์ส หรือ บทเรียน) ให้แนะนำ
+                      
                     }
 
                       //////********End RECOMMENDATION System *********** */
