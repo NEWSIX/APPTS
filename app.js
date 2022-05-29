@@ -158,10 +158,10 @@ app.use('/course-Array',
   ensureStudent,
   require('./routes/student/course/9_Array-course.route')
 );
-app.use('/course-File_Operation',
+app.use('/course-InputOutput',
   ensureLoggedIn({ redirectTo: '/auth/login' }),
   ensureStudent,
-  require('./routes/student/course/10_FileOperation-course.route')
+  require('./routes/student/course/10_InputOutput-course.route')
 );
 /** Quiz  */
 app.use('/course-Introduction-quiz',
@@ -208,6 +208,11 @@ app.use('/course-Array-quiz',
   ensureLoggedIn({ redirectTo: '/auth/login' }),
   ensureStudent,
   require('./routes/student/quiz/9_Array-quiz.route')
+);
+app.use('/course-InputOutput-quiz',
+  ensureLoggedIn({ redirectTo: '/auth/login' }),
+  ensureStudent,
+  require('./routes/student/quiz/10_InputOutput-quiz.route')
 );
 
 // ****** teacher ******** // 
