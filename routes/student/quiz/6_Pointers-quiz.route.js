@@ -56,10 +56,10 @@ router.post('/submit', async (req, res, next) => {
   var timetodo = 0;
 
   /** chekc score */
-  if(choice1 === 'B'){
+  if(choice1 === 'D'){
     scoreLV1 = 10;
   }
-  if(choice2 === 'B'){
+  if(choice2 === 'A'){
     scoreLV2 = 20;
   }
   if(choice3 === 'right'){

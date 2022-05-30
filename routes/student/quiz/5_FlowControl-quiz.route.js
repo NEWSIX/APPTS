@@ -57,7 +57,7 @@ router.post('/submit', async (req, res, next) => {
   if(choice1 === 'B'){
     scoreLV1 = 10;
   }
-  if(choice2 === 'B'){
+  if(choice2 === 'C'){
     scoreLV2 = 20;
   }
   if(choice3 === 'right'){
