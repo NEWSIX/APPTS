@@ -379,7 +379,7 @@ router.get('/', async (req, res, next) => {
               dbo.collection("StudentAnswer").find(query).toArray(function(err, StudentAnswer) {
                 if (err) throw err;
 
-                var IntroductionDone = "NO" ,StringDone = "NO" ,OperatorsDone = "NO" ,DatatypeDone = "NO",FlowControlDone = "NO",PointersDone = "NO",FunctionDone = "NO",StructureDone = "NO",ArrayDone = "NO";
+                var IntroductionDone = "NO" ,StringDone = "NO" ,OperatorsDone = "NO" ,DatatypeDone = "NO",FlowControlDone = "NO",PointersDone = "NO",FunctionDone = "NO",StructureDone = "NO",ArrayDone = "NO" ,InputOutputDone = "NO" ;
                 var TicTacToeDone = "NO" , Library_SystemDone = "NO" , RoshamboDone = "NO" ,CalendarDone = "NO" , CalculatorDone = "NO";
       
                 for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {
@@ -410,6 +410,9 @@ router.get('/', async (req, res, next) => {
                   }
                   if(StudentAnswer[i].contentName ==='Array-Quiz'){
                     ArrayDone = "YES";
+                  }
+                  if(StudentAnswer[i].contentName ==='InputOutput-Quiz'){
+                    InputOutputDone = "YES";
                   }
                   /** */
                   if (StudentAnswer[i].contentName ==='TicTacToe' && StudentAnswer[i].scoreTeacher != undefined) {   
@@ -455,7 +458,8 @@ router.get('/', async (req, res, next) => {
                             Pointers:PointersDone,
                             Function:FunctionDone,
                             Structure:StructureDone,
-                            Array:ArrayDone
+                            Array:ArrayDone,
+                            InputOutput:InputOutputDone
                           } };
                           dbo.collection("StudentClass").updateOne(myquery, newvalues, function(err, res) {
                             if (err) throw err;
@@ -489,9 +493,8 @@ router.get('/', async (req, res, next) => {
                 var FunctionScoreLV1=0,FunctionScoreLV2=0,FunctionScoreLV3=0,FunctionScoreLV4=0;
                 var StructureScoreLV1=0,StructureScoreLV2=0,StructureScoreLV3=0,StructureScoreLV4=0;
                 var ArrayLV1=0,ArrayLV2=0,ArrayLV3=0,ArrayLV4=0;
-                var IntroductionDone = 0 ,StringDone = 0 ,OperatorsDone = 0 ,DatatypeDone = 0,FlowControlDone = 0,PointersDone = 0,FunctionDone = 0,StructureDone = 0,ArrayDone = 0;
-                var TicTacToe = 5 , Library_System = 3 , Roshambo = 4 ,Calendar = 3 , Calculator = 3;
-                var TicTacToeDone = 0 , Library_SystemDone = 0 , RoshamboDone = 0 ,CalendarDone = 0 , CalculatorDone = 0;
+                var InputOutputLV1=0,InputOutputLV2=0,InputOutputLV3=0,InputOutputLV4=0;
+                var IntroductionDone = 0 ,StringDone = 0 ,OperatorsDone = 0 ,DatatypeDone = 0,FlowControlDone = 0,PointersDone = 0,FunctionDone = 0,StructureDone = 0,ArrayDone = 0 ,InputOutputDone = 0;
         
         
                 for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {
@@ -558,14 +561,21 @@ router.get('/', async (req, res, next) => {
                         ArrayLV4 = parseInt(StudentAnswer[i].scoreTeacher);
                         ArrayDone = 1;
                     }
+                    if (StudentAnswer[i].contentName ==='InputOutput-Quiz') {   
+                      InputOutputLV1 = StudentAnswer[i].scoreLV1;
+                      InputOutputLV2 = StudentAnswer[i].scoreLV2;
+                      InputOutputLV3 = StudentAnswer[i].scoreLV3;
+                      InputOutputLV4 = parseInt(StudentAnswer[i].scoreTeacher);
+                      InputOutputDone = 1;
+                  }
                 }
 
                 /*** SUM */
-                var BasicScore = IntroductionScoreLV1+StringScoreLV1+DatatypeScoreLV1+OperatorsScoreLV1+FlowControlScoreLV1+PointersScoreLV1+FunctionScoreLV1+StructureScoreLV1+ArrayLV1 ;
-                var TraceScore = IntroductionScoreLV2+StringScoreLV2+DatatypeScoreLV2+OperatorsScoreLV2+FlowControlScoreLV2+PointersScoreLV2+FunctionScoreLV2+StructureScoreLV2+ArrayLV2 ;
-                var ExplainScore = IntroductionScoreLV3+StringScoreLV3+DatatypeScoreLV3+OperatorsScoreLV3+FlowControlScoreLV3+PointersScoreLV3+FunctionScoreLV3+StructureScoreLV3+ArrayLV3 ;
-                var WriteScore = IntroductionScoreLV4+StringScoreLV4+DatatypeScoreLV4+OperatorsScoreLV4+FlowControlScoreLV4+PointersScoreLV4+FunctionScoreLV4+StructureScoreLV4+ArrayLV4 ;
-                var CourseDone = IntroductionDone+StringDone+DatatypeDone+OperatorsDone+FlowControlDone+PointersDone+FunctionDone+StructureDone+ArrayDone;
+                var BasicScore = IntroductionScoreLV1+StringScoreLV1+DatatypeScoreLV1+OperatorsScoreLV1+FlowControlScoreLV1+PointersScoreLV1+FunctionScoreLV1+StructureScoreLV1+ArrayLV1+InputOutputLV1 ;
+                var TraceScore = IntroductionScoreLV2+StringScoreLV2+DatatypeScoreLV2+OperatorsScoreLV2+FlowControlScoreLV2+PointersScoreLV2+FunctionScoreLV2+StructureScoreLV2+ArrayLV2+InputOutputLV2 ;
+                var ExplainScore = IntroductionScoreLV3+StringScoreLV3+DatatypeScoreLV3+OperatorsScoreLV3+FlowControlScoreLV3+PointersScoreLV3+FunctionScoreLV3+StructureScoreLV3+ArrayLV3+InputOutputLV3 ;
+                var WriteScore = IntroductionScoreLV4+StringScoreLV4+DatatypeScoreLV4+OperatorsScoreLV4+FlowControlScoreLV4+PointersScoreLV4+FunctionScoreLV4+StructureScoreLV4+ArrayLV4+InputOutputLV4 ;
+                var CourseDone = IntroductionDone+StringDone+DatatypeDone+OperatorsDone+FlowControlDone+PointersDone+FunctionDone+StructureDone+ArrayDone+InputOutputDone;
                 /*** Percent */
                 var BasicPercent =  Math.round(((BasicScore/(CourseDone*10))*100));
                 var TracePercent= Math.round(((TraceScore/(CourseDone*20))*100))
@@ -590,26 +600,17 @@ router.get('/', async (req, res, next) => {
                     //หาคอร์สที่เรียนไป แล้วกรองไม้ให้ซ้ำกัน
                     var ArrCourseDone = [];
                     for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {        //value คือ ความยาก ง่าย - 1 ยาก - 9
-                      if (StudentAnswer[i].contentName ==='Introduction-Quiz') {ArrCourseDone.push({key:"Introduction",value:1});} 
-                      if (StudentAnswer[i].contentName ==='String-Quiz') {ArrCourseDone.push({key:"String",value:4});}
-                      if (StudentAnswer[i].contentName ==='Datatype-Quiz') {ArrCourseDone.push({key:"Datatype",value:2});} 
-                      if (StudentAnswer[i].contentName ==='Operators-Quiz') { ArrCourseDone.push({key:"Operators",value:3});}
-                      if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {ArrCourseDone.push({key:"Flow Control",value:8});}
-                      if (StudentAnswer[i].contentName ==='Pointers-Quiz') {ArrCourseDone.push({key:"Pointers",value:7});}
-                      if (StudentAnswer[i].contentName ==='Function-Quiz') {ArrCourseDone.push({key:"Function",value:5});}
-                      if (StudentAnswer[i].contentName ==='Structure-Quiz') {ArrCourseDone.push({key:"Structure",value:6});}
-                      if (StudentAnswer[i].contentName ==='Array-Quiz') {ArrCourseDone.push({key:"Array",value:9});}
-                      if (StudentAnswer[i].contentName ==='Pre-test') { 
-                        if(StudentAnswer[i].scoreC1 === 3){ArrCourseDone.push({key:"Introduction",value:1});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC8 === 3){ArrCourseDone.push({key:"String",value:4});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC2 === 3){ArrCourseDone.push({key:"Datatype",value:2});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC3 === 3){ArrCourseDone.push({key:"Operators",value:3});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC4 === 3){ArrCourseDone.push({key:"Flow Control",value:8});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC7 === 3){ArrCourseDone.push({key:"Pointers",value:7});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC10 === 3){ArrCourseDone.push({key:"Function",value:5});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC9 === 3){ArrCourseDone.push({key:"Structure",value:6});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC5 === 3){ArrCourseDone.push({key:"Array",value:9});} //pre test ทำได้ 3 ข้อ 
-                        }  
+                      var LV1 = StudentAnswer[i].scoreLV1 , LV2 = StudentAnswer[i].scoreLV2 , LV3 = StudentAnswer[i].scoreLV3;
+                      if (StudentAnswer[i].contentName ==='Introduction-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Introduction",value:1});} 
+                      if (StudentAnswer[i].contentName ==='String-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"String",value:4});}
+                      if (StudentAnswer[i].contentName ==='Datatype-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Datatype",value:2});} 
+                      if (StudentAnswer[i].contentName ==='Operators-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) { ArrCourseDone.push({key:"Operators",value:3});}
+                      if (StudentAnswer[i].contentName ==='FlowControl-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Flow Control",value:8});}
+                      if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:7});}
+                      if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:5});}
+                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:6});}
+                      if (StudentAnswer[i].contentName ==='Array-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Array",value:9});}
+                      if (StudentAnswer[i].contentName ==='InputOutput-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"InputOutput",value:10});}
                     }
                    
                     let CourseDonedictionary = Object.assign({}, ...ArrCourseDone.map((x) => ({[x.key]: x.value}))); //Array to dictionary
@@ -628,7 +629,7 @@ router.get('/', async (req, res, next) => {
                     // RecommendaResult[0].RecommendationType คือ วิธีแนะนำที่ผู้เรียนเลือก
  
                     var RecommendOutput = [];
-                    var CourseTotol = ['Introduction','Datatype','Operators','String','Function','Structure','Pointers','Flow Control','Array'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
+                    var CourseTotol = ['Introduction','Datatype','Operators','String','Function','Structure','Pointers','Flow Control','Array','InputOutput'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
                     var Course_Left = [];
                     var ArrRankStorage = []
                     

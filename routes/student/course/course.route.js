@@ -14,11 +14,12 @@ router.get('/', async (req, res, next) => {
         var dbo = db.db(mydatabase);
         var query = { email: person.email };
         dbo.collection("StudentAnswer").find(query).toArray(function(err, StudentAnswer) {
-          if (err) throw err;
-          if(Object.keys(StudentAnswer).length === 0){
+          if(Object.keys(StudentAnswer).length === 0){ // PRETEST Check
             res.redirect('/')
           }
+
           else{
+            var PostTestStatus = 0 , PostTestDone = 0; 
 
             //////********RECOMMENDATION*********** */
 
@@ -32,26 +33,17 @@ router.get('/', async (req, res, next) => {
                     //หาคอร์สที่เรียนไป แล้วกรองไม้ให้ซ้ำกัน
                     var ArrCourseDone = [];
                     for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {        //value คือ ความยาก ง่าย - 1 ยาก - 9
-                      if (StudentAnswer[i].contentName ==='Introduction-Quiz') {ArrCourseDone.push({key:"Introduction",value:1});} 
-                      if (StudentAnswer[i].contentName ==='String-Quiz') {ArrCourseDone.push({key:"String",value:4});}
-                      if (StudentAnswer[i].contentName ==='Datatype-Quiz') {ArrCourseDone.push({key:"Datatype",value:2});} 
-                      if (StudentAnswer[i].contentName ==='Operators-Quiz') { ArrCourseDone.push({key:"Operators",value:3});}
-                      if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {ArrCourseDone.push({key:"Flow Control",value:8});}
-                      if (StudentAnswer[i].contentName ==='Pointers-Quiz') {ArrCourseDone.push({key:"Pointers",value:7});}
-                      if (StudentAnswer[i].contentName ==='Function-Quiz') {ArrCourseDone.push({key:"Function",value:5});}
-                      if (StudentAnswer[i].contentName ==='Structure-Quiz') {ArrCourseDone.push({key:"Structure",value:6});}
-                      if (StudentAnswer[i].contentName ==='Array-Quiz') {ArrCourseDone.push({key:"Array",value:9});}
-                      if (StudentAnswer[i].contentName ==='Pre-test') { 
-                        if(StudentAnswer[i].scoreC1 === 3){ArrCourseDone.push({key:"Introduction",value:1});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC8 === 3){ArrCourseDone.push({key:"String",value:4});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC2 === 3){ArrCourseDone.push({key:"Datatype",value:2});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC3 === 3){ArrCourseDone.push({key:"Operators",value:3});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC4 === 3){ArrCourseDone.push({key:"Flow Control",value:8});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC7 === 3){ArrCourseDone.push({key:"Pointers",value:7});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC10 === 3){ArrCourseDone.push({key:"Function",value:5});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC9 === 3){ArrCourseDone.push({key:"Structure",value:6});} //pre test ทำได้ 3 ข้อ
-                        if(StudentAnswer[i].scoreC5 === 3){ArrCourseDone.push({key:"Array",value:9});} //pre test ทำได้ 3 ข้อ 
-                        }  
+                      var LV1 = StudentAnswer[i].scoreLV1 , LV2 = StudentAnswer[i].scoreLV2 , LV3 = StudentAnswer[i].scoreLV3;
+                      if (StudentAnswer[i].contentName ==='Introduction-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Introduction",value:1});} 
+                      if (StudentAnswer[i].contentName ==='String-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"String",value:4});}
+                      if (StudentAnswer[i].contentName ==='Datatype-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Datatype",value:2});} 
+                      if (StudentAnswer[i].contentName ==='Operators-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) { ArrCourseDone.push({key:"Operators",value:3});}
+                      if (StudentAnswer[i].contentName ==='FlowControl-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Flow Control",value:8});}
+                      if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:7});}
+                      if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:5});}
+                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:6});}
+                      if (StudentAnswer[i].contentName ==='Array-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Array",value:9});}
+                      if (StudentAnswer[i].contentName ==='InputOutput-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"InputOutput",value:10});}
                     }
                    
                     let CourseDonedictionary = Object.assign({}, ...ArrCourseDone.map((x) => ({[x.key]: x.value}))); //Array to dictionary
@@ -70,7 +62,7 @@ router.get('/', async (req, res, next) => {
                     // RecommendaResult[0].RecommendationType คือ วิธีแนะนำที่ผู้เรียนเลือก
  
                     var RecommendOutput = [];
-                    var CourseTotol = ['Introduction','Datatype','Operators','String','Function','Structure','Pointers','Flow Control','Array'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
+                    var CourseTotol = ['Introduction','Datatype','Operators','String','Function','Structure','Pointers','Flow Control','Array','InputOutput'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
                     var Course_Left = [];
                     var ArrRankStorage = []
                     
@@ -141,22 +133,25 @@ router.get('/', async (req, res, next) => {
                           else{RecommendOutput = RecommendOutput[0]}    //เลือกตัวแรกของ array = ตัวที่ง่ายที่สุด
                         
                       }
-                      else {RecommendOutput = "สิ้นสุดการแนะนำ"} //ไม่เหลือ node (คอร์ส หรือ บทเรียน) ให้แนะนำ
+                      else { //ไม่เหลือ node (คอร์ส หรือ บทเรียน) ให้แนะนำ
+                        RecommendOutput = "สิ้นสุดการแนะนำ"
+                        PostTestStatus = 1;
+                    } 
                       
                     }
 
 
                     //////********End RECOMMENDATION System *********** */
-                MongoClient.connect(url, function(err, db) {
-                  if (err) throw err;
-                  var dbo = db.db(mydatabase);
-                  var myquery = { email: person.email };
-                  var newvalues = { $set: {RecommendCourse: RecommendOutput } };
-                  dbo.collection("StudentRecommendation").updateOne(myquery, newvalues, function(err, res) {
+                  MongoClient.connect(url, function(err, db) {
                     if (err) throw err;
-                    db.close();
+                    var dbo = db.db(mydatabase);
+                    var myquery = { email: person.email };
+                    var newvalues = { $set: {RecommendCourse: RecommendOutput } };
+                    dbo.collection("StudentRecommendation").updateOne(myquery, newvalues, function(err, res) {
+                      if (err) throw err;
+                      db.close();
+                    });
                   });
-                });
                   //////********END RECOMMENDATION*********** */
 
                   //***PROJECT UNLOCK */
@@ -203,8 +198,22 @@ router.get('/', async (req, res, next) => {
                   });
                    //***End Of PROJECT UNLOCK */
                 
+                if(PostTestStatus === 0 || PostTestDone === 1){ //if all course not done || post-test done 
 
-                res.render('student/course/course_main', { person ,StudentAnswer,RecommendaResult});
+                  var infoPrePostTest = [{ Name:["Introduction","Data Type","Operators","Flow Control","Array","Input Output","Pointers","Strings","Structure","Function"]}]
+                  for (let i = 0; i < Object.keys(StudentAnswer).length; i++){
+                    var result = StudentAnswer[i];
+                    if (StudentAnswer[i].contentName === "Pre-test"){infoPrePostTest.push({Pre:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]})}
+                    if (StudentAnswer[i].contentName === "Post-test"){infoPrePostTest.push({Post:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]})}
+                  }
+
+
+                  res.render('student/course/course_main', { person ,StudentAnswer,RecommendaResult ,PostTestDone,infoPrePostTest});
+                }
+                if(PostTestStatus === 1 && PostTestDone === 0){ //if all course done && post-test not done
+                  res.render('student/posttest', { person });
+                }
+                
               });
             });
 
@@ -217,5 +226,122 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+
+router.post('/posttestSubmit', async (req, res, next) => {
+  const person = req.user;
+  var currentQuiz = "Post-test"
+  var scoreLV1=0,scoreLV2=0,scoreLV3=0;
+  var scoreC1=0,scoreC2=0,scoreC3=0,scoreC4=0,scoreC5=0,scoreC6=0,scoreC7=0,scoreC8=0,scoreC9=0,scoreC10=0;
+  var c11 = req.body.c11;
+  var c12 = req.body.c12;
+  var c13 = req.body.c13;
+  var c21 = req.body.c21;
+  var c22 = req.body.c22;
+  var c23 = req.body.c23;
+  var c31 = req.body.c31;
+  var c32 = req.body.c32;
+  var c33 = req.body.c33;
+  var c41 = req.body.c41;
+  var c42 = req.body.c42;
+  var c43 = req.body.c43;
+  var c51 = req.body.c51;
+  var c52 = req.body.c52;
+  var c53 = req.body.c53;
+  var c61 = req.body.c61;
+  var c62 = req.body.c62;
+  var c63 = req.body.c63;
+  var c71 = req.body.c71;
+  var c72 = req.body.c72;
+  var c73 = req.body.c73;
+  var c81 = req.body.c81;
+  var c82 = req.body.c82;
+  var c83 = req.body.c83;
+  var c91 = req.body.c91;
+  var c92 = req.body.c92;
+  var c93 = req.body.c93;
+  var c101 = req.body.c101;
+  var c102 = req.body.c102;
+  var c103 = req.body.c103;
+
+  /* 1.Syntax */
+  if (c11 === 'A') {scoreC1 = scoreC1 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c12 === 'D') {scoreC1 = scoreC1 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c13 === 'C') {scoreC1 = scoreC1 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 2.Data Type, Output */
+  if (c21 === 'C') {scoreC2 = scoreC2 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c22 === 'D') {scoreC2 = scoreC2 + 1; scoreLV2 = scoreLV2 + 10;}
+  if (c23 === 'A') {scoreC2 = scoreC2 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 3.Operators */
+  if (c31 === 'D') {scoreC3 = scoreC3 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c32 === 'B') {scoreC3 = scoreC3 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c33 === 'D') {scoreC3 = scoreC3 + 1; scoreLV3 = scoreLV3 + 30;} 
+  /* 4.Flow Control */
+  if (c41 === 'A') {scoreC4 = scoreC4 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c42 === 'A') {scoreC4 = scoreC4 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c43 === 'B') {scoreC4 = scoreC4 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 5.Array */
+  if (c51 === 'B') {scoreC5 = scoreC5 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c52 === 'C') {scoreC5 = scoreC5 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c53 === 'A') {scoreC5 = scoreC5 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 6.Input Output */
+  if (c61 === 'C') {scoreC6 = scoreC6 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c62 === 'C') {scoreC6 = scoreC6 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c63 === 'B') {scoreC6 = scoreC6 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 7.Pointers */
+  if (c71 === 'A') {scoreC7 = scoreC7 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c72 === 'D') {scoreC7 = scoreC7 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c73 === 'C') {scoreC7 = scoreC7 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 8.Strings */
+  if (c81 === 'B') {scoreC8 = scoreC8 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c82 === 'B') {scoreC8 = scoreC8 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c83 === 'D') {scoreC8 = scoreC8 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 9.Structure */
+  if (c91 === 'A') {scoreC9 = scoreC9 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c92 === 'A') {scoreC9 = scoreC9 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c93 === 'A') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
+  /* 10.Function */
+  if (c101 === 'B') {scoreC10 = scoreC10 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c102 === 'C') {scoreC10 = scoreC10 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c103 === 'A') {scoreC10 = scoreC10 + 1; scoreLV3 = scoreLV3 + 30;}
+  /** */
+
+ 
+
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db(mydatabase);
+    var myobj = { 
+      timetodo:1,
+      times: new Date().toLocaleString(), 
+      email: person.email,
+      role:person.role,
+      contentName:currentQuiz,
+      scoreLV1:scoreLV1, //Basic
+      scoreLV2:scoreLV2, //Trace
+      scoreLV3:scoreLV3, //Explain
+      scoreC1:scoreC1, //Intro
+      scoreC2:scoreC2,  //String
+      scoreC3:scoreC3,  //Datatype
+      scoreC4:scoreC4,
+      scoreC5:scoreC5,
+      scoreC6:scoreC6,
+      scoreC7:scoreC7,
+      scoreC8:scoreC8,
+      scoreC9:scoreC9,
+      scoreC10:scoreC10  //Array
+    };
+    dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
+      if (err) throw err;
+      db.close();
+    });
+  });
+  res.redirect('back')   
+ 
+    try {         
+    } catch (error) {
+      next(error);
+    }
+  });
 module.exports = router;
 

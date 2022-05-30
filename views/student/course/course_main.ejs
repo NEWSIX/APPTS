@@ -40,11 +40,17 @@
     
  
 <div class="content">
+
+
 <!-- RECOMMENDATION-->
 <% if (Object.keys(RecommendaResult).length !== 0 && RecommendaResult[0].RecommendCourse != "null"  ) { %>
     <%- include('../layouts/recommendation') %>
 <% } else { %>
 <% } %>
+
+<!-- POSTTEST  -->
+<% if (PostTestDone === 1) { %><%- include('../layouts/post-test') %><% }%>
+<!-- END Of POSTTEST  -->
 
 <!-- MIDDLE 1 -->
 <%- include('../layouts/course-middle') %>
@@ -53,6 +59,9 @@
 <!-- MIDDLE 2 -->
 <%- include('../layouts/course-middle_Score') %>
 <!-- END Of MIDDLE  -->
+
+
+
 
 <!-- Recommendation -->
 <div class="modal fade" id="RecommendSetting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
