@@ -264,45 +264,45 @@ router.post('/posttestSubmit', async (req, res, next) => {
   var c103 = req.body.c103;
 
   /* 1.Syntax */
-  if (c11 === 'A') {scoreC1 = scoreC1 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c12 === 'D') {scoreC1 = scoreC1 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c13 === 'C') {scoreC1 = scoreC1 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c11 === 'C') {scoreC1 = scoreC1 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c12 === 'C') {scoreC1 = scoreC1 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c13 === 'A') {scoreC1 = scoreC1 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 2.Data Type, Output */
   if (c21 === 'C') {scoreC2 = scoreC2 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c22 === 'D') {scoreC2 = scoreC2 + 1; scoreLV2 = scoreLV2 + 10;}
-  if (c23 === 'A') {scoreC2 = scoreC2 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c22 === 'C') {scoreC2 = scoreC2 + 1; scoreLV2 = scoreLV2 + 10;}
+  if (c23 === 'C') {scoreC2 = scoreC2 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 3.Operators */
-  if (c31 === 'D') {scoreC3 = scoreC3 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c31 === 'C') {scoreC3 = scoreC3 + 1; scoreLV1 = scoreLV1 + 10;}
   if (c32 === 'B') {scoreC3 = scoreC3 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c33 === 'D') {scoreC3 = scoreC3 + 1; scoreLV3 = scoreLV3 + 30;} 
+  if (c33 === 'C') {scoreC3 = scoreC3 + 1; scoreLV3 = scoreLV3 + 30;} 
   /* 4.Flow Control */
-  if (c41 === 'A') {scoreC4 = scoreC4 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c42 === 'A') {scoreC4 = scoreC4 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c43 === 'B') {scoreC4 = scoreC4 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c41 === 'C') {scoreC4 = scoreC4 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c42 === 'B') {scoreC4 = scoreC4 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c43 === 'D') {scoreC4 = scoreC4 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 5.Array */
   if (c51 === 'B') {scoreC5 = scoreC5 + 1; scoreLV1 = scoreLV1 + 10;}
   if (c52 === 'C') {scoreC5 = scoreC5 + 1; scoreLV2 = scoreLV2 + 20;}
   if (c53 === 'A') {scoreC5 = scoreC5 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 6.Input Output */
-  if (c61 === 'C') {scoreC6 = scoreC6 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c62 === 'C') {scoreC6 = scoreC6 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c63 === 'B') {scoreC6 = scoreC6 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c61 === 'D') {scoreC6 = scoreC6 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c62 === 'D') {scoreC6 = scoreC6 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c63 === 'A') {scoreC6 = scoreC6 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 7.Pointers */
   if (c71 === 'A') {scoreC7 = scoreC7 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c72 === 'D') {scoreC7 = scoreC7 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c73 === 'C') {scoreC7 = scoreC7 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c72 === 'C') {scoreC7 = scoreC7 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c73 === 'A') {scoreC7 = scoreC7 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 8.Strings */
-  if (c81 === 'B') {scoreC8 = scoreC8 + 1; scoreLV1 = scoreLV1 + 10;}
+  if (c81 === 'C') {scoreC8 = scoreC8 + 1; scoreLV1 = scoreLV1 + 10;}
   if (c82 === 'B') {scoreC8 = scoreC8 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c83 === 'D') {scoreC8 = scoreC8 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c83 === 'B') {scoreC8 = scoreC8 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 9.Structure */
   if (c91 === 'A') {scoreC9 = scoreC9 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c92 === 'A') {scoreC9 = scoreC9 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c93 === 'A') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c92 === 'B') {scoreC9 = scoreC9 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c93 === 'B') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 10.Function */
   if (c101 === 'B') {scoreC10 = scoreC10 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c102 === 'C') {scoreC10 = scoreC10 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c103 === 'A') {scoreC10 = scoreC10 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c102 === 'A') {scoreC10 = scoreC10 + 1; scoreLV2 = scoreLV2 + 20;}
+  if (c103 === 'D') {scoreC10 = scoreC10 + 1; scoreLV3 = scoreLV3 + 30;}
   /** */
 
  
