@@ -7,9 +7,10 @@ var data =
   "opt":["#include＜stdio.h＞",
           'int Sum, a = 59, b = 64;<br>void Addition();',
           "void main(){",
-          "Addition();&nbsp}",
+          "Addition();}",
           'void Addition(){',
-          'Sum = a + b; <br> printf("\nSum of a = %d and b = %d is = %d", a, b, Sum);&nbsp}'
+          'Sum = a + b;',
+          'printf("〵nSum of a = %d and b = %d is = %d", a, b, Sum);}'
         ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }

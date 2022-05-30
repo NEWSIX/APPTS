@@ -10,8 +10,8 @@ var data =
           "int i;",
           'printf( "Enter a value =:");',
           'scanf("%s %d", str, &i);',
-          'printf( "\nYou entered: %s %d ", str, i);',
-          'return 0;&nbsp}'
+          'printf( "〵nYou entered: %s %d ", str, i);',
+          'return 0;}'
         ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }

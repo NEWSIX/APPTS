@@ -7,7 +7,7 @@ var data =
   "opt":['#include＜stdio.h＞',
           'void main(){<br>&nbsp  char c;',
           "c = 'b';",
-          'printf(“The character value is: %c \n”, c); }'
+          'printf(“The character value is: %c 〵n”, c); }'
         ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }

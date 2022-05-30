@@ -8,7 +8,7 @@ var data =
           "int main(){<br>&nbsp  char name[15];",
           'printf("Enter your name: ");',
           'scanf("%s", name);',
-          'printf("Hi %s.\n", name);',
+          'printf("Hi %s.〵n", name);',
           'return 0; }'
         ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"

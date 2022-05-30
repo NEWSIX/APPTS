@@ -10,7 +10,7 @@ var data =
           'scanf("%d",&rows);',
           'for(i=1;i<=rows;i++){',
           'printf("*");',
-          'printf("\n");}}'
+          'printf("〵n");}}'
         ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
