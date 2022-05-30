@@ -36,90 +36,79 @@
 
 <br><br><br>
     <div id = "content" class="container">
-        <h1>Calculator</h1>
-            <div class="box bg-light  mb-5 shadow" >
-                <div class="row">
-                    <div class="col">
-                    </div>
-                    <div class="col-sm-11">
-                        <dl class="row text-start">
-                            จงสร้าง Program Calculator โดยมีกำหนดว่าต้องมีการใช้ Switch case และ Goto statement
-                            <%# 
-                            <dt class="col-sm-12 h3">จงเขียนโปรแกรม ................... โดยมีเงื่อนไขต่อไปนี้ </dt>
-                            <dt class="col-sm-3">เงื่อนไข1</dt>
-                            <dd class="col-sm-9">
-                                <p>ฟังค์ชั่น ต้องสามารถ เอ</p>
-                                <p>ฟังค์ชั่น ต้องหาค่า บี</p>
-                            </dd>
-                            
-                            <dt class="col-sm-3">ตัวแปร</dt>
-                            <dd class="col-sm-9">
-                              <p>เอ</p>
-                              <p>บี</p>
-                            </dd>
-                          
-                            <dt class="col-sm-3">อื่นๆ</dt>
-                            <dd class="col-sm-9">รายละเอียด</dd>
-                          
-                            <dt class="col-sm-3 text-truncate">แนะนำ</dt>
-                            <dd class="col-sm-9">นอนเยอะๆ</dd>
-                        </dl> %> 
-                    </div>
-                </div>
-            </div>
 <form action="/project-Calculator/submit" method="post" autocomplete="off" > 
-        <h2><u>คำตอบ</u> <button type="button" style="color: black;" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-            ทดสอบโค้ด
-        </button></h2> 
-        <div class="form-group">
-            <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
-            <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
-        </div>
-        Language : <select name="lang"><option value="C">C</option></select>
-        <div class="d-grid gap-2">
-            <br>
-            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
-                ส่งคำตอบ
-            </button>
-        </div>
-        <!-- Modal Submit -->        
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">ส่งคำตอบ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    คุณต้องการส่งคำตอบใช่หรือไม่ ?
-                        <div id="emailHelp" class="form-text">หากยังทำโจทย์ไม่ครบ จะไม่สามารถกดส่งได้ </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ไม่</button>
-                        <button type="submit" class="btn btn-dark" value="Submits" id="check" name="check">ใช่</button>
-                    </div>
-                </div>
+        <%# LV4 %>                
+       <h2><u>Calculator</u> <button type="button" style="color: black;" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+        ทดสอบโค้ด
+    </button></h2> 
+
+    
+    <p type="text"  class="list-group-item list-group-item-action bg-dark" style="color: white;">
+        <iframe src="<%= ADRI  %> " width="100%" height="480" allow="autoplay"></iframe>
+    </p>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group" >
+                <h3>CODE</h3>
+                <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+                <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
             </div>
         </div>
+        <div class="col-3">
+            <h3>อธิบาย</h3>
+            <textarea class="form-control" style="height: 400px;" rows="4" name="explain" cols="50"></textarea>
+        </div>
+    </div>
+    <h3>ผลลัพธ์ที่คาด</h3>
+    <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expResult" required></textarea>
+    <br>
+    Language : <select name="lang"><option value="C">C</option></select>
+    <div class="d-grid gap-2">
         <br>
-        <!-- Modal CODE -->        
-        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Online compiler</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <iframe src="https://www.programiz.com/c-programming/online-compiler/" width="100%" height="500px"></iframe>
-                    </div>   
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-lg btn-block" data-bs-dismiss="modal">ปิด</button>
-                    </div>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+            ส่งคำตอบ
+        </button>
+    </div>
+    <!-- Modal Submit -->        
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">ส่งคำตอบ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                คุณต้องการส่งคำตอบใช่หรือไม่ ?
+                    <div id="emailHelp" class="form-text">หากยังทำโจทย์ไม่ครบ จะไม่สามารถกดส่งได้ </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">ไม่</button>
+                    <button type="submit" class="btn btn-dark" value="Submits" id="check" name="check">ใช่</button>
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <!-- Modal CODE -->        
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Online compiler</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://www.programiz.com/c-programming/online-compiler/" width="100%" height="500px"></iframe>
+                </div>   
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-lg btn-block" data-bs-dismiss="modal">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </form>
 <script src="javascripts/compilerStyle.js"></script>
 </body>

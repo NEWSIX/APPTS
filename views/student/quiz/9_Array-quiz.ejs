@@ -131,19 +131,33 @@
                     <input type="hidden" name="choice3" id="choice3result">
                 </div>
                 <br>
-    <%# LV4 %>                             
+        <%# LV4 %>                
                 <h2><u>คำถามที่ : 4</u> <button type="button" style="color: black;" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                     ทดสอบโค้ด
                 </button></h2> 
-                
-                <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
-                    เขียนโปรแกรมกำหนดค่าคะแนนให้กับนักเรียน 5 คน โดยคะแนนจะมี 50, 78, 63, 45 และ 80 ตามลำดับ จากนั้นแสดงผลข้อมูล
-                </p>
 
-                <div class="form-group" >
-                    <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
-                    <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10"></textarea>
-                </div>
+                
+                <p type="text"  class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    <iframe src="<%= ADRI  %> " width="100%" height="480" allow="autoplay"></iframe>
+                </p>
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" >
+                            <h3>CODE</h3>
+                            <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+                            <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
+                        </div>
+                    </div>
+                      <div class="col">
+                <h3>อธิบาย</h3>
+                <textarea class="form-control" style="height: 400px;" rows="4" name="explain" cols="50"></textarea>
+            </div>
+        </div>
+        <h3>ผลลัพธ์ที่คาด</h3>
+        <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expResult" required></textarea>
+               
 
                 Language : <select name="lang"><option value="C">C</option></select>
                 <br />

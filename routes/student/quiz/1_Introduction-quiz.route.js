@@ -6,6 +6,10 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
+var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
+
+
+
 router.get('/', async (req, res, next) => {
   const person = req.user;
   // PRETEST Check
@@ -26,7 +30,7 @@ router.get('/', async (req, res, next) => {
           dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
             if (err) throw err;
 
-            res.render('student/quiz/1_Introduction-quiz', { person ,StudentAnswer,RecommendaResult});
+            res.render('student/quiz/1_Introduction-quiz', { person ,StudentAnswer,RecommendaResult,ADRI});
           });
         });
         
@@ -45,11 +49,15 @@ router.post('/submit', async (req, res, next) => {
   const choice3  = req.body.choice3
   var code = req.body.code;
   var lang = req.body.lang;
+  var explain = req.body.explain
+  var expResult = req.body.expResult
   var scoreLV1 = 0;
   var scoreLV2 = 0;
   var scoreLV3 = 0;
   var currentQuiz = "Introduction-Quiz"
   var timetodo = 0;
+
+  
  
   /** chekc score */
   if(choice1 === 'B'){
@@ -93,10 +101,12 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
-                lv4Content:"เขียนโปรแกรมเพื่อปริ้นค่า * เป็นตัว C ใหญ่",
                 lang:lang,
                 code:code,
-                output:dataOut
+                output:dataOut,
+                explain:explain,
+                expResult:expResult,
+                ADRI:ADRI
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

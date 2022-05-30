@@ -6,10 +6,14 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
+var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
+
 router.post('/submit', async (req, res, next) => {
   const person = req.user;
   var code = req.body.code;
   var lang = req.body.lang;
+  var explain = req.body.explain
+  var expResult = req.body.expResult
   var currentProject = "TicTacToe";
   var timetodo = 0;
 
@@ -43,7 +47,10 @@ router.post('/submit', async (req, res, next) => {
             contentName:currentProject,
             lang:lang,
             code:code,
-            output:dataOut
+            output:dataOut,
+            explain:explain,
+            expResult:expResult,
+            ADRI:ADRI
           };
           dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
             if (err) throw err;
@@ -76,7 +83,7 @@ router.get('/', async (req, res, next) => {
           res.redirect('/')
         }
         else{
-          res.render('student/project/1_TicTacToe', { person });
+          res.render('student/project/1_TicTacToe', { person , ADRI });
         }
         db.close();
       });

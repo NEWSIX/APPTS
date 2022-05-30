@@ -6,6 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
+var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
+
 router.get('/', async (req, res, next) => {
   const person = req.user;
   // PRETEST Check
@@ -43,6 +45,8 @@ router.post('/submit', async (req, res, next) => {
   const choice3  = req.body.choice3
   var code = req.body.code;
   var lang = req.body.lang;
+  var explain = req.body.explain
+  var expResult = req.body.expResult
   var scoreLV1 = 0;
   var scoreLV2 = 0;
   var scoreLV3 = 0;
@@ -92,10 +96,12 @@ router.post('/submit', async (req, res, next) => {
                 scoreLV1:scoreLV1,
                 scoreLV2:scoreLV2,
                 scoreLV3:scoreLV3,
-                lv4Content:"เขียนโปรแกรมโดยรับค่า ตัวเลขจำนวน 10 ตัว จาก Keyboard และหาค่าผลรวม และค่าเฉลี่ย",
                 lang:lang,
                 code:code,
-                output:dataOut
+                output:dataOut,
+                explain:explain,
+                expResult:expResult,
+                ADRI:ADRI
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

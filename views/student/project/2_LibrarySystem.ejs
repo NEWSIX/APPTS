@@ -36,46 +36,35 @@
 
 <br><br><br>
     <div id = "content" class="container">
-        <h1>Library System</h1>
-            <div class="box bg-light  mb-5 shadow" >
-                <div class="row">
-                    <div class="col">
-                    </div>
-                    <div class="col-sm-11">
-                        <dl class="row text-start">
-                            จงสร้าง Program Library System โดยมีกำหนดว่าต้องมีการใช้ flowControlและ Switch case
-                            <%# 
-                            <dt class="col-sm-12 h3">จงเขียนโปรแกรม ................... โดยมีเงื่อนไขต่อไปนี้ </dt>
-                            <dt class="col-sm-3">เงื่อนไข1</dt>
-                            <dd class="col-sm-9">
-                                <p>ฟังค์ชั่น ต้องสามารถ เอ</p>
-                                <p>ฟังค์ชั่น ต้องหาค่า บี</p>
-                            </dd>
-                            
-                            <dt class="col-sm-3">ตัวแปร</dt>
-                            <dd class="col-sm-9">
-                              <p>เอ</p>
-                              <p>บี</p>
-                            </dd>
-                          
-                            <dt class="col-sm-3">อื่นๆ</dt>
-                            <dd class="col-sm-9">รายละเอียด</dd>
-                          
-                            <dt class="col-sm-3 text-truncate">แนะนำ</dt>
-                            <dd class="col-sm-9">นอนเยอะๆ</dd>
-                        </dl>
-                         %> 
-                    </div>
-                </div>
-            </div>
+        
 <form action="/project-Library_System/submit" method="post" autocomplete="off" > 
-        <h2><u>คำตอบ</u> <button type="button" style="color: black;" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+        <%# LV4 %>                
+        <h2><u>Library System</u> <button type="button" style="color: black;" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
             ทดสอบโค้ด
         </button></h2> 
-        <div class="form-group">
-            <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
-            <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
+
+        
+        <p type="text"  class="list-group-item list-group-item-action bg-dark" style="color: white;">
+            <iframe src="<%= ADRI  %> " width="100%" height="480" allow="autoplay"></iframe>
+        </p>
+        <br>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group" >
+                    <h3>CODE</h3>
+                    <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+                    <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
+                </div>
+            </div>
+            <div class="col-3">
+                <h3>อธิบาย</h3>
+                <textarea class="form-control" style="height: 400px;" rows="4" name="explain" cols="50"></textarea>
+            </div>
         </div>
+        <h3>ผลลัพธ์ที่คาด</h3>
+        <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expResult" required></textarea>
+    <br>
         Language : <select name="lang"><option value="C">C</option></select>
         <div class="d-grid gap-2">
             <br>

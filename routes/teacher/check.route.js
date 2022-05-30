@@ -34,33 +34,9 @@ router.get('/', async (req, res, next) => {
 /** teacher send student score */
 router.post('/submit', async (req, res, next) => {
     const person = req.user;
-    var scoreStudent = req.body.studentScore;
+    var score = req.body.studentScore;
     var idStudent = req.body.idStudent;
-    // Scoring Rubric 1-4
-    var studentScoreProject1 = req.body.studentScoreProject1
-    var studentScoreProject2 = req.body.studentScoreProject2
-    var studentScoreProject3 = req.body.studentScoreProject3
-    var studentScoreProject4 = req.body.studentScoreProject4
-    let score = 0;
-
-    if(scoreStudent === undefined){
-        if(studentScoreProject1 != undefined){
-            score = score+1;
-        }
-        if(studentScoreProject2 != undefined){
-            score = score+1;
-        }
-        if(studentScoreProject3 != undefined){
-            score = score+1;
-        }
-        if(studentScoreProject4 != undefined){
-            score = score+1;
-        }
-    }
-    else{
-        score = scoreStudent;
-    };
-
+    
     if(idStudent === ""){}
     else{
         MongoClient.connect(url, function(err, db) {
