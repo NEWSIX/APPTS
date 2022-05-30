@@ -39,9 +39,9 @@ router.get('/', async (req, res, next) => {
                       if (StudentAnswer[i].contentName ==='Datatype-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Datatype",value:2});} 
                       if (StudentAnswer[i].contentName ==='Operators-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) { ArrCourseDone.push({key:"Operators",value:3});}
                       if (StudentAnswer[i].contentName ==='FlowControl-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Flow Control",value:5});}
-                      if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:85});}
+                      if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:8});}
                       if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:9});}
-                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:88});}
+                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:10});}
                       if (StudentAnswer[i].contentName ==='Array-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Array",value:6});}
                       if (StudentAnswer[i].contentName ==='InputOutput-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"InputOutput",value:4});}
                     }
@@ -86,11 +86,11 @@ router.get('/', async (req, res, next) => {
                         //***RECOMMEND : COURSE
                         if(RecommendaResult[0].RecommendationType === "Fastest Path"){
                           //ตรวจสอบว่ายังมีคอร์สเหลือไหม && เก็บข้อมูลเพื่อส่งต่อ
+                          if(DiffCalculator.length != 0){Course_Left.push({CourseName:"Calculator" ,length:DiffCalculator.length, CourseLEFT :DiffCalculator})}
                           if(DiffTicTacToe.length != 0) {Course_Left.push({CourseName:"TicTacToe"  ,length:DiffTicTacToe.length , CourseLEFT :DiffTicTacToe})}
-                          if(DiffLibrary.length != 0)   {Course_Left.push({CourseName:"Library"    ,length:DiffLibrary.length   , CourseLEFT :DiffLibrary})}
                           if(DiffRoshambo.length != 0)  {Course_Left.push({CourseName:"Roshambo"   ,length:DiffRoshambo.length  , CourseLEFT :DiffRoshambo})}
                           if(DiffCalendar.length != 0)  {Course_Left.push({CourseName:"Calendar"   ,length:DiffCalendar.length  , CourseLEFT :DiffCalendar})}
-                          if(DiffCalculator.length != 0){Course_Left.push({CourseName:"Calculator" ,length:DiffCalculator.length, CourseLEFT :DiffCalculator})}
+                          if(DiffLibrary.length != 0)   {Course_Left.push({CourseName:"Library"    ,length:DiffLibrary.length   , CourseLEFT :DiffLibrary})}
                           //หา path ที่น้อยที่สุด
                           var rankCourse_left = Course_Left.sort(function (a, b) {return a.length - b.length;});
                           if(rankCourse_left[1] === undefined){ //ตรวจสอบค่าเปรียบเทียบว่ามีให้เปรียบเทียบไหม
