@@ -4,7 +4,7 @@ const check = document.getElementById("check");
 var data =  
   {
   "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (num1:11,num2:22<br>num1:30)",
-  "opt":["#include<stdio.h>",
+  "opt":["#include＜stdio.h＞",
         "struct numbers{",
         "int num1,num2; };",
         "int main() {",
