@@ -62,7 +62,7 @@ router.get('/', async (req, res, next) => {
                     // RecommendaResult[0].RecommendationType คือ วิธีแนะนำที่ผู้เรียนเลือก
  
                     var RecommendOutput = [];
-                    var CourseTotol = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String','Pointers','Function','Structure'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
+                    var CourseTotol = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String','Structure','Function','Pointers'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
                     var Course_Left = [];
                     var ArrRankStorage = []
                     
