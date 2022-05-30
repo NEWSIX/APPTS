@@ -197,21 +197,20 @@ router.get('/', async (req, res, next) => {
                     });
                   });
                    //***End Of PROJECT UNLOCK */
-                
-                if(PostTestStatus === 0 || PostTestDone === 1){ //if all course not done || post-test done 
 
-                  var infoPrePostTest = [{ Name:["Introduction","Data Type","Operators","Flow Control","Array","Input Output","Pointers","Strings","Structure","Function"]}]
+
+                var infoPrePostTest = [{ Name:["Introduction","Data Type","Operators","Flow Control","Array","Input Output","Pointers","Strings","Structure","Function"]}]
                   for (let i = 0; i < Object.keys(StudentAnswer).length; i++){
                     var result = StudentAnswer[i];
                     if (StudentAnswer[i].contentName === "Pre-test"){infoPrePostTest.push({Pre:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]})}
-                    if (StudentAnswer[i].contentName === "Post-test"){infoPrePostTest.push({Post:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]})}
+                    if (StudentAnswer[i].contentName === "Post-test"){infoPrePostTest.push({Post:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]}),PostTestDone = 1}
                   }
 
-
+                
+                if(PostTestStatus === 0 || PostTestDone === 1){ //if all course not done || post-test done 
                   res.render('student/course/course_main', { person ,StudentAnswer,RecommendaResult ,PostTestDone,infoPrePostTest});
                 }
                 if(PostTestStatus === 1 && PostTestDone === 0){ //if all course done && post-test not done
-                  PostTestDone = 1
                   res.render('student/posttest', { person });
                 }
                 
