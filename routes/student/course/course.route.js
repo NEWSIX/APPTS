@@ -40,8 +40,8 @@ router.get('/', async (req, res, next) => {
                       if (StudentAnswer[i].contentName ==='Operators-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) { ArrCourseDone.push({key:"Operators",value:3});}
                       if (StudentAnswer[i].contentName ==='FlowControl-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Flow Control",value:5});}
                       if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:8});}
-                      if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:9});}
-                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:10});}
+                      if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:9.1});}
+                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:9.2});}
                       if (StudentAnswer[i].contentName ==='Array-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Array",value:6});}
                       if (StudentAnswer[i].contentName ==='InputOutput-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"InputOutput",value:4});}
                     }
