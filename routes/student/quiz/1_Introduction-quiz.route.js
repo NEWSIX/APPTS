@@ -47,10 +47,13 @@ router.post('/submit', async (req, res, next) => {
   const choice1  = req.body.choice1
   const choice2  = req.body.choice2
   const choice3  = req.body.choice3
+  
   var code = req.body.code;
   var lang = req.body.lang;
-  var explain = req.body.explain
   var expResult = req.body.expResult
+  var ImproveResult = req.body.ImproveResult
+  var Improvevariable = req.body.Improvevariable
+
   var scoreLV1 = 0;
   var scoreLV2 = 0;
   var scoreLV3 = 0;
@@ -104,8 +107,9 @@ router.post('/submit', async (req, res, next) => {
                 lang:lang,
                 code:code,
                 output:dataOut,
-                explain:explain,
                 expResult:expResult,
+                ImproveResult:ImproveResult,
+                Improvevariable:Improvevariable,
                 ADRI:ADRI
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {

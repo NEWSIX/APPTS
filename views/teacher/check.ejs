@@ -125,30 +125,31 @@
                         <div class="row">
                             <div class="col-sm">
                             <div class="form-group" >
-                                <span ><b>Code</b></span>
+                                <span ><b>โค้ด (Deployment)</b></span>
                                 <textarea style="height: 400px; background-color: #cacdcf;" class="form-control" id="lineCounter" readonly rows="10"> </textarea>
                                 <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" ><%= student[0].code %></textarea>
                             </div>
                             </div>
                             <div class="col-3">
-                            <span ><b>อธิบาย</b></span>
-                                <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" > <%= student[0].explain %></textarea>
+                            <span ><b>ผลลัพธ์ (Result)</b></span>
+                                <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" > <%= student[0].output %></textarea>
                             </div>
                         </div>
                       
                         
                   
                         <div class="row">
-                            <div class="col-sm">
+                            <span ><b>การประยุกต์ (Improvement)</b></span>
+                            <div class="col-sm"> 
                             <div class="card-body shadow rounded">
-                                <span ><b>Output : ที่คาด</b></span>
-                                <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].expResult %></textarea>
+                                <span ><b>ผลลัพธ์ที่คาด</b></span>
+                                <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].ImproveResult%></textarea>
                             </div>
                             </div>
                             <div class="col-sm">
                             <div class="card-body shadow rounded">
-                                <span ><b>Output : ที่ได้</b></span>
-                                <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].output %></textarea>
+                                <span ><b>ตัวแปรที่ต้องเปลี่ยน</b></span>
+                                <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].Improvevariable%></textarea>
                             </div>
                             </div>
                         </div>
