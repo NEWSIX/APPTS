@@ -7,6 +7,7 @@ const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/tes
 const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
+var ADRI_Expect = "เปลี่ยนนายก A ในประเทศสารขัณฑ์ "
 
 
 
@@ -30,7 +31,7 @@ router.get('/', async (req, res, next) => {
           dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
             if (err) throw err;
 
-            res.render('student/quiz/1_Introduction-quiz', { person ,StudentAnswer,RecommendaResult,ADRI});
+            res.render('student/quiz/1_Introduction-quiz', { person ,StudentAnswer,RecommendaResult,ADRI,ADRI_Expect});
           });
         });
         
@@ -51,7 +52,7 @@ router.post('/submit', async (req, res, next) => {
   var code = req.body.code;
   var lang = req.body.lang;
   var expResult = req.body.expResult
-  var ImproveResult = req.body.ImproveResult
+  var ImproveResult = ADRI_Expect
   var Improvevariable = req.body.Improvevariable
 
   var scoreLV1 = 0;

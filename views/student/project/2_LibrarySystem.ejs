@@ -49,21 +49,19 @@
         </p>
         <br>
 
-        <div class="row">
-            <div class="col">
-                <div class="form-group" >
-                    <h3>CODE</h3>
-                    <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
-                    <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
-                </div>
-            </div>
-            <div class="col-3">
-                <h3>อธิบาย</h3>
-                <textarea class="form-control" style="height: 400px;" rows="4" name="explain" cols="50"></textarea>
-            </div>
+        <div class="form-group" >
+            <h3>CODE</h3>
+            <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
+            <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
         </div>
-        <h3>ผลลัพธ์ที่คาด</h3>
+        <h3>ผลลัพธ์ที่ได้</h3>
         <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expResult" required></textarea>
+
+        <h3>การประยุกต์</h3>
+            <p>ผลลัพธ์ที่คาด</p>
+            <textarea class="form-control" style="height: 100px;" rows="4" name="ImproveResult" cols="50"></textarea>
+            <p>ตัวแปรที่เปลี่ยน</p>
+            <textarea class="form-control" style="height: 150px;" rows="4" name="Improvevariable" cols="50"></textarea>
     <br>
         Language : <select name="lang"><option value="C">C</option></select>
         <div class="d-grid gap-2">
