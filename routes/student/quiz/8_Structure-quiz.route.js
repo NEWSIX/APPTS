@@ -6,8 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
-var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
-var ADRI_Expect = "เปลี่ยนนายก A ในประเทศสารขัณฑ์ "
+var ADRI = "https://drive.google.com/file/d/1jXPxf9JnQleUfJbhGC1ODxrkF72jQ6g3/preview"
+var ADRI_Expect = "จงเขียนโปรแกรมคำนวณการตั้งราคาสินค้า โดยรับค่า 1.ราคาต้นทุน 2.เปอร์เซ็นกำไรที่อยากได้ 3.ภาษีที่ต้องจ่าย "
 
 router.get('/', async (req, res, next) => {
   const person = req.user;

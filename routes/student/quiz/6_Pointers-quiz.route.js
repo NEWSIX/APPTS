@@ -6,8 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
-var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
-var ADRI_Expect = "เปลี่ยนนายก A ในประเทศสารขัณฑ์ "
+var ADRI = "https://drive.google.com/file/d/1egNzRpnmUYx8_SuT0Wgkwpo9hZo_Hgof/preview"
+var ADRI_Expect = "จงสร้าง Token โดยใช้ Pointers ให้ซับซ้อนกว่าเดิม เช่น ใช้ for loop โดยจำนวนรอบตามค่าที่รับผ่านคีย์บอร์ด"
 
 
 router.get('/', async (req, res, next) => {

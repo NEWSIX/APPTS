@@ -6,8 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
-var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
-var ADRI_Expect = "เปลี่ยนนายก A ในประเทศสารขัณฑ์ "
+var ADRI = "https://drive.google.com/file/d/1oji4q6kjc-mjkQnJGGwQZnjm7DnQlWCz/preview"
+var ADRI_Expect = "เขียนโปรแกรมเพื่อพิมพ์ตัวเลขในลักษณะย้อนกลับ (ใส่ค่าอะไรก็ได้ที่เป็นตัวเลข)"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;

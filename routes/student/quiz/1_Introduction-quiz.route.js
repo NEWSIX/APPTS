@@ -6,8 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
-var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
-var ADRI_Expect = "เปลี่ยนนายก A ในประเทศสารขัณฑ์ "
+var ADRI = "https://drive.google.com/file/d/1h048iiynO6zhZodEXZIYUGaUSuNkIemF/preview"
+var ADRI_Expect = "เขียนโปรแกรม C เพื่อพิมพ์ 'A-Z' ตัวใหญ่ โดยเลือก 1 ตัวอักษร (ยกเว้นตัว C)"
 
 
 

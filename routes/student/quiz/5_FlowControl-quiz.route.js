@@ -6,8 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
-var ADRI = "https://drive.google.com/file/d/1n0hqUoDtHsaFKpPV4dunMZ98pbpXQNiN/preview"
-var ADRI_Expect = "เปลี่ยนนายก A ในประเทศสารขัณฑ์ "
+var ADRI = "https://drive.google.com/file/d/1Gp_ccw_qDeDTx_NCsQF8r091Uh1UYj1H/preview"
+var ADRI_Expect = "เขียนโปรแกรมโดยรับค่าตัวเลขจำนวน 2 ตัว จาก Keyboard โดยเลขที่เรียงจะเพิ่มขึ้นเท่าค่าตัวเลขที่ 2 ที่รับมาและหาค่าผลรวม"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;
