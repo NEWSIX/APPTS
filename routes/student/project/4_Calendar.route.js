@@ -12,8 +12,10 @@ router.post('/submit', async (req, res, next) => {
   const person = req.user;
   var code = req.body.code;
   var lang = req.body.lang;
-  var explain = req.body.explain
   var expResult = req.body.expResult
+  var ImproveResult = req.body.ImproveResult
+  var Improvevariable = req.body.Improvevariable
+  
   var currentProject = "Calendar";
   var timetodo = 0;
 
@@ -48,8 +50,10 @@ router.post('/submit', async (req, res, next) => {
             lang:lang,
             code:code,
             output:dataOut,
-            explain:explain,
+ 
             expResult:expResult,
+            ImproveResult:ImproveResult,
+            Improvevariable:Improvevariable,
             ADRI:ADRI
           };
           dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {

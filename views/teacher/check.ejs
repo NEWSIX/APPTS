@@ -131,7 +131,7 @@
                             </div>
                             </div>
                             <div class="col-3">
-                            <span ><b>ผลลัพธ์ (Result)</b></span>
+                            <span ><b>ผลลัพธ์จากระบบ (Result)</b></span>
                                 <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" > <%= student[0].output %></textarea>
                             </div>
                         </div>
@@ -141,10 +141,16 @@
                         <div class="row">
                             <span ><b>การประยุกต์ (Improvement)</b></span>
                             <div class="col-sm"> 
-                            <div class="card-body shadow rounded">
-                                <span ><b>ผลลัพธ์ที่คาด</b></span>
-                                <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].ImproveResult%></textarea>
+                                <div class="card-body shadow rounded">
+                                    <span ><b>ผลลัพธ์จากผู้เรียน</b></span>
+                                    <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].expResult%></textarea>
+                                </div>
                             </div>
+                            <div class="col-sm"> 
+                                <div class="card-body shadow rounded">
+                                    <span ><b>ผลลัพธ์ที่คาด</b></span>
+                                    <textarea style="height: 100%" class="form-control" id="code" name="code" rows="10" ><%= student[0].ImproveResult%></textarea>
+                                </div>
                             </div>
                             <div class="col-sm">
                             <div class="card-body shadow rounded">
