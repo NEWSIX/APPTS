@@ -76,7 +76,7 @@ router.post('/pretestSubmit', async (req, res, next) => {
   /* 9.Structure */
   if (c91 === 'A') {scoreC9 = scoreC9 + 1; scoreLV1 = scoreLV1 + 10;}
   if (c92 === 'A') {scoreC9 = scoreC9 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c93 === 'A') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c93 === 'C') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
   /* 10.Function */
   if (c101 === 'B') {scoreC10 = scoreC10 + 1; scoreLV1 = scoreLV1 + 10;}
   if (c102 === 'C') {scoreC10 = scoreC10 + 1; scoreLV2 = scoreLV2 + 20;}
