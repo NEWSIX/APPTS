@@ -29,7 +29,7 @@ router.get('/', async (req, res, next) => {
           dbo.collection("StudentRecommendation").find(query).toArray(function(err, RecommendaResult) {
             if (err) throw err;
 
-            res.render('student/quiz/5_FlowControl-quiz', { person ,StudentAnswer,RecommendaResult,ADRI,ADRI_Expect});
+            res.render('student/quiz/5_2_Loop-quiz', { person ,StudentAnswer,RecommendaResult,ADRI,ADRI_Expect});
           });
         });
       }
@@ -52,7 +52,7 @@ router.post('/submit', async (req, res, next) => {
   var scoreLV1 = 0;
   var scoreLV2 = 0;
   var scoreLV3 = 0;
-  var currentQuiz = "FlowControl-Quiz" //*** */
+  var currentQuiz = "Loop-Quiz" //*** */
   var timetodo = 0;
 
   /** chekc score */

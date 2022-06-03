@@ -70,6 +70,8 @@
         class="btn btn-secondary collapsed" data-bs-target="#test9">9</button>
         <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
         class="btn btn-secondary collapsed" data-bs-target="#test10">10</button>
+        <button type="button"  data-bs-toggle="collapse" aria-expanded="false" aria-controls="flush-collapseOne" 
+        class="btn btn-secondary collapsed" data-bs-target="#test11">11</button>
     </div>
         <button type="submit" class="btn btn-outline-dark">ส่งคำตอบ</button>
 
@@ -976,7 +978,95 @@
         </div> 
         <%# choice %> 
     </div>
+<%# test10 %>
+<div id="test11" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMain">
+    <%# choice %> 
+    <div class="row align-items-start">
+        <div>
+        <img src="https://drive.google.com/uc?id=1BrRGUsJQqnAZR8RDlyavynA2Bfomm900" class="img-thumbnail rounded"  >
+        <p>ใช้รูปนี้เพื่อตอบคำถามข้อ 11</p>
+        </div>
+        <div class="col">
+          <%# test %>         
+            <div class="list-group">
+                <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    11.1) จากโค้ด จะมีการวนซ้ำของโค้ดกี่ครั้ง
+                </p>
 
+                <input type="radio" class="btn-check" name="c111" id="c111o1" autocomplete="off" value="A" required>
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c111o1">
+                    ก. 3
+                </label>
+                <input type="radio" class="btn-check" name="c111" id="c111o2" autocomplete="off" value="B">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c111o2">
+                    ข. 4
+                </label>
+                <input type="radio" class="btn-check" name="c111" id="c111o3" autocomplete="off" value="C">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c111o3">
+                    ค. 5
+                </label>
+                <input type="radio" class="btn-check" name="c111" id="c111o4" autocomplete="off" value="D">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c111o4">
+                    ง. 6
+                </label>
+            </div>
+        </div>
+        <div class="col">
+          <%# test %>           
+            <div class="list-group">
+                <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    11.2) ถ้าลบบรรทัดที่ 9 ออกไปโปรแกรมจะเกิดอะไรขึ้น
+                </p>
+                
+                <input type="radio" class="btn-check" name="c112" id="c112o1" autocomplete="off" value="A" required>
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c112o1">
+                    ก.	การทำงานผิดพลาด
+                </label>
+                <input type="radio" class="btn-check" name="c112" id="c112o2" autocomplete="off" value="B">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c112o2">
+                    ข.	ไม่มีอะไรเกิดขึ้น
+                </label>
+                <input type="radio" class="btn-check" name="c112" id="c112o3" autocomplete="off" value="C">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c112o3">
+                    ค.	วนซ้ำแค่ครั้งเดียว
+                </label>
+                <input type="radio" class="btn-check" name="c112" id="c112o4" autocomplete="off" value="D">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c112o4">
+                    ง.	วนซ้ำไม่มีที่สิ้นสุด
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <%# test %>           
+            <div class="list-group" style="width: 155%;">
+                <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
+                    11.3) เรียงลำดับการทำงานของ Code <br>
+                    &ensp;1.เปิดฟังก์ชันหลัก / 2.Print ค่าออกมา<br>
+                    &ensp;1.เปิดฟังก์ชันหลัก / 2.Print ค่าออกมา<br>
+                    &ensp;5. สิ้นสุดการทำงานของฟังก์ชัน / 6. กำหนดจำนวนการวนซ้ำใน While…loop 
+                </p>
+                
+                <input type="radio" class="btn-check" name="c113" id="c113o1" autocomplete="off" value="A" required>
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c113o1">
+                    ก.	3 1 2 4 6 5
+                </label>
+                <input type="radio" class="btn-check" name="c113" id="c113o2" autocomplete="off" value="B">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c113o2">
+                    ข.	3 1 4 2 6 5
+                </label>
+                <input type="radio" class="btn-check" name="c113" id="c113o3" autocomplete="off" value="C">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c113o3">
+                    ค.	3 1 4 6 2 5	
+                </label>
+                <input type="radio" class="btn-check" name="c113" id="c113o4" autocomplete="off" value="D">
+                <label class="list-group-item btn-outline-dark list-group-item-action" for="c113o4">
+                    ง.	3 1 2 6 4 5
+                </label>
+            </div>
+        </div>
+    </div> 
+    <%# choice %> 
+</div>
 
 <%#  END %> 
 </form>

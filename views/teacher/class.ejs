@@ -27,93 +27,11 @@
 
 <%- include('../layouts/header') %>
 <br><br><br>
+
 <div id = "content" class="container">
-    <h1>Student</h1>
-    <div class="box bg-light  mb-5 shadow" >
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" class="col-1">#</th>
-                <th scope="col" class="col-4">Name</th>
-                <th scope="col" class="col-1">Class</th>
-                <th scope="col" class="col-2 text-end">Project (4)</th>
-                <th scope="col" class="col-2 text-end">Course</th>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
 
+    <%- include('./class-Student') %>
 
-                <% 
-                    if(Object.keys(Studentresult).length === 1) {   
-                        %>
-                            <th scope="row">1</th>
-                            <td><%=Studentresult[0].email %></td>
-                            <td><%=Studentresult[0].ClassName %></td>
-                            <td class="text-end">
-                                TicTacToe | <%=Studentresult[0].TicTacToe %> <br>
-                                Library System | <%=Studentresult[0].LibrarySystem %> <br> 
-                                Roshambo | <%=Studentresult[0].Roshambo %> <br>
-                                Calculator | <%=Studentresult[0].Calculator %> <br> 
-                                Calendar | <%=Studentresult[0].Calendar %> <br>
-                              
-                            </td>
-                            <td class="text-end">
-                                Introduction | <%=Studentresult[0].Introduction %> <br>
-                                String | <%=Studentresult[0].String %> <br>
-                                Datatype | <%=Studentresult[0].Datatype %> <br> 
-                                Operators | <%=Studentresult[0].Operators %> <br>
-                                Flow Control | <%=Studentresult[0].FlowControl %> <br> 
-                                Pointers | <%=Studentresult[0].Pointers %> <br>
-                                Function | <%=Studentresult[0].Function %> <br>
-                                Structure | <%=Studentresult[0].Structure %> <br> 
-                                Array | <%=Studentresult[0].Array %> <br>
-                            </td>
-                            </tr>
-                           
-                       
-                        <%
-                    } 
-                    else {
-                        for (let i = 0; i < Object.keys(Studentresult).length; i++) {   
-                            %>
-                            
-     
-                            <th scope="row"><%=i+1%></th>
-                            <td><%=Studentresult[i].email %></td>
-                            <td><%=Studentresult[i].ClassName %></td>
-                            <td class="text-end">
-                                TicTacToe | <%=Studentresult[i].TicTacToe %> <br>
-                                Library System | <%=Studentresult[i].LibrarySystem %> <br> 
-                                Roshambo | <%=Studentresult[i].Roshambo %> <br>
-                                Calculator | <%=Studentresult[i].Calculator %> <br> 
-                                Calendar | <%=Studentresult[i].Calendar %> <br>
-                              
-                            </td>
-                            <td class="text-end">
-                                Introduction | <%=Studentresult[i].Introduction %> <br>
-                                String | <%=Studentresult[i].String %> <br>
-                                Datatype | <%=Studentresult[i].Datatype %> <br> 
-                                Operators | <%=Studentresult[i].Operators %> <br>
-                                Flow Control | <%=Studentresult[i].FlowControl %> <br> 
-                                Pointers | <%=Studentresult[i].Pointers %> <br>
-                                Function | <%=Studentresult[i].Function %> <br>
-                                Structure | <%=Studentresult[i].Structure %> <br> 
-                                Array | <%=Studentresult[i].Array %> <br>
-                            </td>
-                            </tr>
-
-
-                            <%
-                        } 
-                    }
-                %>
-
-                
-                
-            </tbody>
-        </table>
-    </div>
 
     <h1>Class Management</h1>
     <div class="row ">

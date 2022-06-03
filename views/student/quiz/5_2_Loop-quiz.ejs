@@ -38,7 +38,7 @@
     <link rel='stylesheet' href='stylesheets/home.css' />
     <link rel='stylesheet' href='stylesheets/compiler_line.css' />
     <link rel='stylesheet' href='stylesheets/Drag_Drop.css' />
-    <title>Input - QUIZ</title>
+    <title>Loop Statement - QUIZ</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
         <div class="accordion" id="accordionParentSyntax">
             <!--   Introduce -->
             <div id="collapseIntroduce" class="accordion-collapse collapse show" data-bs-parent="#accordionParentSyntax">
-                <h1>InputOutput - QUIZ</h1>
+                <h1>Loop Statement - QUIZ</h1>
                 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><i href="/home" class="fa fa-home" style="font-size:16px"></i></li>
@@ -67,59 +67,59 @@
                 </ol>
 
 <%# START %> 
-<form action="/course-InputOutput-quiz/submit" method="post" autocomplete="off" >
+<form action="/course-Loop_Statement-quiz/submit" method="post" autocomplete="off" >
 
     
 
     <%# LV1 %> 
                 <h2><u>คำถามที่ : 1</u></h2>
-                <img width="500" height="600" src="https://drive.google.com/uc?id=1EsMCQcUcC4wbiNB0JbmRBGpRXK0FCAxk" class="img-thumbnail rounded" >
                 <div class="list-group">
+                    <img width="500" height="600" src="https://drive.google.com/uc?id=1F9UtcObKZ9eEG-1b932Gx3TI7xXl_nxl" class="img-thumbnail rounded" >
                     <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
-                        จากโค้ดบรรทัดใดรับค่าจากคีย์บอร์ด
+                        จากรูปโปรแกรมนี้มีทั้งหมดกี่เงื่อนไข
                     </p>
                     
                     <input type="radio" class="btn-check" name="choice1" id="option1-1" autocomplete="off" value="A" required>
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-1">
-                        ก. บรรทัดที่ 3
+                        ก. 1
                     </label>
                     <input type="radio" class="btn-check" name="choice1" id="option1-2" autocomplete="off" value="B">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-2">
-                        ข. บรรทัดที่ 4
+                        ข. 2
                     </label>
                     <input type="radio" class="btn-check" name="choice1" id="option1-3" autocomplete="off" value="C">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-3">
-                        ค. บรรทัดที่ 5
+                        ค. 3
                     </label>
                     <input type="radio" class="btn-check" name="choice1" id="option1-4" autocomplete="off" value="D">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option1-4">
-                        ง. บรรทัดที่ 6
+                        ง. 4
                     </label>
                 </div>
                 <br>
     <%# LV2 %>                     
                 <h2><u>คำถามที่ : 2</u></h2>
-                <img width="500" height="600" src="https://drive.google.com/uc?id=1i1WLcg90S2EOBlDkU2_EyCAEc3lsqdXA" class="img-thumbnail rounded" >
+                <img width="500" height="600" src="https://drive.google.com/uc?id=1F9UtcObKZ9eEG-1b932Gx3TI7xXl_nxl" class="img-thumbnail rounded" >
                 <div class="list-group">
                     <p type="text" class="list-group-item list-group-item-action bg-dark" style="color: white;">
-                        จากโปรแกรมในรูปทำการรับข้อมูลจากคีย์บอร์ดกี่ครั้ง
+                        บรรทัดใดในโปรแกรมทำการเช็คค่า number1 > number2
                     </p>
                     
                     <input type="radio" class="btn-check" name="choice2" id="option2-1" autocomplete="off" value="A" required="required">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-1">
-                        ก. 1
+                        ก. 7
                     </label>
                     <input type="radio" class="btn-check" name="choice2" id="option2-2" autocomplete="off" value="B">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-2">
-                        ข. 2
+                        ข. 8
                     </label>
                     <input type="radio" class="btn-check" name="choice2" id="option2-3" autocomplete="off" value="C">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-3">
-                        ค. 3
+                        ค. 11
                     </label>
                     <input type="radio" class="btn-check" name="choice2" id="option2-4" autocomplete="off" value="D">
                     <label class="list-group-item btn-outline-dark list-group-item-action" for="option2-4">
-                        ง. 4
+                        ง. 12
                     </label>
                 </div>
                 <br>
@@ -147,22 +147,8 @@
                     <textarea style="height: 400px;" class="form-control" id="lineCounter" readonly rows="10">1 </textarea>
                     <textarea style="height: 400px;" class="form-control" id="code" name="code" rows="10" required></textarea>
                 </div>
-                
-                
-
-                <div class="row">
-                    <div class="col-3">
-                    <div class="form-group" >
-                        <h3>Input</h3>
-                        <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expInput" required></textarea>
-                        
-                    </div>
-                    </div>
-                    <div class="col">
-                        <h3>ผลลัพธ์ที่ได้</h3>
-                        <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expResult" required></textarea>
-                    </div>
-                </div>
+                <h3>ผลลัพธ์ที่ได้</h3>
+                <textarea class="form-control" style="height: 100px;" rows="4" cols="30" name="expResult" required></textarea>
 
                 <h3>การประยุกต์</h3>
                     <p><b>ผลลัพธ์ที่คาด</b> : <%= ADRI_Expect  %> </p>  
@@ -231,5 +217,5 @@
     </div>
 </div>
 
-<script src="javascripts/lv3/10_InputOutput.js"></script>
+<script src="javascripts/lv3/5_2_Loop.js"></script>
 <script src="javascripts/compilerStyle.js"></script>

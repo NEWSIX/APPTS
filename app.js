@@ -133,10 +133,15 @@ app.use('/course-Operators',
   ensureStudent,
   require('./routes/student/course/4_Operators-course.route')
 );
-app.use('/course-Flow_Control',
+app.use('/course-Selection_Statement',
   ensureLoggedIn({ redirectTo: '/auth/login' }),
   ensureStudent,
-  require('./routes/student/course/5_FlowControl-course.route')
+  require('./routes/student/course/5_1_Selection-course.route')
+);
+app.use('/course-Loop_Statement',
+  ensureLoggedIn({ redirectTo: '/auth/login' }),
+  ensureStudent,
+  require('./routes/student/course/5_2_Loop-course.route')
 );
 app.use('/course-Pointers',
   ensureLoggedIn({ redirectTo: '/auth/login' }),
@@ -184,10 +189,15 @@ app.use('/course-Operators-quiz',
   ensureStudent,
   require('./routes/student/quiz/4_Operators-quiz.route')
 );
-app.use('/course-Flow_Control-quiz',
+app.use('/course-Selection_Statement-quiz',
   ensureLoggedIn({ redirectTo: '/auth/login' }),
   ensureStudent,
-  require('./routes/student/quiz/5_FlowControl-quiz.route')
+  require('./routes/student/quiz/5_1_Selection-quiz.route')
+);
+app.use('/course-Loop_Statement-quiz',
+  ensureLoggedIn({ redirectTo: '/auth/login' }),
+  ensureStudent,
+  require('./routes/student/quiz/5_2_Loop-course-quiz.route')
 );
 app.use('/course-Pointers-quiz',
   ensureLoggedIn({ redirectTo: '/auth/login' }),

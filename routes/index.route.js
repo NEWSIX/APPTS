@@ -7,8 +7,7 @@ const mydatabase = "APPTSystem";
 router.post('/pretestSubmit', async (req, res, next) => {
   const person = req.user;
   var currentQuiz = "Pre-test"
-  var scoreLV1=0,scoreLV2=0,scoreLV3=0;
-  var scoreC1=0,scoreC2=0,scoreC3=0,scoreC4=0,scoreC5=0,scoreC6=0,scoreC7=0,scoreC8=0,scoreC9=0,scoreC10=0;
+  var scoreC1=0,scoreC2=0,scoreC3=0,scoreC4=0,scoreC5=0,scoreC6=0,scoreC7=0,scoreC8=0,scoreC9=0,scoreC10=0,scoreC11=0;
   var c11 = req.body.c11;
   var c12 = req.body.c12;
   var c13 = req.body.c13;
@@ -39,48 +38,55 @@ router.post('/pretestSubmit', async (req, res, next) => {
   var c101 = req.body.c101;
   var c102 = req.body.c102;
   var c103 = req.body.c103;
-  console.log(c11,c12,c13,c21,c22,c23,c31,c32,c33,c41,c42,c43,c51,c52,c53,c61,c62,c63,c71,c72,c73,c81,c82,c83,c91,c92,c93,c101,c102,c103)
+  var c111 = req.body.c113; //Loop Statement
+  var c112 = req.body.c113; //Loop Statement
+  var c113 = req.body.c113;  //Loop Statement
+  
 
   /* 1.Syntax */
-  if (c11 === 'A') {scoreC1 = scoreC1 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c12 === 'D') {scoreC1 = scoreC1 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c13 === 'C') {scoreC1 = scoreC1 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c11 === 'A') {scoreC1 = scoreC1 + 1;  }
+  if (c12 === 'D') {scoreC1 = scoreC1 + 1;  }
+  if (c13 === 'C') {scoreC1 = scoreC1 + 1;  }
   /* 2.Data Type, Output */
-  if (c21 === 'C') {scoreC2 = scoreC2 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c22 === 'D') {scoreC2 = scoreC2 + 1; scoreLV2 = scoreLV2 + 10;}
-  if (c23 === 'A') {scoreC2 = scoreC2 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c21 === 'C') {scoreC2 = scoreC2 + 1;  }
+  if (c22 === 'D') {scoreC2 = scoreC2 + 1; }
+  if (c23 === 'A') {scoreC2 = scoreC2 + 1;  }
   /* 3.Operators */
-  if (c31 === 'D') {scoreC3 = scoreC3 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c32 === 'B') {scoreC3 = scoreC3 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c33 === 'D') {scoreC3 = scoreC3 + 1; scoreLV3 = scoreLV3 + 30;} 
-  /* 4.Flow Control */
-  if (c41 === 'A') {scoreC4 = scoreC4 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c42 === 'A') {scoreC4 = scoreC4 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c43 === 'B') {scoreC4 = scoreC4 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c31 === 'D') {scoreC3 = scoreC3 + 1;  }
+  if (c32 === 'B') {scoreC3 = scoreC3 + 1;  }
+  if (c33 === 'D') {scoreC3 = scoreC3 + 1;  } 
+  /* 4.Selection Control */
+  if (c41 === 'A') {scoreC4 = scoreC4 + 1;  }
+  if (c42 === 'A') {scoreC4 = scoreC4 + 1;  }
+  if (c43 === 'B') {scoreC4 = scoreC4 + 1;  }
   /* 5.Array */
-  if (c51 === 'B') {scoreC5 = scoreC5 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c52 === 'C') {scoreC5 = scoreC5 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c53 === 'A') {scoreC5 = scoreC5 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c51 === 'B') {scoreC5 = scoreC5 + 1;  }
+  if (c52 === 'C') {scoreC5 = scoreC5 + 1;  }
+  if (c53 === 'A') {scoreC5 = scoreC5 + 1;  }
   /* 6.Input Output */
-  if (c61 === 'C') {scoreC6 = scoreC6 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c62 === 'C') {scoreC6 = scoreC6 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c63 === 'A') {scoreC6 = scoreC6 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c61 === 'C') {scoreC6 = scoreC6 + 1;  }
+  if (c62 === 'C') {scoreC6 = scoreC6 + 1;  }
+  if (c63 === 'A') {scoreC6 = scoreC6 + 1;  }
   /* 7.Pointers */
-  if (c71 === 'A') {scoreC7 = scoreC7 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c72 === 'D') {scoreC7 = scoreC7 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c73 === 'C') {scoreC7 = scoreC7 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c71 === 'A') {scoreC7 = scoreC7 + 1;  }
+  if (c72 === 'D') {scoreC7 = scoreC7 + 1;  }
+  if (c73 === 'C') {scoreC7 = scoreC7 + 1;  }
   /* 8.Strings */
-  if (c81 === 'B') {scoreC8 = scoreC8 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c82 === 'B') {scoreC8 = scoreC8 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c83 === 'D') {scoreC8 = scoreC8 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c81 === 'B') {scoreC8 = scoreC8 + 1;  }
+  if (c82 === 'B') {scoreC8 = scoreC8 + 1;  }
+  if (c83 === 'D') {scoreC8 = scoreC8 + 1;  }
   /* 9.Structure */
-  if (c91 === 'A') {scoreC9 = scoreC9 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c92 === 'A') {scoreC9 = scoreC9 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c93 === 'C') {scoreC9 = scoreC9 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c91 === 'A') {scoreC9 = scoreC9 + 1;  }
+  if (c92 === 'A') {scoreC9 = scoreC9 + 1;  }
+  if (c93 === 'C') {scoreC9 = scoreC9 + 1;  }
   /* 10.Function */
-  if (c101 === 'B') {scoreC10 = scoreC10 + 1; scoreLV1 = scoreLV1 + 10;}
-  if (c102 === 'C') {scoreC10 = scoreC10 + 1; scoreLV2 = scoreLV2 + 20;}
-  if (c103 === 'A') {scoreC10 = scoreC10 + 1; scoreLV3 = scoreLV3 + 30;}
+  if (c101 === 'B') {scoreC10 = scoreC10 + 1;  }
+  if (c102 === 'C') {scoreC10 = scoreC10 + 1;  }
+  if (c103 === 'A') {scoreC10 = scoreC10 + 1;  }
+  /* 11.Loop */
+  if (c111 === 'B') {scoreC11 = scoreC11 + 1;  }
+  if (c112 === 'C') {scoreC11 = scoreC11 + 1;  }
+  if (c113 === 'A') {scoreC11 = scoreC11 + 1;  }
   /** */
 
  
@@ -95,9 +101,6 @@ router.post('/pretestSubmit', async (req, res, next) => {
       email: person.email,
       role:person.role,
       contentName:currentQuiz,
-      scoreLV1:scoreLV1, //Basic
-      scoreLV2:scoreLV2, //Trace
-      scoreLV3:scoreLV3, //Explain
       scoreC1:scoreC1, //Intro
       scoreC2:scoreC2,  //String
       scoreC3:scoreC3,  //Datatype
@@ -107,7 +110,8 @@ router.post('/pretestSubmit', async (req, res, next) => {
       scoreC7:scoreC7,
       scoreC8:scoreC8,
       scoreC9:scoreC9,
-      scoreC10:scoreC10  //Array
+      scoreC10:scoreC10,  //Array
+      scoreC11:scoreC11  //Array
     };
     dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
       if (err) throw err;
@@ -310,7 +314,8 @@ router.get('/', async (req, res, next) => {
             'String':{score:StringScore},
             'Datatype':{score:DatatypeScore},
             'Operators':{score:OperatorsScore},
-            'Flow Control':{score:FlowControlScore},
+            'Selection':{score:FlowControlScore},
+            'Loop':{score:FlowControlScore},
             'Pointers':{score:PointersScore},
             'Function':{score:FunctionScore},
             'Structure':{score:StructureScore},
@@ -379,40 +384,43 @@ router.get('/', async (req, res, next) => {
               dbo.collection("StudentAnswer").find(query).toArray(function(err, StudentAnswer) {
                 if (err) throw err;
 
-                var IntroductionDone = "NO" ,StringDone = "NO" ,OperatorsDone = "NO" ,DatatypeDone = "NO",FlowControlDone = "NO",PointersDone = "NO",FunctionDone = "NO",StructureDone = "NO",ArrayDone = "NO" ,InputOutputDone = "NO" ;
+                var IntroductionDone = "NO" ,StringDone = "NO" ,OperatorsDone = "NO" ,DatatypeDone = "NO",FlowControlDone = "NO",LoopDone = "NO",PointersDone = "NO",FunctionDone = "NO",StructureDone = "NO",ArrayDone = "NO" ,InputOutputDone = "NO" ;
                 var TicTacToeDone = "NO" , Library_SystemDone = "NO" , RoshamboDone = "NO" ,CalendarDone = "NO" , CalculatorDone = "NO";
       
                 for (let i = 0; i < Object.keys(StudentAnswer).length; i++) {
 
                   if(StudentAnswer[i].contentName ==='Introduction-Quiz'){
-                    IntroductionDone = "YES";
+                    IntroductionDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='Datatype-Quiz'){
-                    DatatypeDone = "YES";
+                    DatatypeDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='String-Quiz'){
-                    StringDone = "YES";
+                    StringDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='Operators-Quiz'){
-                    OperatorsDone = "YES";
+                    OperatorsDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
-                  if(StudentAnswer[i].contentName ==='FlowControl-Quiz'){
-                    FlowControlDone = "YES";
+                  if(StudentAnswer[i].contentName ==='Selection-Quiz'){
+                    FlowControlDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
+                  }
+                  if(StudentAnswer[i].contentName ==='Loop-Quiz'){
+                    LoopDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='Pointers-Quiz'){
-                    PointersDone = "YES";
+                    PointersDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='Function-Quiz'){
-                    FunctionDone = "YES";
+                    FunctionDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='Structure-Quiz'){
-                    StructureDone = "YES";
+                    StructureDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='Array-Quiz'){
-                    ArrayDone = "YES";
+                    ArrayDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   if(StudentAnswer[i].contentName ==='InputOutput-Quiz'){
-                    InputOutputDone = "YES";
+                    InputOutputDone = StudentAnswer[i].scoreLV1+"/"+StudentAnswer[i].scoreLV2+"/"+StudentAnswer[i].scoreLV3;
                   }
                   /** */
                   if (StudentAnswer[i].contentName ==='TicTacToe' && StudentAnswer[i].scoreTeacher != undefined) {   
@@ -455,6 +463,7 @@ router.get('/', async (req, res, next) => {
                             Datatype:DatatypeDone,
                             Operators:OperatorsDone,
                             FlowControl:FlowControlDone,
+                            Loop:LoopDone,
                             Pointers:PointersDone,
                             Function:FunctionDone,
                             Structure:StructureDone,
@@ -526,7 +535,7 @@ router.get('/', async (req, res, next) => {
                         OperatorsScoreLV4 = parseInt(StudentAnswer[i].scoreTeacher);
                         OperatorsDone = 1;
                     }
-                    if (StudentAnswer[i].contentName ==='FlowControl-Quiz') {   
+                    if (StudentAnswer[i].contentName ==='Loop-Quiz'||StudentAnswer[i].contentName ==='Selection-Quiz') {   
                         FlowControlScoreLV1 = StudentAnswer[i].scoreLV1;
                         FlowControlScoreLV2 = StudentAnswer[i].scoreLV2;
                         FlowControlScoreLV3 = StudentAnswer[i].scoreLV3;
@@ -602,14 +611,15 @@ router.get('/', async (req, res, next) => {
                     for(let i = 0; i < Object.keys(StudentAnswer).length; i++) {        //value คือ ความยาก ง่าย - 1 ยาก - 9
                       var LV1 = StudentAnswer[i].scoreLV1 , LV2 = StudentAnswer[i].scoreLV2 , LV3 = StudentAnswer[i].scoreLV3;
                       if (StudentAnswer[i].contentName ==='Introduction-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Introduction",value:1});} 
-                      if (StudentAnswer[i].contentName ==='String-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"String",value:7});}
+                      if (StudentAnswer[i].contentName ==='String-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"String",value:8});}
                       if (StudentAnswer[i].contentName ==='Datatype-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Datatype",value:2});} 
                       if (StudentAnswer[i].contentName ==='Operators-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) { ArrCourseDone.push({key:"Operators",value:3});}
-                      if (StudentAnswer[i].contentName ==='FlowControl-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Flow Control",value:5});}
-                      if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:8});}
-                      if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:9});}
-                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:10});}
-                      if (StudentAnswer[i].contentName ==='Array-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Array",value:6});}
+                      if (StudentAnswer[i].contentName ==='Selection-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Selection Statement",value:5});}
+                      if (StudentAnswer[i].contentName ==='Loop-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Loop Statement",value:6});}
+                      if (StudentAnswer[i].contentName ==='Pointers-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Pointers",value:9});}
+                      if (StudentAnswer[i].contentName ==='Function-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Function",value:10});}
+                      if (StudentAnswer[i].contentName ==='Structure-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"Structure",value:11});}
+                      if (StudentAnswer[i].contentName ==='Array-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30 ) {ArrCourseDone.push({key:"Array",value:7});}
                       if (StudentAnswer[i].contentName ==='InputOutput-Quiz' && LV1 === 10 && LV2 === 20 && LV3 === 30) {ArrCourseDone.push({key:"InputOutput",value:4});}
                     }
                    
@@ -629,15 +639,15 @@ router.get('/', async (req, res, next) => {
                     // RecommendaResult[0].RecommendationType คือ วิธีแนะนำที่ผู้เรียนเลือก
  
                     var RecommendOutput = [];
-                    var CourseTotol = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String','Pointers','Function','Structure'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
+                    var CourseTotol = ['Introduction','Datatype','Operators','InputOutput','Selection Statement','Loop Statement','Array','String','Pointers','Function','Structure'] //เรียกจากง่ายไปยาก เปรียบเทียบที่เหมือนกับ path_left หาตัวที่ต่าง เพื่อเลือกตัวง่ายสุดแสดงผล (ไม่รวม file operation)
                     var Course_Left = [];
                     var ArrRankStorage = []
                     
-                    var PathTicTacToe = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String','Function'] //เรียกจากง่ายไปยาก
-                    var PathLibrary = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String','Structure'] 
-                    var PathRoshambo = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String','Function'] 
-                    var PathCalendar = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','Pointers','Function'] 
-                    var PathCalculator = ['Introduction','Datatype','Operators','InputOutput','Flow Control','Array','String']
+                    var PathTicTacToe = ['Introduction','Datatype','Operators','InputOutput','Selection Statement','Loop Statement','Array','String','Function'] //เรียกจากง่ายไปยาก
+                    var PathLibrary = ['Introduction','Datatype','Operators','InputOutput','Selection Statement','Loop Statement','Array','String','Structure'] 
+                    var PathRoshambo = ['Introduction','Datatype','Operators','InputOutput','Selection Statement','Loop Statement','Array','String','Function'] 
+                    var PathCalendar = ['Introduction','Datatype','Operators','InputOutput','Selection Statement','Loop Statement','Array','Pointers','Function'] 
+                    var PathCalculator = ['Introduction','Datatype','Operators','InputOutput','Selection Statement','Loop Statement','Array','String']
                     //ตรวจสอบคอร์สที่ทำ กับ แต่ละ path
                     var b = new Set(CourseDoneSorted);
                     var DiffTicTacToe = [...PathTicTacToe].filter(x => !b.has(x));
