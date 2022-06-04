@@ -119,30 +119,103 @@
                             %>
                             
      
-                            <th scope="row"><%=i+1%></th>
-                            <td><%=Studentresult[i].email %></td>
-                            <td><%=Studentresult[i].ClassName %></td>
-                            <td class="text-end">
-                                TicTacToe | <%=Studentresult[i].TicTacToe %> <br>
-                                Library System | <%=Studentresult[i].LibrarySystem %> <br> 
-                                Roshambo | <%=Studentresult[i].Roshambo %> <br>
-                                Calculator | <%=Studentresult[i].Calculator %> <br> 
-                                Calendar | <%=Studentresult[i].Calendar %> <br>
-                              
+                                <th scope="row"><%=i+1%></th>
+                                <td><%=Studentresult[i].email %></td>
+                                <td><%=Studentresult[i].ClassName %></td>
+                                <td class="text-end">
+                                    TicTacToe | <%=Studentresult[i].TicTacToe %> <br>
+                                    Library System | <%=Studentresult[i].LibrarySystem %> <br> 
+                                    Roshambo | <%=Studentresult[i].Roshambo %> <br>
+                                    Calculator | <%=Studentresult[i].Calculator %> <br> 
+                                    Calendar | <%=Studentresult[i].Calendar %> <br>
+                                
+                                </td>
+                                <td class="text-end">
+                                    <% if(Studentresult[i].infoPrePostTest != undefined){ %>
+                                    
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[0] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Introduction %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[0] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[0] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[1] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].DataType  %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[1] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[1] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[2] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Operators %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[2] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[2] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[3] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].FlowControl %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[3] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[3] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[4] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Loop %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[4] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[4] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[5] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Array  %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[5] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[5] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[6] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].InputOutput  %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[6] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[6] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[7] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Pointers  %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[7] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[7] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[8] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].String   %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[8] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[8] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[9] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Structure   %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[9] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[9] %> <br>
+
+                                    <u><%=Studentresult[i].infoPrePostTest[0].Name[10] %></u> :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Function  %> <br>
+                                    &nbsp &nbspPre Test | <%=Studentresult[i].infoPrePostTest[1].Pre[10] %> <br>
+                                    &nbsp &nbspPost Test | <%=Studentresult[i].infoPrePostTest[2].Post[10] %> <br>
+                                    
+                                <% } else{ %>  
+                                    Introduction :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Introduction %> <br>
+                                    String :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].String %> <br>
+                                    Datatype :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Datatype %> <br> 
+                                    Operators :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Operators %> <br>
+                                    Selection  :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].FlowControl %> <br> 
+                                    Loop  :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Loop %> <br> 
+                                    Pointers :
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Pointers %> <br>
+                                    Function : 
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Function %> <br>
+                                    Structure : 
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Structure %> <br> 
+                                    Array : 
+                                    <br> &nbsp &nbspCourse | <%=Studentresult[i].Array %> <br>
+                                    
+                                <% } %>
+                               
                             </td>
-                            <td class="text-end">
-                                Introduction | <%=Studentresult[i].Introduction %> <br>
-                                String | <%=Studentresult[i].String %> <br>
-                                Datatype | <%=Studentresult[i].Datatype %> <br> 
-                                Operators | <%=Studentresult[i].Operators %> <br>
-                                Selection  | <%=Studentresult[i].FlowControl %> <br> 
-                                Loop  | <%=Studentresult[i].Loop %> <br> 
-                                Pointers | <%=Studentresult[i].Pointers %> <br>
-                                Function | <%=Studentresult[i].Function %> <br>
-                                Structure | <%=Studentresult[i].Structure %> <br> 
-                                Array | <%=Studentresult[i].Array %> <br>
-                            </td>
-                            </tr>
+
+                
+                                </tr>
 
 
                             <%
