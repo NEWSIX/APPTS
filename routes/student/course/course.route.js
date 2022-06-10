@@ -1,4 +1,4 @@
- const router = require('express').Router();
+const router = require('express').Router();
 var compiler = require('compilex');
 const { roles } = require('../../../utils/constants');
 const MongoClient = require('mongodb').MongoClient;
@@ -238,7 +238,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-
 router.post('/posttestSubmit', async (req, res, next) => {
   const person = req.user;
   var currentQuiz = "Post-test"
@@ -273,54 +272,54 @@ router.post('/posttestSubmit', async (req, res, next) => {
   var c101 = req.body.c101;
   var c102 = req.body.c102;
   var c103 = req.body.c103;
-  var c111 = req.body.c113; //Loop Statement
-  var c112 = req.body.c113; //Loop Statement
+  var c111 = req.body.c111; //Loop Statement
+  var c112 = req.body.c112; //Loop Statement
   var c113 = req.body.c113;  //Loop Statement
 
   /* 1.Syntax */
   if (c11 === 'C') {scoreC1 = scoreC1 + 1;}
-  if (c12 === 'C') {scoreC1 = scoreC1 + 1;}
-  if (c13 === 'A') {scoreC1 = scoreC1 + 1;}
+  if (c12 === 'B') {scoreC1 = scoreC1 + 1;}
+  if (c13 === 'C') {scoreC1 = scoreC1 + 1;}
   /* 2.Data Type, Output */
   if (c21 === 'C') {scoreC2 = scoreC2 + 1;}
-  if (c22 === 'C') {scoreC2 = scoreC2 + 1;}
-  if (c23 === 'C') {scoreC2 = scoreC2 + 1;}
+  if (c22 === 'D') {scoreC2 = scoreC2 + 1;}
+  if (c23 === 'A') {scoreC2 = scoreC2 + 1;}
   /* 3.Operators */
-  if (c31 === 'C') {scoreC3 = scoreC3 + 1;}
-  if (c32 === 'B') {scoreC3 = scoreC3 + 1;}
-  if (c33 === 'C') {scoreC3 = scoreC3 + 1;} 
+  if (c31 === 'B') {scoreC3 = scoreC3 + 1;}
+  if (c32 === 'A') {scoreC3 = scoreC3 + 1;}
+  if (c33 === 'D') {scoreC3 = scoreC3 + 1;} 
   /* 4.Flow Control */
   if (c41 === 'C') {scoreC4 = scoreC4 + 1;}
-  if (c42 === 'B') {scoreC4 = scoreC4 + 1;}
-  if (c43 === 'D') {scoreC4 = scoreC4 + 1;}
+  if (c42 === 'C') {scoreC4 = scoreC4 + 1;}
+  if (c43 === 'C') {scoreC4 = scoreC4 + 1;}
   /* 5.Array */
-  if (c51 === 'B') {scoreC5 = scoreC5 + 1;}
-  if (c52 === 'C') {scoreC5 = scoreC5 + 1;}
-  if (c53 === 'A') {scoreC5 = scoreC5 + 1;}
+  if (c51 === 'C') {scoreC5 = scoreC5 + 1;}
+  if (c52 === 'B') {scoreC5 = scoreC5 + 1;}
+  if (c53 === 'B') {scoreC5 = scoreC5 + 1;}
   /* 6.Input Output */
-  if (c61 === 'D') {scoreC6 = scoreC6 + 1;}
-  if (c62 === 'D') {scoreC6 = scoreC6 + 1;}
+  if (c61 === 'C') {scoreC6 = scoreC6 + 1;}
+  if (c62 === 'C') {scoreC6 = scoreC6 + 1;}
   if (c63 === 'A') {scoreC6 = scoreC6 + 1;}
   /* 7.Pointers */
   if (c71 === 'A') {scoreC7 = scoreC7 + 1;}
   if (c72 === 'C') {scoreC7 = scoreC7 + 1;}
   if (c73 === 'A') {scoreC7 = scoreC7 + 1;}
   /* 8.Strings */
-  if (c81 === 'C') {scoreC8 = scoreC8 + 1;}
-  if (c82 === 'B') {scoreC8 = scoreC8 + 1;}
-  if (c83 === 'B') {scoreC8 = scoreC8 + 1;}
+  if (c81 === 'B') {scoreC8 = scoreC8 + 1;}
+  if (c82 === 'C') {scoreC8 = scoreC8 + 1;}
+  if (c83 === 'A') {scoreC8 = scoreC8 + 1;}
   /* 9.Structure */
-  if (c91 === 'A') {scoreC9 = scoreC9 + 1;}
-  if (c92 === 'B') {scoreC9 = scoreC9 + 1;}
+  if (c91 === 'C') {scoreC9 = scoreC9 + 1;}
+  if (c92 === 'D') {scoreC9 = scoreC9 + 1;}
   if (c93 === 'B') {scoreC9 = scoreC9 + 1;}
   /* 10.Function */
-  if (c101 === 'B') {scoreC10 = scoreC10 + 1;}
-  if (c102 === 'A') {scoreC10 = scoreC10 + 1;}
+  if (c101 === 'C') {scoreC10 = scoreC10 + 1;}
+  if (c102 === 'B') {scoreC10 = scoreC10 + 1;}
   if (c103 === 'D') {scoreC10 = scoreC10 + 1;} 
   /* 11.Loop */
   if (c111 === 'B') {scoreC11 = scoreC11 + 1;  }
-  if (c112 === 'C') {scoreC11 = scoreC11 + 1;  }
-  if (c113 === 'A') {scoreC11 = scoreC11 + 1;  }
+  if (c112 === 'D') {scoreC11 = scoreC11 + 1;  }
+  if (c113 === 'C') {scoreC11 = scoreC11 + 1;  }
   /** */
 
  

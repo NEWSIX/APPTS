@@ -38,59 +38,56 @@ router.post('/pretestSubmit', async (req, res, next) => {
   var c101 = req.body.c101;
   var c102 = req.body.c102;
   var c103 = req.body.c103;
-  var c111 = req.body.c113; //Loop Statement
-  var c112 = req.body.c113; //Loop Statement
+  var c111 = req.body.c111; //Loop Statement
+  var c112 = req.body.c112; //Loop Statement
   var c113 = req.body.c113;  //Loop Statement
   
 
-  /* 1.Syntax */
-  if (c11 === 'A') {scoreC1 = scoreC1 + 1;  }
-  if (c12 === 'D') {scoreC1 = scoreC1 + 1;  }
-  if (c13 === 'C') {scoreC1 = scoreC1 + 1;  }
-  /* 2.Data Type, Output */
-  if (c21 === 'C') {scoreC2 = scoreC2 + 1;  }
-  if (c22 === 'D') {scoreC2 = scoreC2 + 1; }
-  if (c23 === 'A') {scoreC2 = scoreC2 + 1;  }
-  /* 3.Operators */
-  if (c31 === 'D') {scoreC3 = scoreC3 + 1;  }
-  if (c32 === 'B') {scoreC3 = scoreC3 + 1;  }
-  if (c33 === 'D') {scoreC3 = scoreC3 + 1;  } 
-  /* 4.Selection Control */
-  if (c41 === 'A') {scoreC4 = scoreC4 + 1;  }
-  if (c42 === 'A') {scoreC4 = scoreC4 + 1;  }
-  if (c43 === 'B') {scoreC4 = scoreC4 + 1;  }
-  /* 5.Array */
-  if (c51 === 'B') {scoreC5 = scoreC5 + 1;  }
-  if (c52 === 'C') {scoreC5 = scoreC5 + 1;  }
-  if (c53 === 'A') {scoreC5 = scoreC5 + 1;  }
-  /* 6.Input Output */
-  if (c61 === 'C') {scoreC6 = scoreC6 + 1;  }
-  if (c62 === 'C') {scoreC6 = scoreC6 + 1;  }
-  if (c63 === 'A') {scoreC6 = scoreC6 + 1;  }
-  /* 7.Pointers */
-  if (c71 === 'A') {scoreC7 = scoreC7 + 1;  }
-  if (c72 === 'D') {scoreC7 = scoreC7 + 1;  }
-  if (c73 === 'C') {scoreC7 = scoreC7 + 1;  }
-  /* 8.Strings */
-  if (c81 === 'B') {scoreC8 = scoreC8 + 1;  }
-  if (c82 === 'B') {scoreC8 = scoreC8 + 1;  }
-  if (c83 === 'D') {scoreC8 = scoreC8 + 1;  }
-  /* 9.Structure */
-  if (c91 === 'A') {scoreC9 = scoreC9 + 1;  }
-  if (c92 === 'A') {scoreC9 = scoreC9 + 1;  }
-  if (c93 === 'C') {scoreC9 = scoreC9 + 1;  }
-  /* 10.Function */
-  if (c101 === 'B') {scoreC10 = scoreC10 + 1;  }
-  if (c102 === 'C') {scoreC10 = scoreC10 + 1;  }
-  if (c103 === 'A') {scoreC10 = scoreC10 + 1;  }
-  /* 11.Loop */
-  if (c111 === 'B') {scoreC11 = scoreC11 + 1;  }
-  if (c112 === 'C') {scoreC11 = scoreC11 + 1;  }
-  if (c113 === 'A') {scoreC11 = scoreC11 + 1;  }
-  /** */
-
- 
-
+ /* 1.Syntax */
+ if (c11 === 'A') {scoreC1 = scoreC1 + 1;  }
+ if (c12 === 'D') {scoreC1 = scoreC1 + 1;  }
+ if (c13 === 'C') {scoreC1 = scoreC1 + 1;  }
+ /* 2.Data Type, Output */
+ if (c21 === 'C') {scoreC2 = scoreC2 + 1;  }
+ if (c22 === 'D') {scoreC2 = scoreC2 + 1; }
+ if (c23 === 'A') {scoreC2 = scoreC2 + 1;  }
+ /* 3.Operators */
+ if (c31 === 'D') {scoreC3 = scoreC3 + 1;  }
+ if (c32 === 'B') {scoreC3 = scoreC3 + 1;  }
+ if (c33 === 'D') {scoreC3 = scoreC3 + 1;  } 
+ /* 4.Selection Control */
+ if (c41 === 'A') {scoreC4 = scoreC4 + 1;  }
+ if (c42 === 'A') {scoreC4 = scoreC4 + 1;  }
+ if (c43 === 'B') {scoreC4 = scoreC4 + 1;  }
+ /* 5.Array */
+ if (c51 === 'B') {scoreC5 = scoreC5 + 1;  }
+ if (c52 === 'C') {scoreC5 = scoreC5 + 1;  }
+ if (c53 === 'A') {scoreC5 = scoreC5 + 1;  }
+ /* 6.Input Output */
+ if (c61 === 'C') {scoreC6 = scoreC6 + 1;  }
+ if (c62 === 'C') {scoreC6 = scoreC6 + 1;  }
+ if (c63 === 'A') {scoreC6 = scoreC6 + 1;  }
+ /* 7.Pointers */
+ if (c71 === 'A') {scoreC7 = scoreC7 + 1;  }
+ if (c72 === 'A') {scoreC7 = scoreC7 + 1;  }
+ if (c73 === 'C') {scoreC7 = scoreC7 + 1;  }
+ /* 8.Strings */
+ if (c81 === 'B') {scoreC8 = scoreC8 + 1;  }
+ if (c82 === 'B') {scoreC8 = scoreC8 + 1;  }
+ if (c83 === 'D') {scoreC8 = scoreC8 + 1;  }
+ /* 9.Structure */
+ if (c91 === 'A') {scoreC9 = scoreC9 + 1;  }
+ if (c92 === 'A') {scoreC9 = scoreC9 + 1;  }
+ if (c93 === 'C') {scoreC9 = scoreC9 + 1;  }
+ /* 10.Function */
+ if (c101 === 'B') {scoreC10 = scoreC10 + 1;  }
+ if (c102 === 'C') {scoreC10 = scoreC10 + 1;  }
+ if (c103 === 'A') {scoreC10 = scoreC10 + 1;  }
+ /* 11.Loop */
+ if (c111 === 'B') {scoreC11 = scoreC11 + 1;  }
+ if (c112 === 'D') {scoreC11 = scoreC11 + 1;  }
+ if (c113 === 'C') {scoreC11 = scoreC11 + 1;  }
+ /** */
 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
