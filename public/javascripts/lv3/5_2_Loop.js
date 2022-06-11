@@ -3,14 +3,13 @@ const check = document.getElementById("check");
 //**  */
 var data =  
   {
-  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (Input number of rows : )",
+  "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง (output : 1 - 10)",
   "opt":[ "#include＜stdio.h＞",
-          'void main(){<br>&nbsp int i,j,rows;',
-          'printf("Input number of rows : ");',
-          'scanf("%d",&rows);',
-          'for(i=1;i<=rows;i++){',
-          'printf("*");',
-          'printf("〵n");}}'
+          'int main() {<br>&nbsp int n = 1;',
+          'while (n <= 10) {',
+          'printf("%d〵n", n)',
+          'n++; }',
+          'return 0; }',
         ],
   "pic" :"https://i.redd.it/mwljue1r4sk11.jpg"
   }
