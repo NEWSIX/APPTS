@@ -200,11 +200,16 @@ router.get('/', async (req, res, next) => {
                    //***End Of PROJECT UNLOCK */
 
 
-                var infoPrePostTest = [{ Name:["Introduction","Data Type","Operators","Selection Statement","Loop Statement","Array","Input Output","Pointers","Strings","Structure","Function"]}]
+                var infoPrePostTest = [{ Name:["Introduction","Data Type","Operators","Selection Statement","Loop Statement","Array","Input Output","Pointers","Strings","Structure","Function","_Summary"]}]
                   for (let i = 0; i < Object.keys(StudentAnswer).length; i++){
                     var result = StudentAnswer[i];
-                    if (StudentAnswer[i].contentName === "Pre-test"){infoPrePostTest.push({Pre:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC11,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]})}
-                    if (StudentAnswer[i].contentName === "Post-test"){infoPrePostTest.push({Post:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC11,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10]}),PostTestDone = 1}
+                    
+                    if (StudentAnswer[i].contentName === "Pre-test"){
+                      let Sum_Pretest = result.scoreC1+result.scoreC2+result.scoreC3+result.scoreC4+result.scoreC11+result.scoreC5+result.scoreC6+result.scoreC7+result.scoreC8+result.scoreC9+result.scoreC10;
+                      infoPrePostTest.push({Pre:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC11,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10,Sum_Pretest]})}
+                    if (StudentAnswer[i].contentName === "Post-test"){
+                      let Sum_Posttest = result.scoreC1+result.scoreC2+result.scoreC3+result.scoreC4+result.scoreC11+result.scoreC5+result.scoreC6+result.scoreC7+result.scoreC8+result.scoreC9+result.scoreC10;
+                      infoPrePostTest.push({Post:[result.scoreC1,result.scoreC2,result.scoreC3,result.scoreC4,result.scoreC11,result.scoreC5,result.scoreC6,result.scoreC7,result.scoreC8,result.scoreC9,result.scoreC10,Sum_Posttest]}),PostTestDone = 1}
                   }
 
                 if(PostTestStatus === 0 || PostTestDone === 1){ //if all course not done || post-test done 
