@@ -6,10 +6,8 @@ var data =
   "question":"เรียงลำดับของโปรแกรมให้ถูกต้อง <br>(Input : Enter a value = Hello!! 2022 <br>Output : You entered: Hello!! 2022)",
   "opt":[ "#include＜stdio.h＞",
           "int main( ) {",
-          "char str[100];",
-          "int i;",
-          'printf( "Enter a value =:");',
-          'scanf("%s %d", str, &i);',
+          "char str[100];<br>int i;",
+          'printf( "Enter a value =:");<br>scanf("%s %d", str, &i);',
           'printf( "〵nYou entered: %s %d ", str, i);',
           'return 0;}'
         ],
