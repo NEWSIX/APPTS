@@ -31,6 +31,13 @@ router.get(
     res.render('Auth/register');
   }
 );
+router.get(
+  '/register/teacher',
+  ensureLoggedOut({ redirectTo: '/' }),
+  async (req, res, next) => {
+    res.render('Auth/register-teacher');
+  }
+);
 
 router.post(
   '/register',
