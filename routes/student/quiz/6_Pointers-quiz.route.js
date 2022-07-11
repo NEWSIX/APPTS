@@ -9,6 +9,7 @@ const mydatabase = "APPTSystem";
 var ADRI = "https://drive.google.com/file/d/1BO8PQ9SavC39RZdzBhStbJSAylrucBmR/preview"
 var ADRI_Expect = "จงสร้าง Token โดยใช้ Pointers ให้ซับซ้อนกว่าเดิม เช่น ใช้ for loop โดยจำนวนรอบตามค่าที่รับผ่านคีย์บอร์ด"
 
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;
@@ -106,7 +107,8 @@ router.post('/submit', async (req, res, next) => {
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
                 expResult:expResult,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

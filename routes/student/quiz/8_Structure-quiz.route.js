@@ -8,6 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/1iIigzM3q5OUMdoAiPUNp1hsEZoOChZT_/preview"
 var ADRI_Expect = "จงเขียนโปรแกรมคำนวณการตั้งราคาสินค้า โดยรับค่า 1.ราคาต้นทุน 2.เปอร์เซ็นกำไรที่อยากได้ 3.ภาษีที่ต้องจ่าย "
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;
@@ -105,7 +106,8 @@ router.post('/submit', async (req, res, next) => {
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
                 expResult:expResult,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

@@ -8,6 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/1YA0Dgl03Wlci8955XIHoQjT4HAP5ztuA/preview"
 var ADRI_Expect = "เขียนโปรแกรมเพื่อพิมพ์ตัวเลขในลักษณะย้อนกลับ (ใส่ค่าอะไรก็ได้ที่เป็นตัวเลข)"
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;
@@ -105,7 +106,8 @@ router.post('/submit', async (req, res, next) => {
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
                 expResult:expResult,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

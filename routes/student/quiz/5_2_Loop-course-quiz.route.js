@@ -8,6 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/17FCfs6NYXTPPYKf4SON56owA51xkkQRO/preview"
 var ADRI_Expect = "เขียนโปรแกรมโดยรับค่าตัวเลขจำนวน 2 ตัว จาก Keyboard โดยเลขที่เรียงจะเพิ่มขึ้นเท่าค่าตัวเลขที่ 2 ที่รับมาและหาค่าผลรวม"
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;
@@ -104,7 +105,8 @@ router.post('/submit', async (req, res, next) => {
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
                 expResult:expResult,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

@@ -6,12 +6,14 @@ const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/test";
 const mydatabase = "APPTSystem";
 
-var ADRI = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
-var ADRI_Expect = "เขียนโปรแกรม C เพื่อพิมพ์ 'A-Z' ตัวใหญ่ โดยเลือก 1 ตัวอักษร (ยกเว้นตัว C)"
+/**โจทย์ข้อที่ 4 (ข้อที่ต้องเขียนโค้ด)*/
+var ADRI = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview" 
+var ADRI_Expect = "เขียนโปรแกรม C เพื่อพิมพ์ 'A-Z' ตัวใหญ่ โดยเลือก 1 ตัวอักษร (ยกเว้นตัว C)" 
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
+/** */
 
 
-
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res, next) => { //ย่อโค้ดนี้ลงเลย
   const person = req.user;
   // PRETEST Check
   MongoClient.connect(url, function(err, db) {
@@ -63,13 +65,14 @@ router.post('/submit', async (req, res, next) => {
 
   
  
-  /** chekc score */
+  /** chekc score */ //ตรวจคำตอบข้อ 1 , 2
   if(choice1 === 'B'){
     scoreLV1 = 10;
   }
   if(choice2 === 'B'){
     scoreLV2 = 20;
   }
+ /**  *///ตรวจคำตอบข้อ 3 ต้อไปที่ public\javascripts\lv3 (เรียงให้ถูก)
   if(choice3 === 'right'){
     scoreLV3 = 30;
   }
@@ -111,7 +114,8 @@ router.post('/submit', async (req, res, next) => {
                 expResult:expResult,
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

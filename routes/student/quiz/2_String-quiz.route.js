@@ -8,6 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/1IiFyAh1teNLEvMVvqYFo_SR__kBQYwFI/preview"
 var ADRI_Expect = "ทำการเพิ่มใส่นามสกุลเข้าไปโดยให้รหัสนักศึกษาแสดงออกมาท้ายสุด"
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
 
 
 router.get('/', async (req, res, next) => {
@@ -107,7 +108,8 @@ router.post('/submit', async (req, res, next) => {
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
                 expResult:expResult,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
                 if (err) throw err;

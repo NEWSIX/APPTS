@@ -8,6 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/18-UA-mYhZu9dqwnEdVuvrfkLnMlguqof/preview"
 var ADRI_Expect = "ให้ใส่ข้อมูลวันที่หมดอายุในเเต่ล่ะสินค้าโดยกำหนดการ input ด้วยตนเอง"
+var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;
@@ -105,7 +106,8 @@ router.post('/submit', async (req, res, next) => {
                 ImproveResult:ImproveResult,
                 Improvevariable:Improvevariable,
                 expResult:"\n  *** INPUT ที่ต้องกรอก ***\n==========================\n: "+expInput+"\n==========================\n"+" \n  *** Output  ที่ได้ *** \n==========================\n"+expResult,
-                ADRI:ADRI
+                ADRI:ADRI,
+                ADRI_Answer:ADRI_Answer
 
               };
               dbo.collection("StudentAnswer").insertOne(myobj, function(err, res) {
