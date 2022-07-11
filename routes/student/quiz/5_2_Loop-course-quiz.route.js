@@ -8,7 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/17FCfs6NYXTPPYKf4SON56owA51xkkQRO/preview"
 var ADRI_Expect = "เขียนโปรแกรมโดยรับค่าตัวเลขจำนวน 2 ตัว จาก Keyboard โดยเลขที่เรียงจะเพิ่มขึ้นเท่าค่าตัวเลขที่ 2 ที่รับมาและหาค่าผลรวม"
-var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
+var ADRI_Answer = "https://drive.google.com/file/d/1i_f_tXaFK-u5Ni-d3u6Src1AL5RrCx9G/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;

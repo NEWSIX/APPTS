@@ -341,7 +341,7 @@ router.get('/', async (req, res, next) => {
           var BasicPercent =  Math.round(((BasicScore/(studentAll*10))*100));
           var TracePercent= Math.round(((TraceScore/(studentAll*20))*100))
           var ExplainPercent = Math.round(((ExplainScore/(studentAll*30))*100))
-          var WritePercent = Math.round(((WriteScore/(studentAll*40))*100))
+          var WritePercent = Math.round(((WriteScore/(studentAll*4))*100))
 
           var PercentTotal =  BasicPercent+TracePercent+ExplainPercent+WritePercent;
           BasicPercent = (BasicPercent/PercentTotal)*100;

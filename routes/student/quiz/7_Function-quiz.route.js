@@ -9,7 +9,7 @@ const mydatabase = "APPTSystem";
 var ADRI = "https://drive.google.com/file/d/1rA3nM8GTKz9PQ2S4rDkCt0yM4ZuHK6bZ/preview"
 var ADRI_Expect = "จงเขียนโปรแกรมคำนวณการตั้งราคาสินค้า โดยรับค่า 1.ราคาต้นทุน 2.เปอร์เซ็นกำไรที่อยากได้ 3.ภาษีที่ต้องจ่าย "
 
-var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
+var ADRI_Answer = "https://drive.google.com/file/d/1RUflfBhp3viAkqUstISFQDqa8aKArmgy/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;

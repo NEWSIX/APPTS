@@ -8,7 +8,7 @@ const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/18-UA-mYhZu9dqwnEdVuvrfkLnMlguqof/preview"
 var ADRI_Expect = "ให้ใส่ข้อมูลวันที่หมดอายุในเเต่ล่ะสินค้าโดยกำหนดการ input ด้วยตนเอง"
-var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
+var ADRI_Answer = "https://drive.google.com/file/d/1JtpxBq2MqkASL5q5i6kmwIt5y0wqFJei/preview"
 
 router.get('/', async (req, res, next) => {
   const person = req.user;

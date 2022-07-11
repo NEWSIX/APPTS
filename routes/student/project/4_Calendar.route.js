@@ -7,7 +7,7 @@ const url = "mongodb+srv://appts:Appts123456789@apptsystem.jgb2f.mongodb.net/tes
 const mydatabase = "APPTSystem";
 
 var ADRI = "https://drive.google.com/file/d/1L5dFGTXu-m-PoldWJYI05cB9bQbc-THF/preview"
-var ADRI_Answer = "https://drive.google.com/file/d/1wQOAcBxYwUJix_06JzJJ48aqGBKDN7WF/preview"
+var ADRI_Answer = "https://drive.google.com/file/d/10MD6nE8HdWKBw101n_cG7QU5Ghecl1bB/preview"
 
 router.post('/submit', async (req, res, next) => {
   const person = req.user;
